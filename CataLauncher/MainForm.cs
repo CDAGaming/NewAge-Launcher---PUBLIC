@@ -98,7 +98,7 @@ namespace NewAgeLauncher
 
         // CREATE SHORTCUT
 
-        private void appShortcutToDesktop(string linkName)
+      /*  private void appShortcutToDesktop(string linkName)
         {
             string deskDir = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
@@ -113,7 +113,7 @@ namespace NewAgeLauncher
                 writer.Flush();
             }
         }
-
+        */
 
         private void exitPictureBox_MouseEnter(object sender, EventArgs e)
         {
