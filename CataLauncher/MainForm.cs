@@ -1,6 +1,6 @@
 ﻿/* 
-    Cata Launcher
-    Copyright (C) 2011-2013  Mitchell Kutchuk
+    NewAge Launcher
+    Copyright (C) 2016 Jestus
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -21,24 +21,18 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using Microsoft.Win32;
-using System.Threading;
 using System.Diagnostics;
 using System.IO;
 using System.Security.Cryptography;
 using System.Net;
 using System.Net.Sockets;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using NewAgeLauncher.Properties;
 using System.Drawing.Text;
-using System.Runtime.InteropServices;
 
 //using IWshRuntimeLibrary;
 
@@ -142,7 +136,7 @@ namespace NewAgeLauncher
 
         private void MinimizePictureBox_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
         }
 
         // ===================
@@ -299,7 +293,7 @@ namespace NewAgeLauncher
             {
                 Process.Start(wowExe);
 
-                this.Close();
+                WindowState = FormWindowState.Minimized;
             }
             else
             {
@@ -774,13 +768,13 @@ namespace NewAgeLauncher
             {
                 if (status)
                 {
-                    statusLabel.ForeColor = Color.PaleTurquoise;
-                    statusLabel.Text = "Online";
+                    statusLabel.ForeColor = Color.Red;
+                    statusLabel.Text = "Offline";
                 }
                 else
                 {
-                    statusLabel.ForeColor = Color.PaleTurquoise;
-                    statusLabel.Text = "Online"; //must be fixed
+                    statusLabel.ForeColor = Color.Green;
+                    statusLabel.Text = "Online";
                 }
             });
         }
@@ -818,7 +812,7 @@ namespace NewAgeLauncher
 
         private void UpdateBox1_Click(object sender, EventArgs e)
         {
-
+            Process.Start("http://www.wownewage.com");
         }
 
         private void statusLabel_Click(object sender, EventArgs e)
@@ -851,22 +845,52 @@ namespace NewAgeLauncher
 
         private void forumButtonPictureBox_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://community.wownewage.com"); 
+            Process.Start("http://community.wownewage.com"); 
         }
 
         private void donateButtonPictureBox_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://wownewage.com/donate");
+            Process.Start("http://wownewage.com/donate");
         }
 
         private void aboutUsButtonPictureBox_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://wownewage.com/");
+            Process.Start("http://wownewage.com/");
         }
 
         private void donateButtonPictureBox_MouseMove(object sender, MouseEventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://www.wownewage.com");
+        }
+
+        private void UpdateBox2_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://www.wownewage.com");
+        }
+
+        private void UpdateBox3_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://www.wownewage.com");
+        }
+
+        private void UpdateBox4_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://www.wownewage.com");
+        }
+
+        private void UpdateBox5_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://www.wownewage.com");
+        }
+
+        private void UpdateBox6_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://www.wownewage.com");
         }
     }
 }

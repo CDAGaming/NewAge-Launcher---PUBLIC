@@ -56,6 +56,7 @@
             // 
             // MinimizePictureBox
             // 
+            this.MinimizePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MinimizePictureBox.Image = global::NewAgeLauncher.Properties.Resources.MinimizeButtonNoHover;
             this.MinimizePictureBox.Location = new System.Drawing.Point(619, 5);
             this.MinimizePictureBox.Name = "MinimizePictureBox";
@@ -70,6 +71,7 @@
             // 
             // exitPictureBox
             // 
+            this.exitPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exitPictureBox.Image = global::NewAgeLauncher.Properties.Resources.ExitButtonNoHover;
             this.exitPictureBox.Location = new System.Drawing.Point(642, 5);
             this.exitPictureBox.Name = "exitPictureBox";
@@ -98,12 +100,14 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(665, 184);
             this.mainPanel.TabIndex = 22;
+            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // browseButton
             // 
             this.browseButton.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(148)))), ((int)(((byte)(9)))));
             this.browseButton.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.browseButton.ButtonText = "Browse";
+            this.browseButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.browseButton.Location = new System.Drawing.Point(504, 71);
             this.browseButton.Name = "browseButton";
             this.browseButton.Size = new System.Drawing.Size(97, 19);
@@ -115,6 +119,7 @@
             this.cancelButton.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(148)))), ((int)(((byte)(9)))));
             this.cancelButton.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cancelButton.ButtonText = "Cancel";
+            this.cancelButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cancelButton.Location = new System.Drawing.Point(12, 136);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(97, 36);
@@ -126,6 +131,7 @@
             this.okButton.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(148)))), ((int)(((byte)(9)))));
             this.okButton.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.okButton.ButtonText = "Save";
+            this.okButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.okButton.Location = new System.Drawing.Point(556, 136);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(97, 36);
