@@ -1,6 +1,6 @@
 ﻿/* 
-    Cata Launcher
-    Copyright (C) 2011-2013  Mitchell Kutchuk
+    NewAge Launcher
+    Copyright (C) 2016 Jestus
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -89,12 +89,12 @@ namespace NewAgeLauncher
 
         private void exitPictureBox_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void MinimizePictureBox_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -121,13 +121,13 @@ namespace NewAgeLauncher
             Settings.Default.WowLocation = wowLocationTextBox.Text;
             Settings.Default.Save();
 
-            this.Close();
+            Close();
 
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void browseButton_Click(object sender, EventArgs e)
@@ -143,5 +143,9 @@ namespace NewAgeLauncher
             }
         }
 
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

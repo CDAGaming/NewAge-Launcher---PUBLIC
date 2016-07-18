@@ -68,9 +68,9 @@
             this.aboutUsButtonPictureBox = new System.Windows.Forms.PictureBox();
             this.forumButtonPictureBox = new System.Windows.Forms.PictureBox();
             this.updatesLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.downloadBar1 = new NewAgeLauncher.DownloadBar();
             this.menuBar1 = new NewAgeLauncher.MenuBar();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.playButtonPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitPictureBox)).BeginInit();
@@ -165,11 +165,11 @@
             // 
             this.downloadProgressLabel.AutoSize = true;
             this.downloadProgressLabel.BackColor = System.Drawing.Color.Transparent;
-            this.downloadProgressLabel.Font = new System.Drawing.Font("Droid Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.downloadProgressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.downloadProgressLabel.ForeColor = System.Drawing.Color.White;
             this.downloadProgressLabel.Location = new System.Drawing.Point(449, 513);
             this.downloadProgressLabel.Name = "downloadProgressLabel";
-            this.downloadProgressLabel.Size = new System.Drawing.Size(129, 22);
+            this.downloadProgressLabel.Size = new System.Drawing.Size(131, 24);
             this.downloadProgressLabel.TabIndex = 9;
             this.downloadProgressLabel.Text = "Downloading: ";
             this.downloadProgressLabel.Visible = false;
@@ -221,6 +221,7 @@
             // MinimizePictureBox
             // 
             this.MinimizePictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.MinimizePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MinimizePictureBox.Image = global::NewAgeLauncher.Properties.Resources.MinimizeButtonNoHover;
             this.MinimizePictureBox.Location = new System.Drawing.Point(1035, 12);
             this.MinimizePictureBox.Name = "MinimizePictureBox";
@@ -236,6 +237,7 @@
             // exitPictureBox
             // 
             this.exitPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.exitPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exitPictureBox.Image = global::NewAgeLauncher.Properties.Resources.ExitButtonNoHover;
             this.exitPictureBox.Location = new System.Drawing.Point(1061, 12);
             this.exitPictureBox.Name = "exitPictureBox";
@@ -252,11 +254,11 @@
             // 
             this.News_Item6_Title.AutoSize = true;
             this.News_Item6_Title.BackColor = System.Drawing.Color.Transparent;
-            this.News_Item6_Title.Font = new System.Drawing.Font("Droid Sans", 12F, System.Drawing.FontStyle.Bold);
+            this.News_Item6_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.News_Item6_Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(204)))), ((int)(((byte)(223)))));
             this.News_Item6_Title.Location = new System.Drawing.Point(100, 504);
             this.News_Item6_Title.Name = "News_Item6_Title";
-            this.News_Item6_Title.Size = new System.Drawing.Size(147, 19);
+            this.News_Item6_Title.Size = new System.Drawing.Size(152, 20);
             this.News_Item6_Title.TabIndex = 65;
             this.News_Item6_Title.Text = "News_Item6_Title";
             // 
@@ -264,11 +266,11 @@
             // 
             this.News_Item5_Title.AutoSize = true;
             this.News_Item5_Title.BackColor = System.Drawing.Color.Transparent;
-            this.News_Item5_Title.Font = new System.Drawing.Font("Droid Sans", 12F, System.Drawing.FontStyle.Bold);
+            this.News_Item5_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.News_Item5_Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(204)))), ((int)(((byte)(223)))));
             this.News_Item5_Title.Location = new System.Drawing.Point(100, 428);
             this.News_Item5_Title.Name = "News_Item5_Title";
-            this.News_Item5_Title.Size = new System.Drawing.Size(147, 19);
+            this.News_Item5_Title.Size = new System.Drawing.Size(152, 20);
             this.News_Item5_Title.TabIndex = 64;
             this.News_Item5_Title.Text = "News_Item5_Title";
             // 
@@ -276,11 +278,11 @@
             // 
             this.News_Item4_Title.AutoSize = true;
             this.News_Item4_Title.BackColor = System.Drawing.Color.Transparent;
-            this.News_Item4_Title.Font = new System.Drawing.Font("Droid Sans", 12F, System.Drawing.FontStyle.Bold);
+            this.News_Item4_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.News_Item4_Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(204)))), ((int)(((byte)(223)))));
             this.News_Item4_Title.Location = new System.Drawing.Point(100, 351);
             this.News_Item4_Title.Name = "News_Item4_Title";
-            this.News_Item4_Title.Size = new System.Drawing.Size(147, 19);
+            this.News_Item4_Title.Size = new System.Drawing.Size(152, 20);
             this.News_Item4_Title.TabIndex = 63;
             this.News_Item4_Title.Text = "News_Item4_Title";
             // 
@@ -288,11 +290,11 @@
             // 
             this.News_Item3_Title.AutoSize = true;
             this.News_Item3_Title.BackColor = System.Drawing.Color.Transparent;
-            this.News_Item3_Title.Font = new System.Drawing.Font("Droid Sans", 12F, System.Drawing.FontStyle.Bold);
+            this.News_Item3_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.News_Item3_Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(204)))), ((int)(((byte)(223)))));
             this.News_Item3_Title.Location = new System.Drawing.Point(100, 273);
             this.News_Item3_Title.Name = "News_Item3_Title";
-            this.News_Item3_Title.Size = new System.Drawing.Size(147, 19);
+            this.News_Item3_Title.Size = new System.Drawing.Size(152, 20);
             this.News_Item3_Title.TabIndex = 62;
             this.News_Item3_Title.Text = "News_Item3_Title";
             // 
@@ -300,11 +302,11 @@
             // 
             this.News_Item2_Title.AutoSize = true;
             this.News_Item2_Title.BackColor = System.Drawing.Color.Transparent;
-            this.News_Item2_Title.Font = new System.Drawing.Font("Droid Sans", 12F, System.Drawing.FontStyle.Bold);
+            this.News_Item2_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.News_Item2_Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(204)))), ((int)(((byte)(223)))));
             this.News_Item2_Title.Location = new System.Drawing.Point(100, 195);
             this.News_Item2_Title.Name = "News_Item2_Title";
-            this.News_Item2_Title.Size = new System.Drawing.Size(147, 19);
+            this.News_Item2_Title.Size = new System.Drawing.Size(152, 20);
             this.News_Item2_Title.TabIndex = 61;
             this.News_Item2_Title.Text = "News_Item2_Title";
             // 
@@ -312,18 +314,18 @@
             // 
             this.News_Item1_Title.AutoSize = true;
             this.News_Item1_Title.BackColor = System.Drawing.Color.Transparent;
-            this.News_Item1_Title.Font = new System.Drawing.Font("Droid Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.News_Item1_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.News_Item1_Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(204)))), ((int)(((byte)(223)))));
             this.News_Item1_Title.Location = new System.Drawing.Point(100, 117);
             this.News_Item1_Title.Name = "News_Item1_Title";
-            this.News_Item1_Title.Size = new System.Drawing.Size(147, 19);
+            this.News_Item1_Title.Size = new System.Drawing.Size(152, 20);
             this.News_Item1_Title.TabIndex = 60;
             this.News_Item1_Title.Text = "News_Item1_Title";
             // 
             // Item6_Description
             // 
             this.Item6_Description.BackColor = System.Drawing.Color.Transparent;
-            this.Item6_Description.Font = new System.Drawing.Font("Droid Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Item6_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Item6_Description.ForeColor = System.Drawing.Color.Silver;
             this.Item6_Description.Location = new System.Drawing.Point(100, 524);
             this.Item6_Description.Name = "Item6_Description";
@@ -343,11 +345,12 @@
             this.UpdateBox6.Size = new System.Drawing.Size(80, 70);
             this.UpdateBox6.TabIndex = 58;
             this.UpdateBox6.TabStop = false;
+            this.UpdateBox6.Click += new System.EventHandler(this.UpdateBox6_Click);
             // 
             // Item5_Description
             // 
             this.Item5_Description.BackColor = System.Drawing.Color.Transparent;
-            this.Item5_Description.Font = new System.Drawing.Font("Droid Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Item5_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Item5_Description.ForeColor = System.Drawing.Color.Silver;
             this.Item5_Description.Location = new System.Drawing.Point(100, 448);
             this.Item5_Description.Name = "Item5_Description";
@@ -367,11 +370,12 @@
             this.UpdateBox5.Size = new System.Drawing.Size(80, 70);
             this.UpdateBox5.TabIndex = 56;
             this.UpdateBox5.TabStop = false;
+            this.UpdateBox5.Click += new System.EventHandler(this.UpdateBox5_Click);
             // 
             // Item1_Description
             // 
             this.Item1_Description.BackColor = System.Drawing.Color.Transparent;
-            this.Item1_Description.Font = new System.Drawing.Font("Droid Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Item1_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Item1_Description.ForeColor = System.Drawing.Color.Silver;
             this.Item1_Description.Location = new System.Drawing.Point(100, 137);
             this.Item1_Description.Name = "Item1_Description";
@@ -384,7 +388,7 @@
             // Item2_Description
             // 
             this.Item2_Description.BackColor = System.Drawing.Color.Transparent;
-            this.Item2_Description.Font = new System.Drawing.Font("Droid Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Item2_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Item2_Description.ForeColor = System.Drawing.Color.Silver;
             this.Item2_Description.Location = new System.Drawing.Point(100, 215);
             this.Item2_Description.Name = "Item2_Description";
@@ -397,7 +401,7 @@
             // Item3_Description
             // 
             this.Item3_Description.BackColor = System.Drawing.Color.Transparent;
-            this.Item3_Description.Font = new System.Drawing.Font("Droid Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Item3_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Item3_Description.ForeColor = System.Drawing.Color.Silver;
             this.Item3_Description.Location = new System.Drawing.Point(100, 293);
             this.Item3_Description.Name = "Item3_Description";
@@ -410,7 +414,7 @@
             // Item4_Description
             // 
             this.Item4_Description.BackColor = System.Drawing.Color.Transparent;
-            this.Item4_Description.Font = new System.Drawing.Font("Droid Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Item4_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Item4_Description.ForeColor = System.Drawing.Color.Silver;
             this.Item4_Description.Location = new System.Drawing.Point(100, 371);
             this.Item4_Description.Name = "Item4_Description";
@@ -430,6 +434,7 @@
             this.UpdateBox4.Size = new System.Drawing.Size(80, 70);
             this.UpdateBox4.TabIndex = 51;
             this.UpdateBox4.TabStop = false;
+            this.UpdateBox4.Click += new System.EventHandler(this.UpdateBox4_Click);
             // 
             // UpdateBox3
             // 
@@ -441,6 +446,7 @@
             this.UpdateBox3.Size = new System.Drawing.Size(80, 70);
             this.UpdateBox3.TabIndex = 50;
             this.UpdateBox3.TabStop = false;
+            this.UpdateBox3.Click += new System.EventHandler(this.UpdateBox3_Click);
             // 
             // UpdateBox2
             // 
@@ -452,6 +458,7 @@
             this.UpdateBox2.Size = new System.Drawing.Size(80, 70);
             this.UpdateBox2.TabIndex = 49;
             this.UpdateBox2.TabStop = false;
+            this.UpdateBox2.Click += new System.EventHandler(this.UpdateBox2_Click);
             // 
             // UpdateBox1
             // 
@@ -530,14 +537,26 @@
             // 
             this.updatesLabel.AutoSize = true;
             this.updatesLabel.BackColor = System.Drawing.Color.Transparent;
-            this.updatesLabel.Font = new System.Drawing.Font("Droid Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updatesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updatesLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(208)))), ((int)(((byte)(226)))));
             this.updatesLabel.Location = new System.Drawing.Point(8, 77);
             this.updatesLabel.Name = "updatesLabel";
-            this.updatesLabel.Size = new System.Drawing.Size(95, 24);
+            this.updatesLabel.Size = new System.Drawing.Size(111, 25);
             this.updatesLabel.TabIndex = 70;
             this.updatesLabel.Text = "UPDATES";
             this.updatesLabel.Click += new System.EventHandler(this.updatesLabel_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::NewAgeLauncher.Properties.Resources.logo1;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Location = new System.Drawing.Point(763, 51);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(329, 100);
+            this.pictureBox1.TabIndex = 71;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // downloadBar1
             // 
@@ -553,8 +572,8 @@
             // 
             this.menuBar1.BackColor = System.Drawing.Color.Transparent;
             this.menuBar1.ButtonColor = System.Drawing.Color.White;
-            this.menuBar1.ButtonFont = new System.Drawing.Font("Droid Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuBar1.Font = new System.Drawing.Font("Droid Sans", 8.25F, System.Drawing.FontStyle.Bold);
+            this.menuBar1.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuBar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.menuBar1.ForeColor = System.Drawing.Color.Transparent;
             this.menuBar1.Location = new System.Drawing.Point(0, 0);
             this.menuBar1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
@@ -565,16 +584,6 @@
             this.menuBar1.TabIndex = 18;
             this.menuBar1.Load += new System.EventHandler(this.menuBar1_Load);
             this.menuBar1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuBar1_MouseDown);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::NewAgeLauncher.Properties.Resources.logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(763, 51);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(329, 100);
-            this.pictureBox1.TabIndex = 71;
-            this.pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
@@ -618,7 +627,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.Text = "WoW Launcher";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "NewAge Launcher";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.playButtonPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizePictureBox)).EndInit();
