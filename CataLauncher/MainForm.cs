@@ -767,6 +767,7 @@ namespace NewAgeLauncher
             if (visible)
             {
                 downloadProgressLabel.Visible = true;
+                downloadSpeedLabel.Visible = true;
                 downloadBar1.BarState = DownloadBar.DownloadBarState.Available;
                 playButtonPictureBox.Enabled = false;
                 playButtonPictureBox.Image = Properties.Resources.play1;
@@ -775,6 +776,7 @@ namespace NewAgeLauncher
             {
                 sw.Reset();
                 downloadProgressLabel.Visible = false;
+                downloadSpeedLabel.Visible = false;
                 downloadBar1.BarState = DownloadBar.DownloadBarState.Playable;
                 playButtonPictureBox.Enabled = true;
                 playButtonPictureBox.Image = Properties.Resources.play1;
