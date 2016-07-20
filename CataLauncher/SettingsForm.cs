@@ -115,22 +115,17 @@ namespace NewAgeLauncher
             }
         }
 
-        private void okButton_Click(object sender, EventArgs e)
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
         {
-
-            Settings.Default.WowLocation = wowLocationTextBox.Text;
-            Settings.Default.Save();
-
-            Close();
 
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+        private void browseButton_Load(object sender, EventArgs e)
         {
-            Close();
+
         }
 
-        private void browseButton_Click(object sender, EventArgs e)
+        private void browse_button_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog fbd = new FolderBrowserDialog())
             {
@@ -143,9 +138,17 @@ namespace NewAgeLauncher
             }
         }
 
-        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        private void save_button_Click(object sender, EventArgs e)
         {
+            Settings.Default.WowLocation = wowLocationTextBox.Text;
+            Settings.Default.Save();
 
+            Close();
+        }
+
+        private void canc_button_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

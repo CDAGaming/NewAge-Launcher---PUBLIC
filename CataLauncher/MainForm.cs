@@ -33,6 +33,8 @@ using System.Net.Sockets;
 using MySql.Data.MySqlClient;
 using NewAgeLauncher.Properties;
 using System.Drawing.Text;
+using System.Diagnostics;
+
 
 //using IWshRuntimeLibrary;
 
@@ -45,6 +47,9 @@ namespace NewAgeLauncher
 
         FontFamily ff;
         Font font;
+
+        Stopwatch sw = new Stopwatch();
+        WebClient client;
 
         public MainForm()
         {
@@ -92,22 +97,22 @@ namespace NewAgeLauncher
 
         // CREATE SHORTCUT
 
-      /*  private void appShortcutToDesktop(string linkName)
-        {
-            string deskDir = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+        /*  private void appShortcutToDesktop(string linkName)
+          {
+              string deskDir = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
-            using (StreamWriter writer = new StreamWriter(deskDir + "\\" + linkName + ".url"))
-            {
-                string app = System.Reflection.Assembly.GetExecutingAssembly().Location;
-                writer.WriteLine("[InternetShortcut]");
-                writer.WriteLine("URL=file:///" + app);
-                writer.WriteLine("IconIndex=0");
-                string icon = app.Replace('\\', '/');
-                writer.WriteLine("IconFile=" + icon);
-                writer.Flush();
-            }
-        }
-        */
+              using (StreamWriter writer = new StreamWriter(deskDir + "\\" + linkName + ".url"))
+              {
+                  string app = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                  writer.WriteLine("[InternetShortcut]");
+                  writer.WriteLine("URL=file:///" + app);
+                  writer.WriteLine("IconIndex=0");
+                  string icon = app.Replace('\\', '/');
+                  writer.WriteLine("IconFile=" + icon);
+                  writer.Flush();
+              }
+          }
+          */
 
         private void exitPictureBox_MouseEnter(object sender, EventArgs e)
         {
@@ -303,7 +308,7 @@ namespace NewAgeLauncher
 
         }
 
-        private delegate void UpdateProgress(int percent, long bytesReceived, long totalBytesReceive);
+        private delegate void UpdateProgress(int percent, long bytesReceived, long totalBytesReceive, double time);
         private delegate void MakeVisibleInvisible(bool visible);
 
         private readonly string tempPath = Path.GetTempFileName();
@@ -328,6 +333,7 @@ namespace NewAgeLauncher
             AllocFont(font, this.Item6_Description, 9, false);
 
             AllocFont(font, this.downloadProgressLabel, 14, false);
+            AllocFont(font, this.downloadSpeedLabel, 14, false);
 
             AllocFont(font, this.updatesLabel, 16, false);
 
@@ -552,22 +558,41 @@ namespace NewAgeLauncher
 
         private void startDownloadBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            WebClient client = new WebClient();
+            // WebClient client = new WebClient();
+            using (client = new WebClient())
+            {
 
-            client.DownloadFileCompleted += new AsyncCompletedEventHandler(client_DownloadFileCompleted);
-            client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(client_DownloadProgressChanged);
+                client.DownloadFileCompleted += new AsyncCompletedEventHandler(client_DownloadFileCompleted);
+                client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(client_DownloadProgressChanged);
 
-            client.DownloadFileAsync(new Uri(Settings.Default.patchDownloadURL), tempPath);
+                // Start the stopwatch which we will be using to calculate the download speed
+                sw.Start();
+
+                try
+                {
+                    // Start downloading the file
+                    client.DownloadFileAsync(new Uri(Settings.Default.patchDownloadURL), tempPath);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void client_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
-            this.Invoke(new UpdateProgress(UpdateProgressbar), new object[] { e.ProgressPercentage, e.BytesReceived, e.TotalBytesToReceive });
+
+            //================
+            
+            // downloadSpeedLabel.Text = text_speed;
+
+            //===============
+            this.Invoke(new UpdateProgress(UpdateProgressbar), new object[] { e.ProgressPercentage, e.BytesReceived, e.TotalBytesToReceive, sw.Elapsed.TotalSeconds });
         }
 
-        private void UpdateProgressbar(int percent, long bytesReceived, long totalBytesToReceive)
+        private void UpdateProgressbar(int percent, long bytesReceived, long totalBytesToReceive, double time)
         {
-
             string received = String.Empty;
             string total = String.Empty;
 
@@ -590,7 +615,15 @@ namespace NewAgeLauncher
             else
                 total = String.Format("{0:0.00}kb", double.Parse(totalBytesToReceive.ToString()) / 1024);
 
-            string progress = String.Format("Download Progress: {0} / {1}", received, total);
+            string progress = String.Format("Downloading: {0} / {1}", received, total);
+
+
+
+
+            string speed = String.Format("{0} kb/s", (bytesReceived / 1024d / time).ToString("0.00"));
+
+            downloadSpeedLabel.Text = speed;
+            //MessageBox.Show("received bytes: " + (bytesReceived + " Elapsed seconds: " + sw.Elapsed.TotalSeconds + " speed: " + bytesReceived/time));
 
             downloadProgressLabel.Text = progress;
 
@@ -602,94 +635,103 @@ namespace NewAgeLauncher
         private void client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {
 
-            bool anyDownloads = false;
+            //sw.Reset();
 
-            string loc = WoW.DataDirectory;
-
-            if (!string.IsNullOrEmpty(loc) && Directory.Exists(loc))
+            if (e.Cancelled == true)
             {
-                using (StreamReader reader = new StreamReader(tempPath))
+                MessageBox.Show("Download has been canceled.");
+            }
+            else
+            {
+                bool anyDownloads = false;
+
+                string loc = WoW.DataDirectory;
+
+                if (!string.IsNullOrEmpty(loc) && Directory.Exists(loc))
                 {
-
-                    string line;
-
-                    while ((line = reader.ReadLine()) != null)
+                    using (StreamReader reader = new StreamReader(tempPath))
                     {
-                        string[] ex = line.Split(' ');
 
+                        string line;
 
-                        string path = Path.Combine(loc, ex[1]);
-
-                        bool proceed = true;
-
-                        if (File.Exists(path))
+                        while ((line = reader.ReadLine()) != null)
                         {
+                            string[] ex = line.Split(' ');
 
-                            //Compare MD5 Hashes
 
-                            using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
+                            string path = Path.Combine(loc, ex[1]);
+
+                            bool proceed = true;
+
+                            if (File.Exists(path))
                             {
 
-                                using (MD5 md5 = new MD5CryptoServiceProvider())
+                                //Compare MD5 Hashes
+
+                                using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
                                 {
 
-                                    byte[] retVal = md5.ComputeHash(fs);
-
-                                    fs.Close();
-
-                                    StringBuilder sb = new StringBuilder();
-
-                                    foreach (byte b in retVal)
+                                    using (MD5 md5 = new MD5CryptoServiceProvider())
                                     {
-                                        sb.Append(string.Format("{0:X2}", b));
-                                    }
 
-                                    if (ex[2] == sb.ToString())
-                                    {
-                                        proceed = false;
+                                        byte[] retVal = md5.ComputeHash(fs);
+
+                                        fs.Close();
+
+                                        StringBuilder sb = new StringBuilder();
+
+                                        foreach (byte b in retVal)
+                                        {
+                                            sb.Append(string.Format("{0:X2}", b));
+                                        }
+
+                                        if (ex[2] == sb.ToString())
+                                        {
+                                            proceed = false;
+                                        }
+
                                     }
 
                                 }
 
                             }
 
-                        }
-
-                        if (proceed)
-                        {
-
-                            WebClient downloadPatches = new WebClient();
-
-                            downloadPatches.DownloadFileCompleted += new AsyncCompletedEventHandler(downloadPatches_DownloadFileCompleted);
-                            downloadPatches.DownloadProgressChanged += new DownloadProgressChangedEventHandler(downloadPatches_DownloadProgressChanged);
-
-
-                            PatchFileInfo pfi = new PatchFileInfo(ex[0], path);
-
-                            object obj = pfi;
-
-                            downloadBar1.Invoke((MethodInvoker)delegate
+                            if (proceed)
                             {
-                                downloadBar1.BarState = DownloadBar.DownloadBarState.Playable;
-                            });
+
+                                WebClient downloadPatches = new WebClient();
+
+                                downloadPatches.DownloadFileCompleted += new AsyncCompletedEventHandler(downloadPatches_DownloadFileCompleted);
+                                downloadPatches.DownloadProgressChanged += new DownloadProgressChangedEventHandler(downloadPatches_DownloadProgressChanged);
 
 
-                            if (!anyDownloads)
-                                downloadPatches.DownloadFileAsync(new Uri(ex[0]), path, obj);
-                            else
-                                patchQueue.Enqueue(pfi);
+                                PatchFileInfo pfi = new PatchFileInfo(ex[0], path);
 
-                            anyDownloads = true;
+                                object obj = pfi;
+
+                                downloadBar1.Invoke((MethodInvoker)delegate
+                                {
+                                    downloadBar1.BarState = DownloadBar.DownloadBarState.Playable;
+                                });
+
+
+                                if (!anyDownloads)
+                                    downloadPatches.DownloadFileAsync(new Uri(ex[0]), path, obj);
+                                else
+                                    patchQueue.Enqueue(pfi);
+
+                                anyDownloads = true;
+                            }
                         }
                     }
                 }
+
+                if (!anyDownloads)
+                    this.Invoke(new MakeVisibleInvisible(DownloadCompleted), new object[] { false });
+                else
+                    this.Invoke(new MakeVisibleInvisible(DownloadCompleted), new object[] { true });
+
             }
-
-            if (!anyDownloads)
-                this.Invoke(new MakeVisibleInvisible(DownloadCompleted), new object[] { false });
-            else
-                this.Invoke(new MakeVisibleInvisible(DownloadCompleted), new object[] { true });
-
         }
 
         private void downloadPatches_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
@@ -722,6 +764,7 @@ namespace NewAgeLauncher
             }
             else
             {
+                sw.Reset();
                 downloadProgressLabel.Visible = false;
                 downloadBar1.BarState = DownloadBar.DownloadBarState.Playable;
                 playButtonPictureBox.Enabled = true;
@@ -731,7 +774,7 @@ namespace NewAgeLauncher
 
         private void downloadPatches_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
-            this.Invoke(new UpdateProgress(UpdateProgressbar), new object[] { e.ProgressPercentage, (int)e.BytesReceived, (int)e.TotalBytesToReceive });
+            this.Invoke(new UpdateProgress(UpdateProgressbar), new object[] { e.ProgressPercentage, (int)e.BytesReceived, (int)e.TotalBytesToReceive, (int)sw.Elapsed.TotalSeconds });
         }
 
         private class PatchFileInfo

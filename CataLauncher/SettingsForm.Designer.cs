@@ -29,30 +29,89 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
-            this.menuBar1 = new NewAgeLauncher.MenuBar();
-            this.MinimizePictureBox = new System.Windows.Forms.PictureBox();
-            this.exitPictureBox = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.browseButton = new NewAgeLauncher.CataButton();
-            this.cancelButton = new NewAgeLauncher.CataButton();
-            this.okButton = new NewAgeLauncher.CataButton();
+            this.canc_button = new System.Windows.Forms.PictureBox();
+            this.save_button = new System.Windows.Forms.PictureBox();
+            this.browse_button = new System.Windows.Forms.PictureBox();
             this.wowLocationTextBox = new System.Windows.Forms.TextBox();
             this.wowLocationLabel = new System.Windows.Forms.Label();
+            this.MinimizePictureBox = new System.Windows.Forms.PictureBox();
+            this.exitPictureBox = new System.Windows.Forms.PictureBox();
+            this.menuBar1 = new NewAgeLauncher.MenuBar();
+            this.mainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.canc_button)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.save_button)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.browse_button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitPictureBox)).BeginInit();
-            this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuBar1
+            // mainPanel
             // 
-            this.menuBar1.ButtonColor = System.Drawing.Color.White;
-            this.menuBar1.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.menuBar1.Location = new System.Drawing.Point(0, 0);
-            this.menuBar1.MenuBarText = "Settings";
-            this.menuBar1.Name = "menuBar1";
-            this.menuBar1.Size = new System.Drawing.Size(662, 32);
-            this.menuBar1.TabIndex = 19;
-            this.menuBar1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuBar1_MouseDown);
+            this.mainPanel.BackColor = System.Drawing.Color.Transparent;
+            this.mainPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mainPanel.BackgroundImage")));
+            this.mainPanel.Controls.Add(this.canc_button);
+            this.mainPanel.Controls.Add(this.save_button);
+            this.mainPanel.Controls.Add(this.browse_button);
+            this.mainPanel.Controls.Add(this.wowLocationTextBox);
+            this.mainPanel.Controls.Add(this.wowLocationLabel);
+            this.mainPanel.Controls.Add(this.MinimizePictureBox);
+            this.mainPanel.Controls.Add(this.exitPictureBox);
+            this.mainPanel.Controls.Add(this.menuBar1);
+            this.mainPanel.Location = new System.Drawing.Point(0, 0);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(665, 184);
+            this.mainPanel.TabIndex = 22;
+            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
+            // 
+            // canc_button
+            // 
+            this.canc_button.Image = global::NewAgeLauncher.Properties.Resources.cancel;
+            this.canc_button.Location = new System.Drawing.Point(12, 137);
+            this.canc_button.Name = "canc_button";
+            this.canc_button.Size = new System.Drawing.Size(98, 35);
+            this.canc_button.TabIndex = 28;
+            this.canc_button.TabStop = false;
+            this.canc_button.Click += new System.EventHandler(this.canc_button_Click);
+            // 
+            // save_button
+            // 
+            this.save_button.Image = global::NewAgeLauncher.Properties.Resources.save;
+            this.save_button.Location = new System.Drawing.Point(555, 137);
+            this.save_button.Name = "save_button";
+            this.save_button.Size = new System.Drawing.Size(98, 35);
+            this.save_button.TabIndex = 27;
+            this.save_button.TabStop = false;
+            this.save_button.Click += new System.EventHandler(this.save_button_Click);
+            // 
+            // browse_button
+            // 
+            this.browse_button.Image = global::NewAgeLauncher.Properties.Resources.browse;
+            this.browse_button.Location = new System.Drawing.Point(505, 71);
+            this.browse_button.Name = "browse_button";
+            this.browse_button.Size = new System.Drawing.Size(96, 19);
+            this.browse_button.TabIndex = 26;
+            this.browse_button.TabStop = false;
+            this.browse_button.Click += new System.EventHandler(this.browse_button_Click);
+            // 
+            // wowLocationTextBox
+            // 
+            this.wowLocationTextBox.Location = new System.Drawing.Point(206, 71);
+            this.wowLocationTextBox.Name = "wowLocationTextBox";
+            this.wowLocationTextBox.ReadOnly = true;
+            this.wowLocationTextBox.Size = new System.Drawing.Size(292, 20);
+            this.wowLocationTextBox.TabIndex = 23;
+            // 
+            // wowLocationLabel
+            // 
+            this.wowLocationLabel.AutoSize = true;
+            this.wowLocationLabel.BackColor = System.Drawing.Color.Transparent;
+            this.wowLocationLabel.ForeColor = System.Drawing.Color.White;
+            this.wowLocationLabel.Location = new System.Drawing.Point(119, 71);
+            this.wowLocationLabel.Name = "wowLocationLabel";
+            this.wowLocationLabel.Size = new System.Drawing.Size(80, 13);
+            this.wowLocationLabel.TabIndex = 22;
+            this.wowLocationLabel.Text = "WoW Directory";
             // 
             // MinimizePictureBox
             // 
@@ -84,78 +143,16 @@
             this.exitPictureBox.MouseLeave += new System.EventHandler(this.exitPictureBox_MouseLeave);
             this.exitPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.exitPictureBox_MouseUp);
             // 
-            // mainPanel
+            // menuBar1
             // 
-            this.mainPanel.BackColor = System.Drawing.Color.Transparent;
-            this.mainPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mainPanel.BackgroundImage")));
-            this.mainPanel.Controls.Add(this.browseButton);
-            this.mainPanel.Controls.Add(this.cancelButton);
-            this.mainPanel.Controls.Add(this.okButton);
-            this.mainPanel.Controls.Add(this.wowLocationTextBox);
-            this.mainPanel.Controls.Add(this.wowLocationLabel);
-            this.mainPanel.Controls.Add(this.MinimizePictureBox);
-            this.mainPanel.Controls.Add(this.exitPictureBox);
-            this.mainPanel.Controls.Add(this.menuBar1);
-            this.mainPanel.Location = new System.Drawing.Point(0, 0);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(665, 184);
-            this.mainPanel.TabIndex = 22;
-            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
-            // 
-            // browseButton
-            // 
-            this.browseButton.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(148)))), ((int)(((byte)(9)))));
-            this.browseButton.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.browseButton.ButtonText = "Browse";
-            this.browseButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.browseButton.Location = new System.Drawing.Point(504, 71);
-            this.browseButton.Name = "browseButton";
-            this.browseButton.Size = new System.Drawing.Size(97, 19);
-            this.browseButton.TabIndex = 26;
-            this.browseButton.Click += new System.EventHandler(this.browseButton_Click);
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(148)))), ((int)(((byte)(9)))));
-            this.cancelButton.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.cancelButton.ButtonText = "Cancel";
-            this.cancelButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cancelButton.Location = new System.Drawing.Point(12, 136);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(97, 36);
-            this.cancelButton.TabIndex = 25;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
-            // 
-            // okButton
-            // 
-            this.okButton.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(148)))), ((int)(((byte)(9)))));
-            this.okButton.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.okButton.ButtonText = "Save";
-            this.okButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.okButton.Location = new System.Drawing.Point(556, 136);
-            this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(97, 36);
-            this.okButton.TabIndex = 24;
-            this.okButton.Click += new System.EventHandler(this.okButton_Click);
-            // 
-            // wowLocationTextBox
-            // 
-            this.wowLocationTextBox.Location = new System.Drawing.Point(206, 71);
-            this.wowLocationTextBox.Name = "wowLocationTextBox";
-            this.wowLocationTextBox.ReadOnly = true;
-            this.wowLocationTextBox.Size = new System.Drawing.Size(292, 20);
-            this.wowLocationTextBox.TabIndex = 23;
-            // 
-            // wowLocationLabel
-            // 
-            this.wowLocationLabel.AutoSize = true;
-            this.wowLocationLabel.BackColor = System.Drawing.Color.Transparent;
-            this.wowLocationLabel.ForeColor = System.Drawing.Color.White;
-            this.wowLocationLabel.Location = new System.Drawing.Point(119, 71);
-            this.wowLocationLabel.Name = "wowLocationLabel";
-            this.wowLocationLabel.Size = new System.Drawing.Size(80, 13);
-            this.wowLocationLabel.TabIndex = 22;
-            this.wowLocationLabel.Text = "WoW Directory";
+            this.menuBar1.ButtonColor = System.Drawing.Color.White;
+            this.menuBar1.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.menuBar1.Location = new System.Drawing.Point(0, 0);
+            this.menuBar1.MenuBarText = "Settings";
+            this.menuBar1.Name = "menuBar1";
+            this.menuBar1.Size = new System.Drawing.Size(662, 32);
+            this.menuBar1.TabIndex = 19;
+            this.menuBar1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuBar1_MouseDown);
             // 
             // SettingsForm
             // 
@@ -171,10 +168,13 @@
             this.Name = "SettingsForm";
             this.Text = "SettingsForm";
             this.Load += new System.EventHandler(this.SettingsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.MinimizePictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.exitPictureBox)).EndInit();
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.canc_button)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.save_button)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.browse_button)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimizePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -187,8 +187,8 @@
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Label wowLocationLabel;
         private System.Windows.Forms.TextBox wowLocationTextBox;
-        private CataButton okButton;
-        private CataButton cancelButton;
-        private CataButton browseButton;
+        private System.Windows.Forms.PictureBox browse_button;
+        private System.Windows.Forms.PictureBox save_button;
+        private System.Windows.Forms.PictureBox canc_button;
     }
 }

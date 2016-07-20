@@ -71,6 +71,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.downloadBar1 = new NewAgeLauncher.DownloadBar();
             this.menuBar1 = new NewAgeLauncher.MenuBar();
+            this.downloadSpeedLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.playButtonPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitPictureBox)).BeginInit();
@@ -585,6 +586,19 @@
             this.menuBar1.Load += new System.EventHandler(this.menuBar1_Load);
             this.menuBar1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuBar1_MouseDown);
             // 
+            // downloadSpeedLabel
+            // 
+            this.downloadSpeedLabel.AutoSize = true;
+            this.downloadSpeedLabel.BackColor = System.Drawing.Color.Transparent;
+            this.downloadSpeedLabel.Font = new System.Drawing.Font("Droid Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.downloadSpeedLabel.ForeColor = System.Drawing.Color.White;
+            this.downloadSpeedLabel.Location = new System.Drawing.Point(945, 514);
+            this.downloadSpeedLabel.Name = "downloadSpeedLabel";
+            this.downloadSpeedLabel.Size = new System.Drawing.Size(109, 22);
+            this.downloadSpeedLabel.TabIndex = 73;
+            this.downloadSpeedLabel.Text = "@ 0.00 KB/s";
+            this.downloadSpeedLabel.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -592,6 +606,7 @@
             this.BackColor = System.Drawing.Color.Lime;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1092, 629);
+            this.Controls.Add(this.downloadSpeedLabel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.updatesLabel);
             this.Controls.Add(this.forumButtonPictureBox);
@@ -693,6 +708,7 @@
         private System.Windows.Forms.PictureBox UpdateBox1;
         private System.Windows.Forms.Label updatesLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label downloadSpeedLabel;
     }
 }
 
