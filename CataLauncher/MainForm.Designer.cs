@@ -590,14 +590,13 @@
             // 
             this.downloadSpeedLabel.AutoSize = true;
             this.downloadSpeedLabel.BackColor = System.Drawing.Color.Transparent;
-            this.downloadSpeedLabel.Font = new System.Drawing.Font("Droid Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.downloadSpeedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.downloadSpeedLabel.ForeColor = System.Drawing.Color.White;
-            this.downloadSpeedLabel.Location = new System.Drawing.Point(945, 514);
+            this.downloadSpeedLabel.Location = new System.Drawing.Point(453, 596);
             this.downloadSpeedLabel.Name = "downloadSpeedLabel";
-            this.downloadSpeedLabel.Size = new System.Drawing.Size(109, 22);
-            this.downloadSpeedLabel.TabIndex = 73;
-            this.downloadSpeedLabel.Text = "@ 0.00 KB/s";
-            this.downloadSpeedLabel.Visible = false;
+            this.downloadSpeedLabel.Size = new System.Drawing.Size(77, 20);
+            this.downloadSpeedLabel.TabIndex = 72;
+            this.downloadSpeedLabel.Text = "0.00 KB/s";
             // 
             // MainForm
             // 

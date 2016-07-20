@@ -333,7 +333,7 @@ namespace NewAgeLauncher
             AllocFont(font, this.Item6_Description, 9, false);
 
             AllocFont(font, this.downloadProgressLabel, 14, false);
-            AllocFont(font, this.downloadSpeedLabel, 14, false);
+            //AllocFont(font, this.downloadSpeedLabel, 14, false);
 
             AllocFont(font, this.updatesLabel, 16, false);
 
@@ -617,12 +617,21 @@ namespace NewAgeLauncher
 
             string progress = String.Format("Downloading: {0} / {1}", received, total);
 
+            string speed;
 
+            if ((int)(bytesReceived / 1024d / time) > 1000)
+            {
+                speed = String.Format("{0} MB/s", (bytesReceived / 1024d / 1024d / time).ToString("0.00"));
+            }
+            else
+            {
+                speed = String.Format("{0} KB/s", (bytesReceived / 1024d / time).ToString("0.00"));
+            }
 
-
-            string speed = String.Format("{0} kb/s", (bytesReceived / 1024d / time).ToString("0.00"));
+            //MessageBox.Show(speed);
 
             downloadSpeedLabel.Text = speed;
+           // downloadSpeedLabel.Refresh();
             //MessageBox.Show("received bytes: " + (bytesReceived + " Elapsed seconds: " + sw.Elapsed.TotalSeconds + " speed: " + bytesReceived/time));
 
             downloadProgressLabel.Text = progress;
