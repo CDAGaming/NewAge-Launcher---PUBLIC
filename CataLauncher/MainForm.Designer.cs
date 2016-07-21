@@ -69,9 +69,9 @@
             this.forumButtonPictureBox = new System.Windows.Forms.PictureBox();
             this.updatesLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.downloadSpeedLabel = new System.Windows.Forms.Label();
             this.downloadBar1 = new NewAgeLauncher.DownloadBar();
             this.menuBar1 = new NewAgeLauncher.MenuBar();
-            this.downloadSpeedLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.playButtonPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitPictureBox)).BeginInit();
@@ -551,6 +551,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::NewAgeLauncher.Properties.Resources.logo1;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Location = new System.Drawing.Point(763, 51);
             this.pictureBox1.Name = "pictureBox1";
@@ -558,6 +559,18 @@
             this.pictureBox1.TabIndex = 71;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // downloadSpeedLabel
+            // 
+            this.downloadSpeedLabel.AutoSize = true;
+            this.downloadSpeedLabel.BackColor = System.Drawing.Color.Transparent;
+            this.downloadSpeedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.downloadSpeedLabel.ForeColor = System.Drawing.Color.White;
+            this.downloadSpeedLabel.Location = new System.Drawing.Point(453, 596);
+            this.downloadSpeedLabel.Name = "downloadSpeedLabel";
+            this.downloadSpeedLabel.Size = new System.Drawing.Size(77, 20);
+            this.downloadSpeedLabel.TabIndex = 72;
+            this.downloadSpeedLabel.Text = "0.00 KB/s";
             // 
             // downloadBar1
             // 
@@ -585,18 +598,6 @@
             this.menuBar1.TabIndex = 18;
             this.menuBar1.Load += new System.EventHandler(this.menuBar1_Load);
             this.menuBar1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuBar1_MouseDown);
-            // 
-            // downloadSpeedLabel
-            // 
-            this.downloadSpeedLabel.AutoSize = true;
-            this.downloadSpeedLabel.BackColor = System.Drawing.Color.Transparent;
-            this.downloadSpeedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.downloadSpeedLabel.ForeColor = System.Drawing.Color.White;
-            this.downloadSpeedLabel.Location = new System.Drawing.Point(453, 596);
-            this.downloadSpeedLabel.Name = "downloadSpeedLabel";
-            this.downloadSpeedLabel.Size = new System.Drawing.Size(77, 20);
-            this.downloadSpeedLabel.TabIndex = 72;
-            this.downloadSpeedLabel.Text = "0.00 KB/s";
             // 
             // MainForm
             // 

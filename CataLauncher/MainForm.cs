@@ -33,7 +33,6 @@ using System.Net.Sockets;
 using MySql.Data.MySqlClient;
 using NewAgeLauncher.Properties;
 using System.Drawing.Text;
-using System.Diagnostics;
 
 
 //using IWshRuntimeLibrary;
@@ -58,8 +57,8 @@ namespace NewAgeLauncher
 
         private void loadFont()
         {
-            byte[] fontArray = NewAgeLauncher.Properties.Resources.DroidSans;
-            int dataLength = NewAgeLauncher.Properties.Resources.DroidSans.Length;
+            byte[] fontArray = Resources.DroidSans;
+            int dataLength = Resources.DroidSans.Length;
 
             IntPtr ptrData = Marshal.AllocCoTaskMem(dataLength);
 
@@ -116,22 +115,22 @@ namespace NewAgeLauncher
 
         private void exitPictureBox_MouseEnter(object sender, EventArgs e)
         {
-            exitPictureBox.Image = Properties.Resources.ExitButton;
+            exitPictureBox.Image = Resources.ExitButton;
         }
 
         private void MinimizePictureBox_MouseEnter(object sender, EventArgs e)
         {
-            MinimizePictureBox.Image = Properties.Resources.MinimizeButton;
+            MinimizePictureBox.Image = Resources.MinimizeButton;
         }
 
         private void exitPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            exitPictureBox.Image = Properties.Resources.ExitButtonNoHover;
+            exitPictureBox.Image = Resources.ExitButtonNoHover;
         }
 
         private void MinimizePictureBox_MouseLeave(object sender, EventArgs e)
         {
-            MinimizePictureBox.Image = Properties.Resources.MinimizeButtonNoHover;
+            MinimizePictureBox.Image = Resources.MinimizeButtonNoHover;
         }
 
         private void exitPictureBox_Click(object sender, EventArgs e)
@@ -147,24 +146,24 @@ namespace NewAgeLauncher
         // ===================
         private void playButtonPictureBox_MouseEnter(object sender, EventArgs e)
         {
-            playButtonPictureBox.Image = Properties.Resources.play_hover1;
+            playButtonPictureBox.Image = Resources.play_hover1;
             Cursor = Cursors.Hand;
         }
 
         private void playButtonPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            playButtonPictureBox.Image = Properties.Resources.play1;
+            playButtonPictureBox.Image = Resources.play1;
             Cursor = Cursors.Arrow;
         }
 
         private void playButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            playButtonPictureBox.Image = Properties.Resources.play_hover1;
+            playButtonPictureBox.Image = Resources.play_hover1;
         }
 
         private void playButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            playButtonPictureBox.Image = Properties.Resources.play_hover1;
+            playButtonPictureBox.Image = Resources.play_hover1;
         }
         // ===================
 
@@ -173,24 +172,24 @@ namespace NewAgeLauncher
         private void settingsButtonPictureBox_MouseEnter(object sender, EventArgs e)
         {
             //MessageBox.Show("mouse enter");
-            settingsButtonPictureBox.Image = Properties.Resources.settings_hover;
+            settingsButtonPictureBox.Image = Resources.settings_hover;
             Cursor = Cursors.Hand;
         }
 
         private void settingsButtonPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            settingsButtonPictureBox.Image = Properties.Resources.settings;
+            settingsButtonPictureBox.Image = Resources.settings;
             Cursor = Cursors.Arrow;
         }
 
         private void settingsButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            settingsButtonPictureBox.Image = Properties.Resources.settings_hover;
+            settingsButtonPictureBox.Image = Resources.settings_hover;
         }
 
         private void settingsButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            settingsButtonPictureBox.Image = Properties.Resources.settings_hover;
+            settingsButtonPictureBox.Image = Resources.settings_hover;
         }
       
         // ===================
@@ -199,93 +198,93 @@ namespace NewAgeLauncher
         private void donateButtonPictureBox_MouseEnter(object sender, EventArgs e)
         {
             //MessageBox.Show("mouse enter");
-            donateButtonPictureBox.Image = Properties.Resources.donate_hover;
+            donateButtonPictureBox.Image = Resources.donate_hover;
             Cursor = Cursors.Hand;
         }
 
         private void donateButtonPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            donateButtonPictureBox.Image = Properties.Resources.donate;
+            donateButtonPictureBox.Image = Resources.donate;
             Cursor = Cursors.Arrow;
         }
 
         private void donateButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            donateButtonPictureBox.Image = Properties.Resources.donate_hover;
+            donateButtonPictureBox.Image = Resources.donate_hover;
         }
 
         private void donateButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            donateButtonPictureBox.Image = Properties.Resources.donate_hover;
+            donateButtonPictureBox.Image = Resources.donate_hover;
         }
         // ===================
 
         // ===================
         private void aboutUsButtonPictureBox_MouseEnter(object sender, EventArgs e)
         {
-            aboutUsButtonPictureBox.Image = Properties.Resources.aboutus_hover;
+            aboutUsButtonPictureBox.Image = Resources.aboutus_hover;
             Cursor = Cursors.Hand;
         }
 
         private void aboutUsButtonPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            aboutUsButtonPictureBox.Image = Properties.Resources.aboutus;
+            aboutUsButtonPictureBox.Image = Resources.aboutus;
             Cursor = Cursors.Arrow;
         }
 
         private void aboutUsButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            aboutUsButtonPictureBox.Image = Properties.Resources.aboutus_hover;
+            aboutUsButtonPictureBox.Image = Resources.aboutus_hover;
         }
 
         private void aboutUsButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            aboutUsButtonPictureBox.Image = Properties.Resources.aboutus_hover;
+            aboutUsButtonPictureBox.Image = Resources.aboutus_hover;
         }
         // ===================
 
         // ===================
         private void forumButtonPictureBox_MouseEnter(object sender, EventArgs e)
         {
-            forumButtonPictureBox.Image = Properties.Resources.forum_hover;
+            forumButtonPictureBox.Image = Resources.forum_hover;
             Cursor = Cursors.Hand;
         }
 
         private void forumButtonPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            forumButtonPictureBox.Image = Properties.Resources.forum;
+            forumButtonPictureBox.Image = Resources.forum;
             Cursor = Cursors.Arrow;
         }
 
         private void forumButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            forumButtonPictureBox.Image = Properties.Resources.forum_hover;
+            forumButtonPictureBox.Image = Resources.forum_hover;
         }
 
         private void forumButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            forumButtonPictureBox.Image = Properties.Resources.forum;
+            forumButtonPictureBox.Image = Resources.forum;
         }
         // ===================
 
         private void exitPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            exitPictureBox.Image = Properties.Resources.ExitButtonPress;
+            exitPictureBox.Image = Resources.ExitButtonPress;
         }
 
         private void exitPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            exitPictureBox.Image = Properties.Resources.ExitButton;
+            exitPictureBox.Image = Resources.ExitButton;
         }
 
         private void MinimizePictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            MinimizePictureBox.Image = Properties.Resources.MinimizeButtonPress;
+            MinimizePictureBox.Image = Resources.MinimizeButtonPress;
         }
 
         private void MinimizePictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            MinimizePictureBox.Image = Properties.Resources.MinimizeButton;
+            MinimizePictureBox.Image = Resources.MinimizeButton;
         }
 
         private void playButtonPictureBox_Click(object sender, EventArgs e)
@@ -631,7 +630,7 @@ namespace NewAgeLauncher
             //MessageBox.Show(speed);
 
             downloadSpeedLabel.Text = speed;
-           // downloadSpeedLabel.Refresh();
+            //downloadSpeedLabel.Refresh();
             //MessageBox.Show("received bytes: " + (bytesReceived + " Elapsed seconds: " + sw.Elapsed.TotalSeconds + " speed: " + bytesReceived/time));
 
             downloadProgressLabel.Text = progress;
@@ -822,12 +821,12 @@ namespace NewAgeLauncher
             {
                 if (status)
                 {
-                    statusLabel.ForeColor = Color.Red;
+                    statusLabel.ForeColor = Color.IndianRed;
                     statusLabel.Text = "Offline";
                 }
                 else
                 {
-                    statusLabel.ForeColor = Color.Green;
+                    statusLabel.ForeColor = Color.LimeGreen;
                     statusLabel.Text = "Online";
                 }
             });
