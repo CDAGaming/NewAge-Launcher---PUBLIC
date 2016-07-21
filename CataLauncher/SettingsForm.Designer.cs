@@ -66,6 +66,7 @@
             // 
             // canc_button
             // 
+            this.canc_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.canc_button.Image = global::NewAgeLauncher.Properties.Resources.cancel;
             this.canc_button.Location = new System.Drawing.Point(12, 137);
             this.canc_button.Name = "canc_button";
@@ -76,6 +77,7 @@
             // 
             // save_button
             // 
+            this.save_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.save_button.Image = global::NewAgeLauncher.Properties.Resources.save;
             this.save_button.Location = new System.Drawing.Point(555, 137);
             this.save_button.Name = "save_button";
@@ -86,6 +88,7 @@
             // 
             // browse_button
             // 
+            this.browse_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.browse_button.Image = global::NewAgeLauncher.Properties.Resources.browse;
             this.browse_button.Location = new System.Drawing.Point(505, 71);
             this.browse_button.Name = "browse_button";
