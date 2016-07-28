@@ -36,6 +36,7 @@ namespace NewAgeLauncher
         public SettingsForm()
         {
             InitializeComponent();
+
         }
 
         private void SettingsForm_Load(object sender, EventArgs e)
@@ -44,6 +45,8 @@ namespace NewAgeLauncher
             TransparencyKey = Color.Lime;
 
             wowLocationTextBox.Text = Settings.Default.WowLocation;
+            Transparent_Checkbox.Checked = Settings.Default.TransparencyToggle;
+            WoWCache_CheckBox.Checked = Settings.Default.WoWCacheToggle;
 
         }
 
@@ -140,10 +143,35 @@ namespace NewAgeLauncher
 
         private void save_button_Click(object sender, EventArgs e)
         {
-            Settings.Default.WowLocation = wowLocationTextBox.Text;
-            Settings.Default.Save();
+            // WoW Location Saving
 
-            Close();
+            Settings.Default.WowLocation = wowLocationTextBox.Text;
+           
+
+            // Transparency Checkbox
+
+            if (Transparent_Checkbox.Checked == true)
+            {
+                Settings.Default.TransparencyToggle = true;
+            }
+            if (Transparent_Checkbox.Checked == false)
+            {
+                Settings.Default.TransparencyToggle = false;
+            }
+
+            // WoW Cache CheckBox
+
+            if (WoWCache_CheckBox.Checked)
+            {
+                Settings.Default.WoWCacheToggle = true;
+            }
+            else
+            {
+                Settings.Default.WoWCacheToggle = false;
+            }
+
+            Settings.Default.Save();
+            Application.Restart();
         }
 
         private void canc_button_Click(object sender, EventArgs e)

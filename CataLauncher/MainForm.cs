@@ -53,6 +53,16 @@ namespace NewAgeLauncher
         public MainForm()
         {
             InitializeComponent();
+
+            if(Settings.Default.TransparencyToggle == false)
+            {
+                Opacity = 1.00;
+            }
+            else
+            {
+                Opacity = 1.00;
+            }
+
         }
 
         private void loadFont()
@@ -81,7 +91,7 @@ namespace NewAgeLauncher
 
         private void AllocFont(Font f, Control c, float size, Boolean bold)
         {
-            if(bold)
+            if (bold)
             {
                 FontStyle fontStyle = FontStyle.Bold;
                 c.Font = new Font(ff, size, fontStyle);
@@ -191,7 +201,7 @@ namespace NewAgeLauncher
         {
             settingsButtonPictureBox.Image = Resources.settings_hover;
         }
-      
+
         // ===================
 
         // ===================
@@ -314,6 +324,14 @@ namespace NewAgeLauncher
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            if (Settings.Default.TransparencyToggle == false)
+            {
+                Opacity = 1.00;
+            }
+            if (Settings.Default.TransparencyToggle == true)
+            {
+                Opacity = .90;
+            }
 
             // LOAD FONT
             loadFont();
@@ -336,7 +354,7 @@ namespace NewAgeLauncher
 
             AllocFont(font, this.updatesLabel, 16, false);
 
-            
+
 
 
             /* string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -433,76 +451,76 @@ namespace NewAgeLauncher
 
             int btnCtr = 0;
 
-        /*    if (!string.IsNullOrEmpty(Settings.Default.WebsiteUrl))
-            {
+            /*    if (!string.IsNullOrEmpty(Settings.Default.WebsiteUrl))
+                {
 
-                CataButton btn = new CataButton();
-                btn.Size = new Size(97, 39);
-                btn.Name = "webButton";
-                btn.ButtonText = "Website";
-                btn.Location = new Point((97 * btnCtr) + 25, 469);
-                btn.Click += (s, args) => Process.Start(Settings.Default.WebsiteUrl);
+                    CataButton btn = new CataButton();
+                    btn.Size = new Size(97, 39);
+                    btn.Name = "webButton";
+                    btn.ButtonText = "Website";
+                    btn.Location = new Point((97 * btnCtr) + 25, 469);
+                    btn.Click += (s, args) => Process.Start(Settings.Default.WebsiteUrl);
 
-                Controls.Add(btn);
+                    Controls.Add(btn);
 
-                btn.BringToFront();
+                    btn.BringToFront();
 
-                btnCtr++;
+                    btnCtr++;
 
-            }
+                }
 
-            if (!string.IsNullOrEmpty(Settings.Default.ForumsUrl))
-            {
+                if (!string.IsNullOrEmpty(Settings.Default.ForumsUrl))
+                {
 
-                CataButton btn = new CataButton();
-                btn.Size = new Size(97, 39);
-                btn.Name = "frmButton";
-                btn.ButtonText = "Forums";
-                btn.Location = new Point((97 * btnCtr) + 25, 469);
-                btn.Click += (s, args) => Process.Start(Settings.Default.ForumsUrl);
+                    CataButton btn = new CataButton();
+                    btn.Size = new Size(97, 39);
+                    btn.Name = "frmButton";
+                    btn.ButtonText = "Forums";
+                    btn.Location = new Point((97 * btnCtr) + 25, 469);
+                    btn.Click += (s, args) => Process.Start(Settings.Default.ForumsUrl);
 
-                Controls.Add(btn);
+                    Controls.Add(btn);
 
-                btn.BringToFront();
+                    btn.BringToFront();
 
-                btnCtr++;
+                    btnCtr++;
 
-            }
+                }
 
-            if (!string.IsNullOrEmpty(Settings.Default.VoteUrl))
-            {
+                if (!string.IsNullOrEmpty(Settings.Default.VoteUrl))
+                {
 
-                CataButton btn = new CataButton();
-                btn.Size = new Size(97, 39);
-                btn.Name = "voteBtn";
-                btn.ButtonText = "Vote";
-                btn.Location = new Point((97 * btnCtr) + 25, 469);
-                btn.Click += (s, args) => Process.Start(Settings.Default.VoteUrl);
+                    CataButton btn = new CataButton();
+                    btn.Size = new Size(97, 39);
+                    btn.Name = "voteBtn";
+                    btn.ButtonText = "Vote";
+                    btn.Location = new Point((97 * btnCtr) + 25, 469);
+                    btn.Click += (s, args) => Process.Start(Settings.Default.VoteUrl);
 
-                Controls.Add(btn);
+                    Controls.Add(btn);
 
-                btn.BringToFront();
+                    btn.BringToFront();
 
-                btnCtr++;
+                    btnCtr++;
 
-            }
+                }
 
-            if (!string.IsNullOrEmpty(Settings.Default.DonateUrl))
-            {
+                if (!string.IsNullOrEmpty(Settings.Default.DonateUrl))
+                {
 
-                CataButton btn = new CataButton();
-                btn.Size = new Size(97, 39);
-                btn.Name = "donateBtn";
-                btn.ButtonText = "Donate";
-                btn.Location = new Point((97 * btnCtr) + 25, 469);
-                btn.Click += (s, args) => Process.Start(Settings.Default.DonateUrl);
+                    CataButton btn = new CataButton();
+                    btn.Size = new Size(97, 39);
+                    btn.Name = "donateBtn";
+                    btn.ButtonText = "Donate";
+                    btn.Location = new Point((97 * btnCtr) + 25, 469);
+                    btn.Click += (s, args) => Process.Start(Settings.Default.DonateUrl);
 
-                Controls.Add(btn);
+                    Controls.Add(btn);
 
-                btn.BringToFront();
+                    btn.BringToFront();
 
-            }
-            */
+                }
+                */
 
             if (string.IsNullOrEmpty(Settings.Default.WowLocation) || !Directory.Exists(Settings.Default.WowLocation))
             {
@@ -583,7 +601,7 @@ namespace NewAgeLauncher
         {
 
             //================
-            
+
             // downloadSpeedLabel.Text = text_speed;
 
             //===============
@@ -898,7 +916,7 @@ namespace NewAgeLauncher
 
         private void forumButtonPictureBox_Click(object sender, EventArgs e)
         {
-            Process.Start("http://community.wownewage.com"); 
+            Process.Start("http://community.wownewage.com");
         }
 
         private void donateButtonPictureBox_Click(object sender, EventArgs e)
@@ -946,88 +964,64 @@ namespace NewAgeLauncher
             Process.Start("http://www.wownewage.com");
         }
 
-        //Create DropShadow & Resizability -- EXPIERIMENTAL DEBUGGING ONLY --
+        //Create Resizability -- EXPIERIMENTAL DEBUGGING ONLY --
 
-        // Create DropShadow
-        /*
+        // Resizable Border Code
 
-        private const int CS_DROPSHADOW = 0x20000;
+        protected override void WndProc(ref Message m)
+        {
+            const int RESIZE_HANDLE_SIZE = 10;
+
+            switch (m.Msg)
+            {
+                case 0x0084/*NCHITTEST*/ :
+                    base.WndProc(ref m);
+
+                    if ((int)m.Result == 0x01/*HTCLIENT*/)
+                    {
+                        Point screenPoint = new Point(m.LParam.ToInt32());
+                        Point clientPoint = this.PointToClient(screenPoint);
+                        if (clientPoint.Y <= RESIZE_HANDLE_SIZE)
+                        {
+                            if (clientPoint.X <= RESIZE_HANDLE_SIZE)
+                                m.Result = (IntPtr)13/*HTTOPLEFT*/ ;
+                            else if (clientPoint.X < (Size.Width - RESIZE_HANDLE_SIZE))
+                                m.Result = (IntPtr)12/*HTTOP*/ ;
+                            else
+                                m.Result = (IntPtr)14/*HTTOPRIGHT*/ ;
+                        }
+                        else if (clientPoint.Y <= (Size.Height - RESIZE_HANDLE_SIZE))
+                        {
+                            if (clientPoint.X <= RESIZE_HANDLE_SIZE)
+                                m.Result = (IntPtr)10/*HTLEFT*/ ;
+                            else if (clientPoint.X < (Size.Width - RESIZE_HANDLE_SIZE))
+                                m.Result = (IntPtr)2/*HTCAPTION*/ ;
+                            else
+                                m.Result = (IntPtr)11/*HTRIGHT*/ ;
+                        }
+                        else
+                        {
+                            if (clientPoint.X <= RESIZE_HANDLE_SIZE)
+                                m.Result = (IntPtr)16/*HTBOTTOMLEFT*/ ;
+                            else if (clientPoint.X < (Size.Width - RESIZE_HANDLE_SIZE))
+                                m.Result = (IntPtr)15/*HTBOTTOM*/ ;
+                            else
+                                m.Result = (IntPtr)17/*HTBOTTOMRIGHT*/ ;
+                        }
+                    }
+                    return;
+            }
+            base.WndProc(ref m);
+        }
+
         protected override CreateParams CreateParams
         {
             get
             {
                 CreateParams cp = base.CreateParams;
-                cp.ClassStyle |= CS_DROPSHADOW;
+                cp.Style |= 0x20000; // <--- use 0x20000
                 return cp;
             }
         }
-
-        // Resizable Border Code
-
-            protected override void WndProc(ref Message m)
-            {
-                const int wmNcHitTest = 0x84;
-                const int htLeft = 10;
-                const int htRight = 11;
-                const int htTop = 12;
-                const int htTopLeft = 13;
-                const int htTopRight = 14;
-                const int htBottom = 15;
-                const int htBottomLeft = 16;
-                const int htBottomRight = 17;
-
-                if (m.Msg == wmNcHitTest)
-                {
-                    int x = (int)(m.LParam.ToInt64() & 0xFFFF);
-                    int y = (int)((m.LParam.ToInt64() & 0xFFFF0000) >> 16);
-                    Point pt = PointToClient(new Point(x, y));
-                    Size clientSize = ClientSize;
-                    ///allow resize on the lower right corner
-                    if (pt.X >= clientSize.Width - 16 && pt.Y >= clientSize.Height - 16 && clientSize.Height >= 16)
-                    {
-                        m.Result = (IntPtr)(IsMirrored ? htBottomLeft : htBottomRight);
-                        return;
-                    }
-                    ///allow resize on the lower left corner
-                    if (pt.X <= 16 && pt.Y >= clientSize.Height - 16 && clientSize.Height >= 16)
-                    {
-                        m.Result = (IntPtr)(IsMirrored ? htBottomRight : htBottomLeft);
-                        return;
-                    }
-                    ///allow resize on the upper right corner
-                    if (pt.X <= 16 && pt.Y <= 16 && clientSize.Height >= 16)
-                    {
-                        m.Result = (IntPtr)(IsMirrored ? htTopRight : htTopLeft);
-                        return;
-                    }
-                    ///allow resize on the upper left corner
-                    if (pt.X >= clientSize.Width - 16 && pt.Y <= 16 && clientSize.Height >= 16)
-                    {
-                        m.Result = (IntPtr)(IsMirrored ? htTopLeft : htTopRight);
-                        return;
-                    }
-                    ///allow resize on the top border
-                    if (pt.Y <= 16 && clientSize.Height >= 16)
-                    {
-                        m.Result = (IntPtr)(htTop);
-                        return;
-                    }
-                    ///allow resize on the bottom border
-                    if (pt.Y >= clientSize.Height - 16 && clientSize.Height >= 16)
-                    {
-                        m.Result = (IntPtr)(htBottom);
-                        return;
-                    }
-                    ///allow resize on the left border
-                    if (pt.X <= 16 && clientSize.Height >= 16)
-                    {
-                        m.Result = (IntPtr)(htLeft);
-                        return;
-                    }
-                    ///allow resize on the right border
-                    if (pt.X >= clientSize.Width - 16 && clientSize.Height >= 16)
-                    {
-                        m.Result = (IntPtr)(htRight);
-                        return;  */
     }
 }

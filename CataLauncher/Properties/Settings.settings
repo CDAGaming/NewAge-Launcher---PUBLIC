@@ -29,5 +29,11 @@
     <Setting Name="DonateUrl" Type="System.String" Scope="Application">
       <Value Profile="(Default)">http://wownewage.com/donate</Value>
     </Setting>
+    <Setting Name="TransparencyToggle" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="WoWCacheToggle" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
