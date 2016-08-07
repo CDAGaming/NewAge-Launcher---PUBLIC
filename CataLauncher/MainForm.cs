@@ -324,6 +324,9 @@ namespace NewAgeLauncher
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            
+            // Tranceparency Toggle(SettingsForm.cs)
+
             if (Settings.Default.TransparencyToggle == false)
             {
                 Opacity = 1.00;
@@ -822,30 +825,31 @@ namespace NewAgeLauncher
         {
             bool status = false;
 
-            try
+            using (TcpClient client = new TcpClient())
             {
-                TcpClient client = new TcpClient();
+                try
+                {
+                    client.Connect(Settings.Default.server, Settings.Default.port);
 
-                client.Connect(Settings.Default.server, Settings.Default.port);
-
-                status = true;
-            }
-            catch (Exception ex)
-            {
-                status = false;
+                    status = true;
+                }
+                catch (Exception ex)
+                {
+                    status = false;
+                }
             }
 
             statusLabel.Invoke((MethodInvoker)delegate
             {
                 if (status)
                 {
-                    statusLabel.ForeColor = Color.IndianRed;
-                    statusLabel.Text = "Offline";
+                    statusLabel.ForeColor = Color.LimeGreen;
+                    statusLabel.Text = "Online";
                 }
                 else
                 {
-                    statusLabel.ForeColor = Color.LimeGreen;
-                    statusLabel.Text = "Online";
+                    statusLabel.ForeColor = Color.IndianRed;
+                    statusLabel.Text = "Offline";
                 }
             });
         }

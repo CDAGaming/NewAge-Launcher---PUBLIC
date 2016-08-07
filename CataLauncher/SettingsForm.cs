@@ -47,7 +47,7 @@ namespace NewAgeLauncher
             wowLocationTextBox.Text = Settings.Default.WowLocation;
             Transparent_Checkbox.Checked = Settings.Default.TransparencyToggle;
             WoWCache_CheckBox.Checked = Settings.Default.WoWCacheToggle;
-
+            Launguage_ComboBox.SelectedText = Settings.Default.LaunguageSet;
         }
 
         private void exitPictureBox_MouseDown(object sender, MouseEventArgs e)
@@ -141,12 +141,18 @@ namespace NewAgeLauncher
             }
         }
 
+        private void canc_button_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void save_button_Click(object sender, EventArgs e)
         {
+
+
             // WoW Location Saving
 
             Settings.Default.WowLocation = wowLocationTextBox.Text;
-           
 
             // Transparency Checkbox
 
@@ -171,12 +177,20 @@ namespace NewAgeLauncher
             }
 
             Settings.Default.Save();
-            Application.Restart();
-        }
 
-        private void canc_button_Click(object sender, EventArgs e)
-        {
-            Close();
+            if (Launguage_ComboBox.SelectedText != null)
+            {
+                Settings.Default.LaunguageSet = Launguage_ComboBox.SelectedText;
+                LaunguageChanger.Properties.Settings.Default.CurrentLaunguage = Settings.Default.CurrentLaunguage;
+                System.Diagnostics.Process.Start(AppDomain.CurrentDomain.BaseDirectory + "/bin/Launguage Changer.exe");
+                WindowState = FormWindowState.Minimized;
+            }
+            else
+            {
+                Settings.Default.Save();
+                Application.Restart();
+            }
+            
         }
     }
 }

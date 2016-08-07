@@ -9,7 +9,7 @@
       <Value Profile="(Default)">http://wownewage.com/patches.txt</Value>
     </Setting>
     <Setting Name="server" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">WoW: NewAge</Value>
+      <Value Profile="(Default)">wownewage.com</Value>
     </Setting>
     <Setting Name="port" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">3724</Value>
@@ -34,6 +34,21 @@
     </Setting>
     <Setting Name="WoWCacheToggle" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="LaunguageSet" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="WebsiteURLES" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://wownewage.com/Launcher/Launguage/ES/NewAge Launcher.exe</Value>
+    </Setting>
+    <Setting Name="WebsiteURLEN" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://wownewage.com/Launcher/Launguage/EN/NewAge Launcher.exe</Value>
+    </Setting>
+    <Setting Name="WebsiteURLFR" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://wownewage.com/Launcher/Launguage/FR/NewAge Launcher.exe</Value>
+    </Setting>
+    <Setting Name="CurrentLaunguage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">English (Default)</Value>
     </Setting>
   </Settings>
 </SettingsFile>

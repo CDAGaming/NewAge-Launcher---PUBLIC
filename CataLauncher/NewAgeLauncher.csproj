@@ -131,6 +131,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\LaunguageChanger\Properties\Settings.Designer.cs">
+      <Link>Settings.Designer.cs</Link>
+    </Compile>
     <Compile Include="CataButton.cs">
       <SubType>UserControl</SubType>
     </Compile>

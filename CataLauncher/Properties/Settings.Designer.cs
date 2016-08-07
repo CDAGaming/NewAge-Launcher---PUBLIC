@@ -43,7 +43,7 @@ namespace NewAgeLauncher.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("WoW: NewAge")]
+        [global::System.Configuration.DefaultSettingValueAttribute("wownewage.com")]
         public string server {
             get {
                 return ((string)(this["server"]));
@@ -128,6 +128,54 @@ namespace NewAgeLauncher.Properties {
             }
             set {
                 this["WoWCacheToggle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LaunguageSet {
+            get {
+                return ((string)(this["LaunguageSet"]));
+            }
+            set {
+                this["LaunguageSet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://wownewage.com/Launcher/Launguage/ES/NewAge Launcher.exe")]
+        public string WebsiteURLES {
+            get {
+                return ((string)(this["WebsiteURLES"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://wownewage.com/Launcher/Launguage/EN/NewAge Launcher.exe")]
+        public string WebsiteURLEN {
+            get {
+                return ((string)(this["WebsiteURLEN"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://wownewage.com/Launcher/Launguage/FR/NewAge Launcher.exe")]
+        public string WebsiteURLFR {
+            get {
+                return ((string)(this["WebsiteURLFR"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("English (Default)")]
+        public string CurrentLaunguage {
+            get {
+                return ((string)(this["CurrentLaunguage"]));
             }
         }
     }

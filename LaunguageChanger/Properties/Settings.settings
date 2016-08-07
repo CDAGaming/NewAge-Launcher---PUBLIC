@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LaunguageChanger.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CurrentLaunguage" Type="System.String" Scope="User">
+      <Value Profile="(Default)">English (Default)</Value>
+    </Setting>
+    <Setting Name="SaveString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AppDomain.CurrentDomain.BaseDirectory + "NewAge Launcher.exe"</Value>
+    </Setting>
+    <Setting Name="EnglishURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://wownewage.com/Launcher/Launguage/EN/NewAge Launcher.exe</Value>
+    </Setting>
+    <Setting Name="EspanolURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://wownewage.com/Launcher/Launguage/ES/NewAge Launcher.exe</Value>
+    </Setting>
+    <Setting Name="FrenchURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Setting" Type="System.Uri" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>
