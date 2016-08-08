@@ -324,8 +324,19 @@ namespace NewAgeLauncher
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
-            // Tranceparency Toggle(SettingsForm.cs)
+            // Detect if Launguage Change is needed
+
+            if (Settings.Default.LaunguageSet == true)
+            {
+                Process.Start(AppDomain.CurrentDomain.BaseDirectory + "/bin/Launguage Changer.exe");
+                WindowState = FormWindowState.Minimized;
+            }
+            else
+            {
+                // N/A
+            }
+
+            // Transparency Toggle(SettingsForm.cs)
 
             if (Settings.Default.TransparencyToggle == false)
             {

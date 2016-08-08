@@ -144,64 +144,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;WoWCache_CheckBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="LaunguageLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LaunguageLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 94</value>
-  </data>
-  <data name="LaunguageLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 13</value>
-  </data>
-  <data name="LaunguageLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="LaunguageLabel.Text" xml:space="preserve">
-    <value>Choose a Launguage:</value>
-  </data>
-  <data name="&gt;&gt;LaunguageLabel.Name" xml:space="preserve">
-    <value>LaunguageLabel</value>
-  </data>
-  <data name="&gt;&gt;LaunguageLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LaunguageLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;LaunguageLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="Launguage_ComboBox.Items" xml:space="preserve">
-    <value>English (Default)</value>
-  </data>
-  <data name="Launguage_ComboBox.Items1" xml:space="preserve">
-    <value>Español (Spanish)</value>
-  </data>
-  <data name="Launguage_ComboBox.Items2" xml:space="preserve">
-    <value>Français (French)</value>
-  </data>
-  <data name="Launguage_ComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 110</value>
-  </data>
-  <data name="Launguage_ComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 21</value>
-  </data>
-  <data name="Launguage_ComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="&gt;&gt;Launguage_ComboBox.Name" xml:space="preserve">
-    <value>Launguage_ComboBox</value>
-  </data>
-  <data name="&gt;&gt;Launguage_ComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Launguage_ComboBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Launguage_ComboBox.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="Transparent_Checkbox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -228,7 +171,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Transparent_Checkbox.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="canc_button.Location" type="System.Drawing.Point, System.Drawing">
     <value>456, 137</value>
@@ -249,7 +192,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;canc_button.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="save_button.Location" type="System.Drawing.Point, System.Drawing">
     <value>560, 137</value>
@@ -270,7 +213,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;save_button.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="browse_button.Location" type="System.Drawing.Point, System.Drawing">
     <value>208, 40</value>
@@ -291,7 +234,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;browse_button.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="wowLocationTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 62</value>
@@ -312,7 +255,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;wowLocationTextBox.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="wowLocationLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -339,7 +282,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;wowLocationLabel.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="menuBar1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -360,7 +303,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;menuBar1.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="exitPictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -385,7 +328,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;exitPictureBox.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="MinimizePictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -409,7 +352,37 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MinimizePictureBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="Language_Checkbox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Language_Checkbox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Language_Checkbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>400, 40</value>
+  </data>
+  <data name="Language_Checkbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 17</value>
+  </data>
+  <data name="Language_Checkbox.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="Language_Checkbox.Text" xml:space="preserve">
+    <value>Change Launguage</value>
+  </data>
+  <data name="&gt;&gt;Language_Checkbox.Name" xml:space="preserve">
+    <value>Language_Checkbox</value>
+  </data>
+  <data name="&gt;&gt;Language_Checkbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Language_Checkbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Language_Checkbox.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

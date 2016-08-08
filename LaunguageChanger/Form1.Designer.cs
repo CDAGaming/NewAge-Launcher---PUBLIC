@@ -28,98 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.LaunguageTitleLabel = new System.Windows.Forms.Label();
-            this.Startlbl = new System.Windows.Forms.Label();
-            this.Progresslbl = new System.Windows.Forms.ProgressBar();
-            this.LabelStep1 = new System.Windows.Forms.Label();
-            this.LabelStep2 = new System.Windows.Forms.Label();
-            this.LabelStep3 = new System.Windows.Forms.Label();
-            this.lblprogress = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.OKButton = new System.Windows.Forms.Button();
+            this.CancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // LaunguageTitleLabel
+            // label1
             // 
-            this.LaunguageTitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.LaunguageTitleLabel.Location = new System.Drawing.Point(85, 9);
-            this.LaunguageTitleLabel.Name = "LaunguageTitleLabel";
-            this.LaunguageTitleLabel.Size = new System.Drawing.Size(215, 17);
-            this.LaunguageTitleLabel.TabIndex = 0;
-            this.LaunguageTitleLabel.Text = "Changing Launguage";
-            this.LaunguageTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Choose Launguage:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Startlbl
+            // comboBox1
             // 
-            this.Startlbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.Startlbl.Location = new System.Drawing.Point(24, 35);
-            this.Startlbl.Name = "Startlbl";
-            this.Startlbl.Size = new System.Drawing.Size(346, 17);
-            this.Startlbl.TabIndex = 1;
-            this.Startlbl.Text = "(Launguage A) to (Launguage B)";
-            this.Startlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Startlbl.Click += new System.EventHandler(this.label1_Click);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "English",
+            "Espanol"});
+            this.comboBox1.Location = new System.Drawing.Point(6, 32);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(143, 21);
+            this.comboBox1.TabIndex = 1;
+            this.comboBox1.Text = "English";
             // 
-            // Progresslbl
+            // OKButton
             // 
-            this.Progresslbl.Location = new System.Drawing.Point(24, 91);
-            this.Progresslbl.Name = "Progresslbl";
-            this.Progresslbl.Size = new System.Drawing.Size(346, 31);
-            this.Progresslbl.TabIndex = 2;
+            this.OKButton.ForeColor = System.Drawing.Color.Black;
+            this.OKButton.Location = new System.Drawing.Point(151, 76);
+            this.OKButton.Name = "OKButton";
+            this.OKButton.Size = new System.Drawing.Size(71, 24);
+            this.OKButton.TabIndex = 2;
+            this.OKButton.Text = "Ok";
+            this.OKButton.UseVisualStyleBackColor = true;
+            this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
             // 
-            // LabelStep1
+            // CancelButton
             // 
-            this.LabelStep1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.LabelStep1.ForeColor = System.Drawing.Color.Red;
-            this.LabelStep1.Location = new System.Drawing.Point(12, 125);
-            this.LabelStep1.Name = "LabelStep1";
-            this.LabelStep1.Size = new System.Drawing.Size(128, 27);
-            this.LabelStep1.TabIndex = 3;
-            this.LabelStep1.Text = "Downloading";
-            this.LabelStep1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LabelStep2
-            // 
-            this.LabelStep2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.LabelStep2.ForeColor = System.Drawing.Color.Red;
-            this.LabelStep2.Location = new System.Drawing.Point(133, 125);
-            this.LabelStep2.Name = "LabelStep2";
-            this.LabelStep2.Size = new System.Drawing.Size(127, 27);
-            this.LabelStep2.TabIndex = 4;
-            this.LabelStep2.Text = "Patching";
-            this.LabelStep2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LabelStep3
-            // 
-            this.LabelStep3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.LabelStep3.ForeColor = System.Drawing.Color.Red;
-            this.LabelStep3.Location = new System.Drawing.Point(254, 125);
-            this.LabelStep3.Name = "LabelStep3";
-            this.LabelStep3.Size = new System.Drawing.Size(127, 27);
-            this.LabelStep3.TabIndex = 5;
-            this.LabelStep3.Text = "Completed";
-            this.LabelStep3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblprogress
-            // 
-            this.lblprogress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lblprogress.Location = new System.Drawing.Point(21, 71);
-            this.lblprogress.Name = "lblprogress";
-            this.lblprogress.Size = new System.Drawing.Size(346, 17);
-            this.lblprogress.TabIndex = 6;
-            this.lblprogress.Text = "(Launguage A) to (Launguage B)";
-            this.lblprogress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CancelButton.ForeColor = System.Drawing.Color.Black;
+            this.CancelButton.Location = new System.Drawing.Point(12, 76);
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Size = new System.Drawing.Size(71, 24);
+            this.CancelButton.TabIndex = 3;
+            this.CancelButton.Text = "Cancel";
+            this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // TitleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 178);
-            this.Controls.Add(this.lblprogress);
-            this.Controls.Add(this.LabelStep3);
-            this.Controls.Add(this.LabelStep2);
-            this.Controls.Add(this.LabelStep1);
-            this.Controls.Add(this.Progresslbl);
-            this.Controls.Add(this.Startlbl);
-            this.Controls.Add(this.LaunguageTitleLabel);
+            this.ClientSize = new System.Drawing.Size(234, 112);
+            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.OKButton);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "TitleForm";
             this.Text = "Launguage Updater";
@@ -130,13 +97,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Label LaunguageTitleLabel;
-        private System.Windows.Forms.Label Startlbl;
-        private System.Windows.Forms.ProgressBar Progresslbl;
-        private System.Windows.Forms.Label LabelStep1;
-        private System.Windows.Forms.Label LabelStep2;
-        private System.Windows.Forms.Label LabelStep3;
-        private System.Windows.Forms.Label lblprogress;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button OKButton;
+        private System.Windows.Forms.Button CancelButton;
     }
 }
 

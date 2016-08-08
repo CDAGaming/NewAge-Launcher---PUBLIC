@@ -133,10 +133,10 @@ namespace NewAgeLauncher.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string LaunguageSet {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool LaunguageSet {
             get {
-                return ((string)(this["LaunguageSet"]));
+                return ((bool)(this["LaunguageSet"]));
             }
             set {
                 this["LaunguageSet"] = value;
@@ -170,12 +170,27 @@ namespace NewAgeLauncher.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("English (Default)")]
         public string CurrentLaunguage {
             get {
                 return ((string)(this["CurrentLaunguage"]));
+            }
+            set {
+                this["CurrentLaunguage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool LanguageChangeTag {
+            get {
+                return ((bool)(this["LanguageChangeTag"]));
+            }
+            set {
+                this["LanguageChangeTag"] = value;
             }
         }
     }

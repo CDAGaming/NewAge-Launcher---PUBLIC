@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.WoWCache_CheckBox = new System.Windows.Forms.CheckBox();
-            this.LaunguageLabel = new System.Windows.Forms.Label();
-            this.Launguage_ComboBox = new System.Windows.Forms.ComboBox();
             this.Transparent_Checkbox = new System.Windows.Forms.CheckBox();
             this.canc_button = new System.Windows.Forms.PictureBox();
             this.save_button = new System.Windows.Forms.PictureBox();
@@ -41,6 +39,7 @@
             this.menuBar1 = new NewAgeLauncher.MenuBar();
             this.exitPictureBox = new System.Windows.Forms.PictureBox();
             this.MinimizePictureBox = new System.Windows.Forms.PictureBox();
+            this.Language_Checkbox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.canc_button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.save_button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.browse_button)).BeginInit();
@@ -57,24 +56,6 @@
             this.WoWCache_CheckBox.ForeColor = System.Drawing.Color.White;
             this.WoWCache_CheckBox.Name = "WoWCache_CheckBox";
             this.WoWCache_CheckBox.UseVisualStyleBackColor = false;
-            // 
-            // LaunguageLabel
-            // 
-            resources.ApplyResources(this.LaunguageLabel, "LaunguageLabel");
-            this.LaunguageLabel.BackColor = System.Drawing.Color.Transparent;
-            this.LaunguageLabel.ForeColor = System.Drawing.Color.White;
-            this.LaunguageLabel.Name = "LaunguageLabel";
-            // 
-            // Launguage_ComboBox
-            // 
-            this.Launguage_ComboBox.BackColor = System.Drawing.Color.White;
-            this.Launguage_ComboBox.FormattingEnabled = true;
-            this.Launguage_ComboBox.Items.AddRange(new object[] {
-            resources.GetString("Launguage_ComboBox.Items"),
-            resources.GetString("Launguage_ComboBox.Items1"),
-            resources.GetString("Launguage_ComboBox.Items2")});
-            resources.ApplyResources(this.Launguage_ComboBox, "Launguage_ComboBox");
-            this.Launguage_ComboBox.Name = "Launguage_ComboBox";
             // 
             // Transparent_Checkbox
             // 
@@ -164,20 +145,27 @@
             this.MinimizePictureBox.MouseLeave += new System.EventHandler(this.MinimizePictureBox_MouseLeave);
             this.MinimizePictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MinimizePictureBox_MouseUp);
             // 
+            // Language_Checkbox
+            // 
+            resources.ApplyResources(this.Language_Checkbox, "Language_Checkbox");
+            this.Language_Checkbox.BackColor = System.Drawing.Color.Transparent;
+            this.Language_Checkbox.ForeColor = System.Drawing.Color.White;
+            this.Language_Checkbox.Name = "Language_Checkbox";
+            this.Language_Checkbox.UseVisualStyleBackColor = false;
+            // 
             // SettingsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::NewAgeLauncher.Properties.Resources.BG;
+            this.Controls.Add(this.Language_Checkbox);
             this.Controls.Add(this.exitPictureBox);
             this.Controls.Add(this.MinimizePictureBox);
             this.Controls.Add(this.canc_button);
             this.Controls.Add(this.WoWCache_CheckBox);
             this.Controls.Add(this.save_button);
             this.Controls.Add(this.Transparent_Checkbox);
-            this.Controls.Add(this.LaunguageLabel);
-            this.Controls.Add(this.Launguage_ComboBox);
             this.Controls.Add(this.menuBar1);
             this.Controls.Add(this.wowLocationLabel);
             this.Controls.Add(this.wowLocationTextBox);
@@ -205,10 +193,9 @@
         private System.Windows.Forms.PictureBox save_button;
         private System.Windows.Forms.PictureBox canc_button;
         private System.Windows.Forms.CheckBox Transparent_Checkbox;
-        private System.Windows.Forms.Label LaunguageLabel;
-        private System.Windows.Forms.ComboBox Launguage_ComboBox;
         private System.Windows.Forms.CheckBox WoWCache_CheckBox;
         private System.Windows.Forms.PictureBox exitPictureBox;
         private System.Windows.Forms.PictureBox MinimizePictureBox;
+        private System.Windows.Forms.CheckBox Language_Checkbox;
     }
 }

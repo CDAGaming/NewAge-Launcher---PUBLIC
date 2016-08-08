@@ -17,7 +17,7 @@
     <Setting Name="FrenchURL" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="Setting" Type="System.Uri" Scope="User">
+    <Setting Name="LaunguageChange" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

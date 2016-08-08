@@ -27,6 +27,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using NewAgeLauncher.Properties;
+using System.Diagnostics;
 
 namespace NewAgeLauncher
 {
@@ -47,7 +48,7 @@ namespace NewAgeLauncher
             wowLocationTextBox.Text = Settings.Default.WowLocation;
             Transparent_Checkbox.Checked = Settings.Default.TransparencyToggle;
             WoWCache_CheckBox.Checked = Settings.Default.WoWCacheToggle;
-            Launguage_ComboBox.SelectedText = Settings.Default.LaunguageSet;
+            Language_Checkbox.Checked = Settings.Default.LanguageChangeTag;
         }
 
         private void exitPictureBox_MouseDown(object sender, MouseEventArgs e)
@@ -176,21 +177,32 @@ namespace NewAgeLauncher
                 Settings.Default.WoWCacheToggle = false;
             }
 
+            // Language Change CheckBox
+
+            if (Language_Checkbox.Checked)
+            {
+                Settings.Default.LanguageChangeTag = true;
+            }
+            else
+            {
+                Settings.Default.LanguageChangeTag = false;
+            }
+
+
             Settings.Default.Save();
 
-            if (Launguage_ComboBox.SelectedText != null)
+            // Checks if The User Asks to Change Launguage
+            // If so, Launguage Change .exe is Launched
+
+            if (Settings.Default.LanguageChangeTag == true)
             {
-                Settings.Default.LaunguageSet = Launguage_ComboBox.SelectedText;
-                LaunguageChanger.Properties.Settings.Default.CurrentLaunguage = Settings.Default.CurrentLaunguage;
-                System.Diagnostics.Process.Start(AppDomain.CurrentDomain.BaseDirectory + "/bin/Launguage Changer.exe");
+                Process.Start(AppDomain.CurrentDomain.BaseDirectory + "/bin/Launguage Changer.exe");
                 WindowState = FormWindowState.Minimized;
             }
             else
             {
-                Settings.Default.Save();
                 Application.Restart();
             }
-            
         }
     }
 }

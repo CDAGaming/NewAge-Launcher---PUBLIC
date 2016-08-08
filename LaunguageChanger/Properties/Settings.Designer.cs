@@ -73,12 +73,13 @@ namespace LaunguageChanger.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Uri Setting {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LaunguageChange {
             get {
-                return ((global::System.Uri)(this["Setting"]));
+                return ((string)(this["LaunguageChange"]));
             }
             set {
-                this["Setting"] = value;
+                this["LaunguageChange"] = value;
             }
         }
     }
