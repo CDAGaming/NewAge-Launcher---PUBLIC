@@ -193,5 +193,17 @@ namespace NewAgeLauncher.Properties {
                 this["LanguageChangeTag"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FontAdditionTag {
+            get {
+                return ((bool)(this["FontAdditionTag"]));
+            }
+            set {
+                this["FontAdditionTag"] = value;
+            }
+        }
     }
 }

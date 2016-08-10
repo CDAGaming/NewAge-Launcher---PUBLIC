@@ -979,7 +979,7 @@ namespace NewAgeLauncher
             Process.Start("http://www.wownewage.com");
         }
 
-        //Create Resizability -- EXPIERIMENTAL DEBUGGING ONLY --
+        //Create Resizability
 
         // Resizable Border Code
 

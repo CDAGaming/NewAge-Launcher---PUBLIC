@@ -38,7 +38,7 @@ namespace LaunguageChanger
 {
     public partial class TitleForm : Form
     {
-        // Creates New WebClient, & Sets New .exe FileName
+        // Creates New WebClient
 
         WebClient client = new WebClient();
 
@@ -121,10 +121,21 @@ namespace LaunguageChanger
                     response.Close();
                     writer.Close();
 
-                    // Sets Launcher Launguage Tag back to False to prevent App opening over & Over
+                    // Sets Launcher Launguage Tag back to False to Prevent App Opening over & Over
 
-                    Settings.Default.LanguageChangeTag = false;
+                    if(Settings.Default.LanguageChangeTag == true)
+                    {
+                        Settings.Default.LanguageChangeTag = false;
+                    }
+                    if(Settings_ES.Default.LanguageChangeTag == true)
+                    {
+                        Settings_ES.Default.LanguageChangeTag = false;
+                    }
+
+                    // Saves All Current LAunguage Settings
+
                     Settings.Default.Save();
+                    Settings_ES.Default.Save();
 
                     if (MessageBox.Show("Launguage is Now" + Properties.Settings.Default.LaunguageChange + ", Click OK to Finish Patching", "Success", MessageBoxButtons.OK) == DialogResult.OK)
                     {
@@ -152,6 +163,7 @@ namespace LaunguageChanger
 
                 if (Properties.Settings.Default.LaunguageChange == "Espanol")
                 {
+
                     string ftpAdress_ES = "ftp://wownewage.com/launcher/Launguage/ES/";
                     string username_ES = "Anthony";
                     string password_ES = "d6Zc35";
@@ -186,10 +198,21 @@ namespace LaunguageChanger
                         response.Close();
                         writer.Close();
 
-                        // Sets Launcher Launguage Tag back to False to prevent App opening over & Over
+                        // Sets Launcher Launguage Tag back to False to Prevent App Opening over & Over
 
-                        Settings.Default.LanguageChangeTag = false;
+                        if (Settings.Default.LanguageChangeTag == true)
+                        {
+                            Settings.Default.LanguageChangeTag = false;
+                        }
+                        if (Settings_ES.Default.LanguageChangeTag == true)
+                        {
+                            Settings_ES.Default.LanguageChangeTag = false;
+                        }
+
+                        // Saves All Current Launguage Settings
+
                         Settings.Default.Save();
+                        Settings_ES.Default.Save();
 
                         if (MessageBox.Show("Launguage is Now" + Properties.Settings.Default.LaunguageChange + ", Click OK to Finish Patching", "Success", MessageBoxButtons.OK) == DialogResult.OK)
                         {
