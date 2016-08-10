@@ -49,6 +49,7 @@ namespace NewAgeLauncher
             Transparent_Checkbox.Checked = Settings.Default.TransparencyToggle;
             WoWCache_CheckBox.Checked = Settings.Default.WoWCacheToggle;
             Language_Checkbox.Checked = Settings.Default.LanguageChangeTag;
+            Font_Checkbox.Checked = Settings.Default.FontAdditionTag;
         }
 
         private void exitPictureBox_MouseDown(object sender, MouseEventArgs e)
@@ -188,8 +189,38 @@ namespace NewAgeLauncher
                 Settings.Default.LanguageChangeTag = false;
             }
 
+            //Font Installation CheckBox
+
+            if (Font_Checkbox.Checked)
+            {
+                Settings.Default.FontAdditionTag = true;
+            }
+            else
+            {
+                Settings.Default.FontAdditionTag = false;
+            }
+
 
             Settings.Default.Save();
+
+            // Check if Fonts need to be installed and Installs Them
+            if (Settings.Default.FontAdditionTag == true)
+            {
+                DialogResult dr1 = new DialogResult();
+                dr1 = MessageBox.Show("Please accept the Following Font Windows by Clicking Install, Or Click Cancel to Stop Font Install", "IMPORTANT", MessageBoxButtons.OKCancel);
+                if (dr1 == DialogResult.OK)
+                {
+                    Process.Start(AppDomain.CurrentDomain.BaseDirectory + "/bin/etc/Fonts/DroidSans.ttf");
+                    Process.Start(AppDomain.CurrentDomain.BaseDirectory + "/bin/etc/Fonts/DroidSans-Bold.ttf");
+                    Settings.Default.Save();
+                }
+                if (dr1 == DialogResult.Cancel)
+                {
+                    Settings.Default.FontAdditionTag = false;
+                    Settings.Default.Save();
+                }
+
+            }
 
             // Checks if The User Asks to Change Launguage
             // If so, Launguage Change .exe is Launched

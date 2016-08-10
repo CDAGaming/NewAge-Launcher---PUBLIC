@@ -1,0 +1,50 @@
+Official NewAge Launcher Translations
+
+(Play)
+English = "Play"
+Spanish = "Jugar"
+
+(Settings)
+English = "Settings"
+Spanish = "null"
+
+(Donate)
+English = "Donate"
+Spanish = "null"
+
+(About Us)
+English = "About Us"
+Spanish = "null"
+
+(Forum)
+English = "Forum"
+Spanish = "null"
+
+(Downloading)
+English = "Downloading"
+Spanish = "null"
+
+(MessageBox1("Could not find WoW_mod.exe! Launcher just restored a backup of wow_mod.exe", "Warning"))
+English = "Could not find WoW_mod.exe! Launcher just restored a backup of wow_mod.exe", "Warning"
+Spanish = "null", "Advertencia"
+
+(NewAge Launcher)
+English = "NewAge Launcher"
+Spanish = "null"
+
+(MessageBox2("Download has been Canceled"))
+English = "Download has been Canceled"
+Spanish = "null"
+
+(Online)
+English = "Online"
+Spanish = "null"
+
+(Offline)
+English = "Offline"
+Spanish = "null"
+
+(Server Status)
+English = "Server Status"
+Spanish = "null"
+
