@@ -1,50 +1,54 @@
 Official NewAge Launcher Translations
 
+Languages Supported: English, Espanol
+
+French will be Supported Soon!
+
 (Play)
 English = "Play"
 Spanish = "Jugar"
 
 (Settings)
 English = "Settings"
-Spanish = "null"
+Spanish = "Opciones"
 
 (Donate)
 English = "Donate"
-Spanish = "null"
+Spanish = "Donar"
 
 (About Us)
 English = "About Us"
-Spanish = "null"
+Spanish = "Sobre Nosotros"
 
 (Forum)
 English = "Forum"
-Spanish = "null"
+Spanish = "Foro"
 
 (Downloading)
 English = "Downloading"
-Spanish = "null"
+Spanish = "Descargando"
 
 (MessageBox1("Could not find WoW_mod.exe! Launcher just restored a backup of wow_mod.exe", "Warning"))
 English = "Could not find WoW_mod.exe! Launcher just restored a backup of wow_mod.exe", "Warning"
-Spanish = "null", "Advertencia"
+Spanish = "No se pudo el WoW_mod.exe! El lanzador acaba de restaurar una copia de seguridad de wow_mod.exe", "Advertencia"
 
 (NewAge Launcher)
 English = "NewAge Launcher"
-Spanish = "null"
+Spanish = "Lansador de NuevaEra"
 
 (MessageBox2("Download has been Canceled"))
 English = "Download has been Canceled"
-Spanish = "null"
+Spanish = "La descarda ha sido canselada"
 
 (Online)
 English = "Online"
-Spanish = "null"
+Spanish = "En linea"
 
 (Offline)
 English = "Offline"
-Spanish = "null"
+Spanish = "Fuera de linea"
 
 (Server Status)
 English = "Server Status"
-Spanish = "null"
+Spanish = "Estado del Servidor"
 
