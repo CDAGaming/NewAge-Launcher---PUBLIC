@@ -297,7 +297,7 @@
     <value>menuBar1</value>
   </data>
   <data name="&gt;&gt;menuBar1.Type" xml:space="preserve">
-    <value>NewAgeLauncher.MenuBar, NewAge Launcher, Version=1.1.1.4, Culture=neutral, PublicKeyToken=null</value>
+    <value>NewAgeLauncher.MenuBar, NewAge Launcher, Version=0.0.8.2, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;menuBar1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -364,13 +364,13 @@
     <value>400, 40</value>
   </data>
   <data name="Language_Checkbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 17</value>
+    <value>114, 17</value>
   </data>
   <data name="Language_Checkbox.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
   </data>
   <data name="Language_Checkbox.Text" xml:space="preserve">
-    <value>Change Launguage</value>
+    <value>Change Language</value>
   </data>
   <data name="&gt;&gt;Language_Checkbox.Name" xml:space="preserve">
     <value>Language_Checkbox</value>

@@ -463,9 +463,10 @@ namespace NewAgeLauncher
 
             // END UPDATES SECTION =====================================
 
+            /*
             int btnCtr = 0;
 
-            /*    if (!string.IsNullOrEmpty(Settings.Default.WebsiteUrl))
+                if (!string.IsNullOrEmpty(Settings.Default.WebsiteUrl))
                 {
 
                     CataButton btn = new CataButton();
@@ -844,7 +845,7 @@ namespace NewAgeLauncher
 
                     status = true;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     status = false;
                 }

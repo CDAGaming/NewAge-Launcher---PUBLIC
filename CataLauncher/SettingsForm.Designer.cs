@@ -70,7 +70,7 @@
             // 
             this.canc_button.BackColor = System.Drawing.Color.Transparent;
             this.canc_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.canc_button.Image = global::NewAgeLauncher.Properties.Resources.cancel;
+            this.canc_button.Image = global::NewAgeLauncher.Properties.Resources.Cancel_NEW_;
             resources.ApplyResources(this.canc_button, "canc_button");
             this.canc_button.Name = "canc_button";
             this.canc_button.TabStop = false;

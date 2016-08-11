@@ -52,3 +52,39 @@ Spanish = "Fuera de linea"
 English = "Server Status"
 Spanish = "Estado del Servidor"
 
+(WoW Directory)
+English = "WoW Directory"
+Spanish = "null"
+
+(Browse)
+English = "Browse"
+Spanish = "null"
+
+(Change Language)
+English = "Change Languages"
+Spanish = "null"
+
+(Cancel)
+English = "Cancel"
+Spanish = "null"
+
+(Save)
+English = "Save"
+Spanish = "null"
+
+(Enable Transparency)
+English = "Enable Transparency"
+Spanish = "null"
+
+(Install Fonts)
+English = "Install Fonts"
+Spanish = "null"
+
+(Optional)
+English = "Optional"
+Spanish = "null"
+
+(Clear WoW Cache)
+English = "Clear WoW Cache"
+Spanish = "null"
+

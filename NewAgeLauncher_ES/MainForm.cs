@@ -313,7 +313,7 @@ namespace NewAgeLauncher
             else
             {
                 File.Copy(Settings_ES.Default.WowLocation + "\\data\\wow.mpq", Settings_ES.Default.WowLocation + "\\wow_mod.exe");
-                MessageBox.Show(this, "Could not find WoW_mod.exe! Launcher just restored a backup of wow_mod.exe", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(this, "No se pudo el WoW_mod.exe! El lanzador acaba de restaurar una copia de seguridad de wow_mod.exe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
@@ -468,9 +468,10 @@ namespace NewAgeLauncher
 
             // END UPDATES SECTION =====================================
 
+            /*
             int btnCtr = 0;
 
-            /*    if (!string.IsNullOrEmpty(Settings.Default.WebsiteUrl))
+                if (!string.IsNullOrEmpty(Settings.Default.WebsiteUrl))
                 {
 
                     CataButton btn = new CataButton();
@@ -588,7 +589,7 @@ namespace NewAgeLauncher
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "NewAge Launcher", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Lansador de NuevaEra", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -651,7 +652,7 @@ namespace NewAgeLauncher
             else
                 total = String.Format("{0:0.00}kb", double.Parse(totalBytesToReceive.ToString()) / 1024);
 
-            string progress = String.Format("Downloading: {0} / {1}", received, total);
+            string progress = String.Format("Descargando: {0} / {1}", received, total);
 
             string speed;
 
@@ -684,7 +685,7 @@ namespace NewAgeLauncher
 
             if (e.Cancelled == true)
             {
-                MessageBox.Show("Download has been canceled.");
+                MessageBox.Show("La descarda ha sido canselada.");
             }
             else
             {
@@ -849,7 +850,7 @@ namespace NewAgeLauncher
 
                     status = true;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     status = false;
                 }
@@ -860,12 +861,12 @@ namespace NewAgeLauncher
                 if (status)
                 {
                     statusLabel.ForeColor = Color.LimeGreen;
-                    statusLabel.Text = "Online";
+                    statusLabel.Text = "En linea";
                 }
                 else
                 {
                     statusLabel.ForeColor = Color.IndianRed;
-                    statusLabel.Text = "Offline";
+                    statusLabel.Text = "Fuera de linea";
                 }
             });
         }

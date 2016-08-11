@@ -113,6 +113,16 @@ namespace NewAgeLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cancel_NEW_ {
+            get {
+                object obj = ResourceManager.GetObject("Cancel(NEW)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dbar_available {
             get {
                 object obj = ResourceManager.GetObject("dbar_available", resourceCulture);

@@ -209,9 +209,9 @@
             this.downloadProgressLabel.ForeColor = System.Drawing.Color.White;
             this.downloadProgressLabel.Location = new System.Drawing.Point(3, 0);
             this.downloadProgressLabel.Name = "downloadProgressLabel";
-            this.downloadProgressLabel.Size = new System.Drawing.Size(131, 24);
+            this.downloadProgressLabel.Size = new System.Drawing.Size(133, 24);
             this.downloadProgressLabel.TabIndex = 9;
-            this.downloadProgressLabel.Text = "Downloading: ";
+            this.downloadProgressLabel.Text = "Descargando: ";
             this.downloadProgressLabel.Visible = false;
             // 
             // serverStatusLabel
@@ -223,9 +223,9 @@
             this.serverStatusLabel.ForeColor = System.Drawing.Color.White;
             this.serverStatusLabel.Location = new System.Drawing.Point(3, 0);
             this.serverStatusLabel.Name = "serverStatusLabel";
-            this.serverStatusLabel.Size = new System.Drawing.Size(101, 20);
+            this.serverStatusLabel.Size = new System.Drawing.Size(141, 20);
             this.serverStatusLabel.TabIndex = 10;
-            this.serverStatusLabel.Text = "Server Status:";
+            this.serverStatusLabel.Text = "Estado del Servidor:";
             // 
             // statusLabel
             // 
@@ -234,11 +234,11 @@
             this.statusLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.statusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusLabel.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.statusLabel.Location = new System.Drawing.Point(110, 0);
+            this.statusLabel.Location = new System.Drawing.Point(150, 0);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(54, 20);
+            this.statusLabel.Size = new System.Drawing.Size(60, 20);
             this.statusLabel.TabIndex = 11;
-            this.statusLabel.Text = "Online";
+            this.statusLabel.Text = "En linea";
             this.statusLabel.Click += new System.EventHandler(this.statusLabel_Click);
             // 
             // checkServerStatusBackgroundWorker
@@ -743,11 +743,11 @@
             this.OnlineOfflinePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.OnlineOfflinePanel.Controls.Add(this.serverStatusLabel, 0, 0);
             this.OnlineOfflinePanel.Controls.Add(this.statusLabel, 1, 0);
-            this.OnlineOfflinePanel.Location = new System.Drawing.Point(901, 507);
+            this.OnlineOfflinePanel.Location = new System.Drawing.Point(859, 507);
             this.OnlineOfflinePanel.Name = "OnlineOfflinePanel";
             this.OnlineOfflinePanel.RowCount = 1;
             this.OnlineOfflinePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.OnlineOfflinePanel.Size = new System.Drawing.Size(167, 20);
+            this.OnlineOfflinePanel.Size = new System.Drawing.Size(209, 20);
             this.OnlineOfflinePanel.TabIndex = 78;
             // 
             // UpdateTextLabel
@@ -941,7 +941,7 @@
             this.menuBar1.ForeColor = System.Drawing.Color.Transparent;
             this.menuBar1.Location = new System.Drawing.Point(0, 0);
             this.menuBar1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.menuBar1.MenuBarText = "Nueva Era Lanzacohetes";
+            this.menuBar1.MenuBarText = "Lansador de NuevaEra";
             this.menuBar1.Name = "menuBar1";
             this.menuBar1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.menuBar1.Size = new System.Drawing.Size(1092, 43);
