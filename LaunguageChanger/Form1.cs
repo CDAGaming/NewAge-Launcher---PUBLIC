@@ -167,7 +167,7 @@ namespace LaunguageChanger
                     string ftpAdress_ES = "ftp://wownewage.com/launcher/Launguage/ES/";
                     string username_ES = "Anthony";
                     string password_ES = "d6Zc35";
-                    string filename_ES = "NewAge Launcher.zip";
+                    string filename_ES = "Lansador de NuevaEra.zip";
                     string filedir_ES = AppDomain.CurrentDomain.BaseDirectory + "/etc/ES/";
                     string BaseDir_ES = AppDomain.CurrentDomain.BaseDirectory;
 

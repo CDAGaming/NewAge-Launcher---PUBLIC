@@ -59,18 +59,6 @@ namespace NewAgeLauncher.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string WowLocation {
-            get {
-                return ((string)(this["WowLocation"]));
-            }
-            set {
-                this["WowLocation"] = value;
-            }
-        }
-        
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("http://wownewage.com")]
@@ -107,42 +95,6 @@ namespace NewAgeLauncher.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool TransparencyToggle {
-            get {
-                return ((bool)(this["TransparencyToggle"]));
-            }
-            set {
-                this["TransparencyToggle"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool WoWCacheToggle {
-            get {
-                return ((bool)(this["WoWCacheToggle"]));
-            }
-            set {
-                this["WoWCacheToggle"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool LaunguageSet {
-            get {
-                return ((bool)(this["LaunguageSet"]));
-            }
-            set {
-                this["LaunguageSet"] = value;
-            }
-        }
-        
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("http://wownewage.com/Launcher/Launguage/ES/NewAge Launcher.exe")]
@@ -172,6 +124,54 @@ namespace NewAgeLauncher.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string WowLocation {
+            get {
+                return ((string)(this["WowLocation"]));
+            }
+            set {
+                this["WowLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool TransparencyToggle {
+            get {
+                return ((bool)(this["TransparencyToggle"]));
+            }
+            set {
+                this["TransparencyToggle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool WoWCacheToggle {
+            get {
+                return ((bool)(this["WoWCacheToggle"]));
+            }
+            set {
+                this["WoWCacheToggle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FontAdditionTag {
+            get {
+                return ((bool)(this["FontAdditionTag"]));
+            }
+            set {
+                this["FontAdditionTag"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Espanol (Spanish)")]
         public string CurrentLaunguage {
             get {
@@ -191,18 +191,6 @@ namespace NewAgeLauncher.Properties {
             }
             set {
                 this["LanguageChangeTag"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool FontAdditionTag {
-            get {
-                return ((bool)(this["FontAdditionTag"]));
-            }
-            set {
-                this["FontAdditionTag"] = value;
             }
         }
     }

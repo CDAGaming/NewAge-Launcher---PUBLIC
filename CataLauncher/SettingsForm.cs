@@ -212,6 +212,7 @@ namespace NewAgeLauncher
                 {
                     Process.Start(AppDomain.CurrentDomain.BaseDirectory + "/bin/etc/Fonts/DroidSans.ttf");
                     Process.Start(AppDomain.CurrentDomain.BaseDirectory + "/bin/etc/Fonts/DroidSans-Bold.ttf");
+                    Process.Start(AppDomain.CurrentDomain.BaseDirectory + "/bin/etc/Fonts/GODOFWAR.ttf");
                     Settings.Default.Save();
                 }
                 if (dr1 == DialogResult.Cancel)
@@ -223,17 +224,21 @@ namespace NewAgeLauncher
             }
 
             // Checks if The User Asks to Change Launguage
-            // If so, Launguage Change .exe is Launched
+            // If so, Language Changer.exe is Launched
 
             if (Settings.Default.LanguageChangeTag == true)
             {
                 Process.Start(AppDomain.CurrentDomain.BaseDirectory + "/bin/Launguage Changer.exe");
                 WindowState = FormWindowState.Minimized;
+                Application.Exit();
             }
             else
             {
-                Application.Restart();
+
             }
+
+            Application.Restart();
+
         }
     }
 }

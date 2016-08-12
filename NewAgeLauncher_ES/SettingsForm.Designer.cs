@@ -70,7 +70,7 @@
             // 
             this.canc_button.BackColor = System.Drawing.Color.Transparent;
             this.canc_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.canc_button.Image = global::NewAgeLauncher.Properties.Resources.Cancel_NEW_;
+            this.canc_button.Image = global::NewAgeLauncher.Resources_ES.Cancel;
             resources.ApplyResources(this.canc_button, "canc_button");
             this.canc_button.Name = "canc_button";
             this.canc_button.TabStop = false;
@@ -80,7 +80,7 @@
             // 
             this.save_button.BackColor = System.Drawing.Color.Transparent;
             this.save_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.save_button.Image = global::NewAgeLauncher.Properties.Resources.save;
+            this.save_button.Image = global::NewAgeLauncher.Resources_ES.Save;
             resources.ApplyResources(this.save_button, "save_button");
             this.save_button.Name = "save_button";
             this.save_button.TabStop = false;
@@ -90,7 +90,7 @@
             // 
             this.browse_button.BackColor = System.Drawing.Color.Transparent;
             this.browse_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.browse_button.Image = global::NewAgeLauncher.Properties.Resources.browse;
+            this.browse_button.Image = global::NewAgeLauncher.Resources_ES.Browse;
             resources.ApplyResources(this.browse_button, "browse_button");
             this.browse_button.Name = "browse_button";
             this.browse_button.TabStop = false;

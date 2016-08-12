@@ -1,5 +1,5 @@
 ﻿/* 
-    NewAge Launcher - Espanol Edition
+    NewAge Launcher -- Espanol Edition
     Copyright (C) 2016 Jestus
 
     This program is free software: you can redistribute it and/or modify
@@ -212,6 +212,7 @@ namespace NewAgeLauncher
                 {
                     Process.Start(AppDomain.CurrentDomain.BaseDirectory + "/bin/etc/Fonts/DroidSans.ttf");
                     Process.Start(AppDomain.CurrentDomain.BaseDirectory + "/bin/etc/Fonts/DroidSans-Bold.ttf");
+                    Process.Start(AppDomain.CurrentDomain.BaseDirectory + "/bin/etc/Fonts/GODOFWAR.ttf");
                     Settings_ES.Default.Save();
                 }
                 if (dr1 == DialogResult.Cancel)
@@ -222,19 +223,22 @@ namespace NewAgeLauncher
 
             }
 
-
             // Checks if The User Asks to Change Launguage
-            // If so, Launguage Change .exe is Launched
+            // If so, Language Changer.exe is Launched
 
             if (Settings_ES.Default.LanguageChangeTag == true)
             {
                 Process.Start(AppDomain.CurrentDomain.BaseDirectory + "/bin/Launguage Changer.exe");
                 WindowState = FormWindowState.Minimized;
+                Application.Exit();
             }
             else
             {
-                Application.Restart();
+
             }
+
+            Application.Restart();
+
         }
     }
 }

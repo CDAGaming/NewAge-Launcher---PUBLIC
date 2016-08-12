@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NewAgeLauncher</RootNamespace>
-    <AssemblyName>NewAge Launcher</AssemblyName>
+    <AssemblyName>Lansador de NuevaEra</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -82,9 +82,7 @@
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
-  </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug x64|x86'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x86\Debug x64\</OutputPath>
@@ -133,6 +131,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <OutputPath>bin\Release\</OutputPath>
+    <Optimize>true</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug x64|AnyCPU'">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -142,8 +141,14 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <OutputPath>bin\Release x64\</OutputPath>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\bin\libs\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -191,6 +196,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings_ES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings_ES.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Resources_ES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources_ES.resx</DependentUpon>
+    </Compile>
     <Compile Include="SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +239,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Resources_ES.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources_ES.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="SettingsForm.el.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,11 +268,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings_ES.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Settings_ES.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings_ES.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\DroidSans-Bold.ttf" />
@@ -301,14 +315,27 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="catalogo_0YD_icon.ico" />
+    <None Include="Resources\Save1.png" />
     <None Include="Resources\MySql.Data.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Resources\Forum_Hovor.png" />
+    <None Include="Resources\Forum_NoHovor.png" />
+    <None Include="Resources\Donate_Hovor.png" />
+    <None Include="Resources\Donate_NoHovor.png" />
+    <None Include="Resources\Settings_Hovor.png" />
+    <None Include="Resources\Settings_NoHovor.png" />
+    <None Include="Resources\Play_Hovor.png" />
+    <None Include="Resources\Play_NoHovor.png" />
     <None Include="Resources\save.png" />
     <None Include="Resources\browse.png" />
     <None Include="Resources\cancel.png" />
     <None Include="Resources\BG %284%29.png" />
     <None Include="Resources\Cancel%28NEW%29.png" />
+    <None Include="Resources\AboutUs_NoHovor.png" />
+    <None Include="Resources\AboutUs_Hovor.png" />
+    <None Include="Resources\Browse1.png" />
+    <None Include="Resources\Cancel1.png" />
     <Content Include="Resources\catalogo_0YD_icon.ico" />
     <None Include="Resources\logo1.png" />
     <None Include="Resources\logo.png" />
@@ -365,6 +392,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources_ES\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

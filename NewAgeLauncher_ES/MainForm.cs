@@ -157,24 +157,24 @@ namespace NewAgeLauncher
         // ===================
         private void playButtonPictureBox_MouseEnter(object sender, EventArgs e)
         {
-            playButtonPictureBox.Image = Resources.play_hover1;
+            playButtonPictureBox.Image = Resources_ES.Play_Hovor;
             Cursor = Cursors.Hand;
         }
 
         private void playButtonPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            playButtonPictureBox.Image = Resources.play1;
+            playButtonPictureBox.Image = Resources_ES.Play_NoHovor;
             Cursor = Cursors.Arrow;
         }
 
         private void playButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            playButtonPictureBox.Image = Resources.play_hover1;
+            playButtonPictureBox.Image = Resources_ES.Play_Hovor;
         }
 
         private void playButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            playButtonPictureBox.Image = Resources.play_hover1;
+            playButtonPictureBox.Image = Resources_ES.Play_Hovor;
         }
         // ===================
 
@@ -183,24 +183,24 @@ namespace NewAgeLauncher
         private void settingsButtonPictureBox_MouseEnter(object sender, EventArgs e)
         {
             //MessageBox.Show("mouse enter");
-            settingsButtonPictureBox.Image = Resources.settings_hover;
+            settingsButtonPictureBox.Image = Resources_ES.Settings_Hovor;
             Cursor = Cursors.Hand;
         }
 
         private void settingsButtonPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            settingsButtonPictureBox.Image = Resources.settings;
+            settingsButtonPictureBox.Image = Resources_ES.Settings_NoHovor;
             Cursor = Cursors.Arrow;
         }
 
         private void settingsButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            settingsButtonPictureBox.Image = Resources.settings_hover;
+            settingsButtonPictureBox.Image = Resources_ES.Settings_Hovor;
         }
 
         private void settingsButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            settingsButtonPictureBox.Image = Resources.settings_hover;
+            settingsButtonPictureBox.Image = Resources_ES.Settings_Hovor;
         }
 
         // ===================
@@ -209,72 +209,72 @@ namespace NewAgeLauncher
         private void donateButtonPictureBox_MouseEnter(object sender, EventArgs e)
         {
             //MessageBox.Show("mouse enter");
-            donateButtonPictureBox.Image = Resources.donate_hover;
+            donateButtonPictureBox.Image = Resources_ES.Donate_Hovor;
             Cursor = Cursors.Hand;
         }
 
         private void donateButtonPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            donateButtonPictureBox.Image = Resources.donate;
+            donateButtonPictureBox.Image = Resources_ES.Donate_NoHovor;
             Cursor = Cursors.Arrow;
         }
 
         private void donateButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            donateButtonPictureBox.Image = Resources.donate_hover;
+            donateButtonPictureBox.Image = Resources_ES.Donate_Hovor;
         }
 
         private void donateButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            donateButtonPictureBox.Image = Resources.donate_hover;
+            donateButtonPictureBox.Image = Resources_ES.Donate_Hovor;
         }
         // ===================
 
         // ===================
         private void aboutUsButtonPictureBox_MouseEnter(object sender, EventArgs e)
         {
-            aboutUsButtonPictureBox.Image = Resources.aboutus_hover;
+            aboutUsButtonPictureBox.Image = Resources_ES.AboutUs_Hovor;
             Cursor = Cursors.Hand;
         }
 
         private void aboutUsButtonPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            aboutUsButtonPictureBox.Image = Resources.aboutus;
+            aboutUsButtonPictureBox.Image = Resources_ES.AboutUs_NoHovor;
             Cursor = Cursors.Arrow;
         }
 
         private void aboutUsButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            aboutUsButtonPictureBox.Image = Resources.aboutus_hover;
+            aboutUsButtonPictureBox.Image = Resources_ES.AboutUs_Hovor;
         }
 
         private void aboutUsButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            aboutUsButtonPictureBox.Image = Resources.aboutus_hover;
+            aboutUsButtonPictureBox.Image = Resources_ES.AboutUs_Hovor;
         }
         // ===================
 
         // ===================
         private void forumButtonPictureBox_MouseEnter(object sender, EventArgs e)
         {
-            forumButtonPictureBox.Image = Resources.forum_hover;
+            forumButtonPictureBox.Image = Resources_ES.Forum_Hovor;
             Cursor = Cursors.Hand;
         }
 
         private void forumButtonPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            forumButtonPictureBox.Image = Resources.forum;
+            forumButtonPictureBox.Image = Resources_ES.Forum_NoHovor;
             Cursor = Cursors.Arrow;
         }
 
         private void forumButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            forumButtonPictureBox.Image = Resources.forum_hover;
+            forumButtonPictureBox.Image = Resources_ES.Forum_Hovor;
         }
 
         private void forumButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            forumButtonPictureBox.Image = Resources.forum;
+            forumButtonPictureBox.Image = Resources_ES.Forum_Hovor;
         }
         // ===================
 
@@ -807,7 +807,7 @@ namespace NewAgeLauncher
                 downloadSpeedLabel.Visible = true;
                 downloadBar1.BarState = DownloadBar.DownloadBarState.Available;
                 playButtonPictureBox.Enabled = false;
-                playButtonPictureBox.Image = Properties.Resources.play1;
+                playButtonPictureBox.Image = Resources_ES.Play_NoHovor;
             }
             else
             {
@@ -816,7 +816,7 @@ namespace NewAgeLauncher
                 downloadSpeedLabel.Visible = false;
                 downloadBar1.BarState = DownloadBar.DownloadBarState.Playable;
                 playButtonPictureBox.Enabled = true;
-                playButtonPictureBox.Image = Properties.Resources.play1;
+                playButtonPictureBox.Image = Resources_ES.Play_NoHovor;
             }
         }
 

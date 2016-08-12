@@ -297,7 +297,7 @@
     <value>menuBar1</value>
   </data>
   <data name="&gt;&gt;menuBar1.Type" xml:space="preserve">
-    <value>NewAgeLauncher.MenuBar, NewAge Launcher, Version=0.0.8.2, Culture=neutral, PublicKeyToken=null</value>
+    <value>NewAgeLauncher.MenuBar, NewAge Launcher, Version=0.0.9.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;menuBar1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -599,7 +599,7 @@
     <value>665, 184</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>SettingsForm</value>
+    <value>NewAge - Settings</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SettingsForm</value>

@@ -123,16 +123,16 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="WoWCache_CheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>528, 40</value>
+    <value>505, 40</value>
   </data>
   <data name="WoWCache_CheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 17</value>
+    <value>93, 17</value>
   </data>
   <data name="WoWCache_CheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
   <data name="WoWCache_CheckBox.Text" xml:space="preserve">
-    <value>Clear WoW Cache</value>
+    <value>Limpiar Cache</value>
   </data>
   <data name="&gt;&gt;WoWCache_CheckBox.Name" xml:space="preserve">
     <value>WoWCache_CheckBox</value>
@@ -150,16 +150,16 @@
     <value>True</value>
   </data>
   <data name="Transparent_Checkbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>400, 65</value>
+    <value>369, 65</value>
   </data>
   <data name="Transparent_Checkbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 17</value>
+    <value>135, 17</value>
   </data>
   <data name="Transparent_Checkbox.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
   </data>
   <data name="Transparent_Checkbox.Text" xml:space="preserve">
-    <value>Enable Transparency</value>
+    <value>Habilitar Transparencia</value>
   </data>
   <data name="&gt;&gt;Transparent_Checkbox.Name" xml:space="preserve">
     <value>Transparent_Checkbox</value>
@@ -297,7 +297,7 @@
     <value>menuBar1</value>
   </data>
   <data name="&gt;&gt;menuBar1.Type" xml:space="preserve">
-    <value>NewAgeLauncher.MenuBar, NewAge Launcher, Version=0.0.8.2, Culture=neutral, PublicKeyToken=null</value>
+    <value>NewAgeLauncher.MenuBar, Lansador de NuevaEra, Version=0.0.9.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;menuBar1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -361,16 +361,16 @@
     <value>NoControl</value>
   </data>
   <data name="Language_Checkbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>400, 40</value>
+    <value>369, 40</value>
   </data>
   <data name="Language_Checkbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 17</value>
+    <value>98, 17</value>
   </data>
   <data name="Language_Checkbox.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
   </data>
   <data name="Language_Checkbox.Text" xml:space="preserve">
-    <value>Change Language</value>
+    <value>Cambiar Idioma</value>
   </data>
   <data name="&gt;&gt;Language_Checkbox.Name" xml:space="preserve">
     <value>Language_Checkbox</value>
@@ -391,16 +391,16 @@
     <value>NoControl</value>
   </data>
   <data name="Font_Checkbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>528, 65</value>
+    <value>505, 64</value>
   </data>
   <data name="Font_Checkbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 17</value>
+    <value>152, 17</value>
   </data>
   <data name="Font_Checkbox.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
+    <value>35</value>
   </data>
   <data name="Font_Checkbox.Text" xml:space="preserve">
-    <value>Install Fonts (Optional)</value>
+    <value>Instalar Fuentes (Opcional)</value>
   </data>
   <data name="&gt;&gt;Font_Checkbox.Name" xml:space="preserve">
     <value>Font_Checkbox</value>
@@ -599,7 +599,7 @@
     <value>665, 184</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>SettingsForm</value>
+    <value>NuevaEra - Opciones</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SettingsForm</value>

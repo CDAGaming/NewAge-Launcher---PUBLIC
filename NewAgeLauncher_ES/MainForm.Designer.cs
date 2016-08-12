@@ -249,7 +249,7 @@
             // 
             this.playButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.playButtonPictureBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.playButtonPictureBox.Image = global::NewAgeLauncher.Properties.Resources.play1;
+            this.playButtonPictureBox.Image = global::NewAgeLauncher.Resources_ES.Play_NoHovor;
             this.playButtonPictureBox.Location = new System.Drawing.Point(3, 3);
             this.playButtonPictureBox.Name = "playButtonPictureBox";
             this.playButtonPictureBox.Size = new System.Drawing.Size(217, 37);
@@ -540,7 +540,7 @@
             // 
             this.settingsButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.settingsButtonPictureBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.settingsButtonPictureBox.Image = global::NewAgeLauncher.Properties.Resources.settings;
+            this.settingsButtonPictureBox.Image = global::NewAgeLauncher.Resources_ES.Settings_NoHovor;
             this.settingsButtonPictureBox.Location = new System.Drawing.Point(3, 46);
             this.settingsButtonPictureBox.Name = "settingsButtonPictureBox";
             this.settingsButtonPictureBox.Size = new System.Drawing.Size(217, 37);
@@ -556,7 +556,7 @@
             // 
             this.donateButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.donateButtonPictureBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.donateButtonPictureBox.Image = global::NewAgeLauncher.Properties.Resources.donate;
+            this.donateButtonPictureBox.Image = global::NewAgeLauncher.Resources_ES.Donate_NoHovor;
             this.donateButtonPictureBox.Location = new System.Drawing.Point(3, 89);
             this.donateButtonPictureBox.Name = "donateButtonPictureBox";
             this.donateButtonPictureBox.Size = new System.Drawing.Size(217, 37);
@@ -572,7 +572,7 @@
             // 
             this.aboutUsButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.aboutUsButtonPictureBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.aboutUsButtonPictureBox.Image = global::NewAgeLauncher.Properties.Resources.aboutus;
+            this.aboutUsButtonPictureBox.Image = global::NewAgeLauncher.Resources_ES.AboutUs_NoHovor;
             this.aboutUsButtonPictureBox.Location = new System.Drawing.Point(3, 132);
             this.aboutUsButtonPictureBox.Name = "aboutUsButtonPictureBox";
             this.aboutUsButtonPictureBox.Size = new System.Drawing.Size(217, 37);
@@ -588,7 +588,7 @@
             // 
             this.forumButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.forumButtonPictureBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.forumButtonPictureBox.Image = global::NewAgeLauncher.Properties.Resources.forum;
+            this.forumButtonPictureBox.Image = global::NewAgeLauncher.Resources_ES.Forum_NoHovor;
             this.forumButtonPictureBox.Location = new System.Drawing.Point(3, 175);
             this.forumButtonPictureBox.Name = "forumButtonPictureBox";
             this.forumButtonPictureBox.Size = new System.Drawing.Size(217, 43);
@@ -984,7 +984,7 @@
             this.MinimumSize = new System.Drawing.Size(1092, 629);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NewAge Launcher";
+            this.Text = "Lansador de NuevaEra ";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.playButtonPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizePictureBox)).EndInit();
