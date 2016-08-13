@@ -163,7 +163,7 @@ namespace NewAgeLauncher
 
         private void playButtonPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            playButtonPictureBox.Image = Resources_ES.Play_NoHovor;
+            playButtonPictureBox.Image = Resources_ES.Play_NoHovor1;
             Cursor = Cursors.Arrow;
         }
 
@@ -189,7 +189,7 @@ namespace NewAgeLauncher
 
         private void settingsButtonPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            settingsButtonPictureBox.Image = Resources_ES.Settings_NoHovor;
+            settingsButtonPictureBox.Image = Resources_ES.Settings_NoHovor1;
             Cursor = Cursors.Arrow;
         }
 
@@ -215,7 +215,7 @@ namespace NewAgeLauncher
 
         private void donateButtonPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            donateButtonPictureBox.Image = Resources_ES.Donate_NoHovor;
+            donateButtonPictureBox.Image = Resources_ES.Donate_NoHovor1;
             Cursor = Cursors.Arrow;
         }
 
@@ -239,7 +239,7 @@ namespace NewAgeLauncher
 
         private void aboutUsButtonPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            aboutUsButtonPictureBox.Image = Resources_ES.AboutUs_NoHovor;
+            aboutUsButtonPictureBox.Image = Resources_ES.AboutUs_NoHovor1;
             Cursor = Cursors.Arrow;
         }
 
@@ -263,7 +263,7 @@ namespace NewAgeLauncher
 
         private void forumButtonPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            forumButtonPictureBox.Image = Resources_ES.Forum_NoHovor;
+            forumButtonPictureBox.Image = Resources_ES.Forum_NoHovor1;
             Cursor = Cursors.Arrow;
         }
 
@@ -807,7 +807,7 @@ namespace NewAgeLauncher
                 downloadSpeedLabel.Visible = true;
                 downloadBar1.BarState = DownloadBar.DownloadBarState.Available;
                 playButtonPictureBox.Enabled = false;
-                playButtonPictureBox.Image = Resources_ES.Play_NoHovor;
+                playButtonPictureBox.Image = Resources_ES.Play_NoHovor1;
             }
             else
             {
@@ -816,7 +816,7 @@ namespace NewAgeLauncher
                 downloadSpeedLabel.Visible = false;
                 downloadBar1.BarState = DownloadBar.DownloadBarState.Playable;
                 playButtonPictureBox.Enabled = true;
-                playButtonPictureBox.Image = Resources_ES.Play_NoHovor;
+                playButtonPictureBox.Image = Resources_ES.Play_NoHovor1;
             }
         }
 

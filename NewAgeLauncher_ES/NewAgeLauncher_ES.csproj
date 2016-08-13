@@ -315,6 +315,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="catalogo_0YD_icon.ico" />
+    <None Include="Resources\Settings_NoHovor1.png" />
+    <None Include="Resources\Play_NoHovor1.png" />
+    <None Include="Resources\Forum_NoHovor1.png" />
+    <None Include="Resources\Donate_NoHovor1.png" />
     <None Include="Resources\Save1.png" />
     <None Include="Resources\MySql.Data.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -336,6 +340,7 @@
     <None Include="Resources\AboutUs_Hovor.png" />
     <None Include="Resources\Browse1.png" />
     <None Include="Resources\Cancel1.png" />
+    <None Include="Resources\AboutUs_NoHovor1.png" />
     <Content Include="Resources\catalogo_0YD_icon.ico" />
     <None Include="Resources\logo1.png" />
     <None Include="Resources\logo.png" />

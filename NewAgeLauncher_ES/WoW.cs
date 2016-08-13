@@ -80,13 +80,76 @@ namespace NewAgeLauncher
             {
 
                 if (File.Exists(Path.Combine(Directory, @"Data\enGB\realmlist.wtf")))
+                {
+                    string pathGB = (Path.Combine(Directory, @"Data\enGB\realmlist.wtf"));
+                    FileAttributes attributesGB = File.GetAttributes(pathGB);
+
+                    // If File is Set as Read Only, Do This:
+
+                    if ((attributesGB & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
+                    {
+                        attributesGB = RemoveAttribute_ENGB(attributesGB, FileAttributes.ReadOnly);
+                        File.SetAttributes(pathGB, attributesGB);
+                    }
+
                     return Path.Combine(Directory, @"Data\enGB\realmlist.wtf");
+
+                }
                 else if (File.Exists(Path.Combine(Directory, @"Data\enUS\realmlist.wtf")))
+                {
+                    string pathUS = (Path.Combine(Directory, @"Data\enUS\realmlist.wtf"));
+                    FileAttributes attributesUS = File.GetAttributes(pathUS);
+
+                    // If File is Set to Read Only, Do This:
+
+                    if ((attributesUS & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
+                    {
+                        attributesUS = RemoveAttribute_ENUS(attributesUS, FileAttributes.ReadOnly);
+                        File.SetAttributes(pathUS, attributesUS);
+                    }
+
                     return Path.Combine(Directory, @"Data\enUS\realmlist.wtf");
+                }
+                else if (File.Exists(Path.Combine(Directory, @"Data\deDE\realmlist.wtf")))
+                {
+                    string pathDE = (Path.Combine(Directory, @"Data\deDE\realmlist.wtf"));
+                    FileAttributes attributesDE = File.GetAttributes(pathDE);
+
+                    // If File is Set to Read Only, Do this:
+
+                    if ((attributesDE & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
+                    {
+                        attributesDE = RemoveAttribute_deDE(attributesDE, FileAttributes.ReadOnly);
+                        File.SetAttributes(pathDE, attributesDE);
+                    }
+
+                    return Path.Combine(Directory, @"Data\deDE\realmlist.wtf");
+                }
+                else if (File.Exists(Path.Combine(Directory, @"Data\esES\realmlist.wtf")))
+                {
+                    return Path.Combine(Directory, @"Data\esES\realmlist.wtf");
+                }
+
+
                 else
                     return null;
 
             }
+        }
+
+        public static FileAttributes RemoveAttribute_deDE(FileAttributes attributesDE, FileAttributes Remove_deDE)
+        {
+            return attributesDE & ~Remove_deDE;
+        }
+
+        public static FileAttributes RemoveAttribute_ENGB(FileAttributes attributesGB, FileAttributes Remove_ENGB)
+        {
+            return attributesGB & ~Remove_ENGB;
+        }
+
+        public static FileAttributes RemoveAttribute_ENUS(FileAttributes attributesUS, FileAttributes Remove_ENUS)
+        {
+            return attributesUS & ~Remove_ENUS;
         }
 
         public static string DataDirectory

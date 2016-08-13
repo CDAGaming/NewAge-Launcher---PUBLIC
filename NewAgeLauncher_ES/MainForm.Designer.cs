@@ -202,14 +202,13 @@
             // 
             // downloadProgressLabel
             // 
-            this.downloadProgressLabel.AutoSize = true;
             this.downloadProgressLabel.BackColor = System.Drawing.Color.Transparent;
             this.downloadProgressLabel.Dock = System.Windows.Forms.DockStyle.Left;
             this.downloadProgressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.downloadProgressLabel.ForeColor = System.Drawing.Color.White;
             this.downloadProgressLabel.Location = new System.Drawing.Point(3, 0);
             this.downloadProgressLabel.Name = "downloadProgressLabel";
-            this.downloadProgressLabel.Size = new System.Drawing.Size(133, 24);
+            this.downloadProgressLabel.Size = new System.Drawing.Size(354, 24);
             this.downloadProgressLabel.TabIndex = 9;
             this.downloadProgressLabel.Text = "Descargando: ";
             this.downloadProgressLabel.Visible = false;
@@ -249,7 +248,7 @@
             // 
             this.playButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.playButtonPictureBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.playButtonPictureBox.Image = global::NewAgeLauncher.Resources_ES.Play_NoHovor;
+            this.playButtonPictureBox.Image = global::NewAgeLauncher.Resources_ES.Play_NoHovor1;
             this.playButtonPictureBox.Location = new System.Drawing.Point(3, 3);
             this.playButtonPictureBox.Name = "playButtonPictureBox";
             this.playButtonPictureBox.Size = new System.Drawing.Size(217, 37);
@@ -540,7 +539,7 @@
             // 
             this.settingsButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.settingsButtonPictureBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.settingsButtonPictureBox.Image = global::NewAgeLauncher.Resources_ES.Settings_NoHovor;
+            this.settingsButtonPictureBox.Image = global::NewAgeLauncher.Resources_ES.Settings_NoHovor1;
             this.settingsButtonPictureBox.Location = new System.Drawing.Point(3, 46);
             this.settingsButtonPictureBox.Name = "settingsButtonPictureBox";
             this.settingsButtonPictureBox.Size = new System.Drawing.Size(217, 37);
@@ -556,7 +555,7 @@
             // 
             this.donateButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.donateButtonPictureBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.donateButtonPictureBox.Image = global::NewAgeLauncher.Resources_ES.Donate_NoHovor;
+            this.donateButtonPictureBox.Image = global::NewAgeLauncher.Resources_ES.Donate_NoHovor1;
             this.donateButtonPictureBox.Location = new System.Drawing.Point(3, 89);
             this.donateButtonPictureBox.Name = "donateButtonPictureBox";
             this.donateButtonPictureBox.Size = new System.Drawing.Size(217, 37);
@@ -572,7 +571,7 @@
             // 
             this.aboutUsButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.aboutUsButtonPictureBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.aboutUsButtonPictureBox.Image = global::NewAgeLauncher.Resources_ES.AboutUs_NoHovor;
+            this.aboutUsButtonPictureBox.Image = global::NewAgeLauncher.Resources_ES.AboutUs_NoHovor1;
             this.aboutUsButtonPictureBox.Location = new System.Drawing.Point(3, 132);
             this.aboutUsButtonPictureBox.Name = "aboutUsButtonPictureBox";
             this.aboutUsButtonPictureBox.Size = new System.Drawing.Size(217, 37);
@@ -588,7 +587,7 @@
             // 
             this.forumButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.forumButtonPictureBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.forumButtonPictureBox.Image = global::NewAgeLauncher.Resources_ES.Forum_NoHovor;
+            this.forumButtonPictureBox.Image = global::NewAgeLauncher.Resources_ES.Forum_NoHovor1;
             this.forumButtonPictureBox.Location = new System.Drawing.Point(3, 175);
             this.forumButtonPictureBox.Name = "forumButtonPictureBox";
             this.forumButtonPictureBox.Size = new System.Drawing.Size(217, 43);
@@ -709,8 +708,8 @@
             this.DownloadTextPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.DownloadTextPanel.BackColor = System.Drawing.Color.Transparent;
             this.DownloadTextPanel.ColumnCount = 2;
-            this.DownloadTextPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.DownloadTextPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.DownloadTextPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.72546F));
+            this.DownloadTextPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.27454F));
             this.DownloadTextPanel.Controls.Add(this.downloadProgressLabel, 0, 0);
             this.DownloadTextPanel.Controls.Add(this.downloadSpeedLabel, 1, 0);
             this.DownloadTextPanel.Location = new System.Drawing.Point(470, 533);

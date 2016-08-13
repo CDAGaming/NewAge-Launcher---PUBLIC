@@ -22,14 +22,14 @@ namespace NewAgeLauncher {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources_ES {
+    internal class Resources_US {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources_ES() {
+        internal Resources_US() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace NewAgeLauncher {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NewAgeLauncher.Resources_ES", typeof(Resources_ES).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NewAgeLauncher.Resources_US", typeof(Resources_US).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -83,36 +83,6 @@ namespace NewAgeLauncher {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AboutUs_NoHovor1 {
-            get {
-                object obj = ResourceManager.GetObject("AboutUs_NoHovor1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Browse {
-            get {
-                object obj = ResourceManager.GetObject("Browse", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cancel {
-            get {
-                object obj = ResourceManager.GetObject("Cancel", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Donate_Hovor {
             get {
                 object obj = ResourceManager.GetObject("Donate_Hovor", resourceCulture);
@@ -126,16 +96,6 @@ namespace NewAgeLauncher {
         internal static System.Drawing.Bitmap Donate_NoHovor {
             get {
                 object obj = ResourceManager.GetObject("Donate_NoHovor", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Donate_NoHovor1 {
-            get {
-                object obj = ResourceManager.GetObject("Donate_NoHovor1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +123,9 @@ namespace NewAgeLauncher {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Forum_NoHovor1 {
+        internal static System.Drawing.Bitmap NoHovor {
             get {
-                object obj = ResourceManager.GetObject("Forum_NoHovor1", resourceCulture);
+                object obj = ResourceManager.GetObject("NoHovor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,29 +143,9 @@ namespace NewAgeLauncher {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Play_NoHovor {
+        internal static System.Drawing.Bitmap Play_NoHovor2 {
             get {
-                object obj = ResourceManager.GetObject("Play_NoHovor", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Play_NoHovor1 {
-            get {
-                object obj = ResourceManager.GetObject("Play_NoHovor1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Save {
-            get {
-                object obj = ResourceManager.GetObject("Save", resourceCulture);
+                object obj = ResourceManager.GetObject("Play_NoHovor2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -226,16 +166,6 @@ namespace NewAgeLauncher {
         internal static System.Drawing.Bitmap Settings_NoHovor {
             get {
                 object obj = ResourceManager.GetObject("Settings_NoHovor", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Settings_NoHovor1 {
-            get {
-                object obj = ResourceManager.GetObject("Settings_NoHovor1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

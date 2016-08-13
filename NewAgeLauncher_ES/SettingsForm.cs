@@ -45,6 +45,15 @@ namespace NewAgeLauncher
 
             TransparencyKey = Color.Lime;
 
+            if (Settings_ES.Default.LanguageChangeTag == false)
+            {
+                Language_Checkbox.Checked = false;
+            }
+            if (Settings_ES.Default.FontAdditionTag == false)
+            {
+                Font_Checkbox.Checked = false;
+            }
+
             wowLocationTextBox.Text = Settings_ES.Default.WowLocation;
             Transparent_Checkbox.Checked = Settings_ES.Default.TransparencyToggle;
             WoWCache_CheckBox.Checked = Settings_ES.Default.WoWCacheToggle;

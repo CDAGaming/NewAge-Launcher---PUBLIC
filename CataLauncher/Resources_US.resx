@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Play_Hovor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Play_Hovor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Donate_Hovor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Donate_Hovor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Settings_NoHovor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Settings_NoHovor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,49 +127,28 @@
   <data name="AboutUs_NoHovor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\AboutUs_NoHovor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Cancel1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Forum_Hovor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Forum_Hovor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Settings_Hovor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Settings_Hovor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Play_NoHovor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Play_NoHovor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Save1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Browse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Browse1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AboutUs_Hovor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\AboutUs_Hovor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Play_NoHovor2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Play_NoHovor2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Donate_NoHovor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Donate_NoHovor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="NoHovor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\NoHovor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Forum_NoHovor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Forum_NoHovor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Donate_Hovor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Donate_Hovor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Play_Hovor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Play_Hovor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Forum_Hovor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Forum_Hovor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AboutUs_NoHovor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\AboutUs_NoHovor1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Donate_NoHovor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Donate_NoHovor1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Forum_NoHovor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Forum_NoHovor1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Play_NoHovor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Play_NoHovor1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Settings_NoHovor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Settings_NoHovor1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AboutUs_Hovor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\AboutUs_Hovor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

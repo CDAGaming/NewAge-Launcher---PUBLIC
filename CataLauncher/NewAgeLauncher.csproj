@@ -195,6 +195,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources_US.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources_US.resx</DependentUpon>
+    </Compile>
     <Compile Include="SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +233,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Resources_US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources_US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="SettingsForm.el.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,6 +314,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="catalogo_0YD_icon.ico" />
+    <None Include="Resources\Settings_Hovor.png" />
+    <None Include="Resources\Settings_NoHovor.png" />
+    <None Include="Resources\Play_NoHovor2.png" />
+    <None Include="Resources\Forum_Hovor.png" />
+    <None Include="Resources\Forum_NoHovor.png" />
+    <None Include="Resources\Donate_Hovor.png" />
+    <None Include="Resources\Donate_NoHovor.png" />
+    <None Include="Resources\NoHovor.png" />
+    <None Include="Resources\Play_Hovor.png" />
+    <None Include="Resources\Play_NoHovor1.png" />
+    <None Include="Resources\Play_NoHovor.png" />
     <None Include="Resources\MySql.Data.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -313,6 +333,8 @@
     <None Include="Resources\cancel.png" />
     <None Include="Resources\BG %284%29.png" />
     <None Include="Resources\Cancel%28NEW%29.png" />
+    <None Include="Resources\AboutUs_NoHovor.png" />
+    <None Include="Resources\AboutUs_Hovor.png" />
     <Content Include="Resources\catalogo_0YD_icon.ico" />
     <None Include="Resources\logo1.png" />
     <None Include="Resources\logo.png" />
