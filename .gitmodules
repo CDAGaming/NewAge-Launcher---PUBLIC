@@ -1,0 +1,6 @@
+[submodule "LanguageChanger"]
+	path = LanguageChanger
+	url = https://github.com/CDAGaming/LanguageChanger.git
+[submodule "Externals/LanguageChanger"]
+	path = Externals/LanguageChanger
+	url = https://github.com/CDAGaming/LanguageChanger.git
