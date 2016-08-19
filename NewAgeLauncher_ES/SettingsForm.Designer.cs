@@ -41,6 +41,8 @@
             this.MinimizePictureBox = new System.Windows.Forms.PictureBox();
             this.Language_Checkbox = new System.Windows.Forms.CheckBox();
             this.Font_Checkbox = new System.Windows.Forms.CheckBox();
+            this.Buglbl = new System.Windows.Forms.Label();
+            this.RequestaFeaturelbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.canc_button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.save_button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.browse_button)).BeginInit();
@@ -162,12 +164,30 @@
             this.Font_Checkbox.Name = "Font_Checkbox";
             this.Font_Checkbox.UseVisualStyleBackColor = false;
             // 
+            // Buglbl
+            // 
+            resources.ApplyResources(this.Buglbl, "Buglbl");
+            this.Buglbl.BackColor = System.Drawing.Color.Transparent;
+            this.Buglbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Buglbl.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.Buglbl.Name = "Buglbl";
+            // 
+            // RequestaFeaturelbl
+            // 
+            resources.ApplyResources(this.RequestaFeaturelbl, "RequestaFeaturelbl");
+            this.RequestaFeaturelbl.BackColor = System.Drawing.Color.Transparent;
+            this.RequestaFeaturelbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RequestaFeaturelbl.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.RequestaFeaturelbl.Name = "RequestaFeaturelbl";
+            // 
             // SettingsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::NewAgeLauncher.Properties.Resources.BG;
+            this.Controls.Add(this.Buglbl);
+            this.Controls.Add(this.RequestaFeaturelbl);
             this.Controls.Add(this.Font_Checkbox);
             this.Controls.Add(this.Language_Checkbox);
             this.Controls.Add(this.exitPictureBox);
@@ -208,5 +228,7 @@
         private System.Windows.Forms.PictureBox MinimizePictureBox;
         private System.Windows.Forms.CheckBox Language_Checkbox;
         private System.Windows.Forms.CheckBox Font_Checkbox;
+        private System.Windows.Forms.Label Buglbl;
+        private System.Windows.Forms.Label RequestaFeaturelbl;
     }
 }
