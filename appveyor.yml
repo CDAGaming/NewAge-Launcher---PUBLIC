@@ -15,11 +15,11 @@
  # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #--------------------------------#
-#   AppVeyor Configuration     #
+#     AppVeyor Configuration     #
 #--------------------------------#
- #-------------------------------#
- #         NewAge Launcher       #
- #-------------------------------#
+ #------------------------------#
+ #       NewAge Launcher        #
+ #------------------------------#
 
 version: 1.0.{build}
 branches:
@@ -32,6 +32,6 @@ build:
   verbosity: minimal
 deploy:
 - provider: GitHub
-  release: Release V0.9.2
+  release: Release V0.9.5
   auth_token:
     secure: AaRUijs5QwQRA0b/D0OvrqvJVeTIBxH7Q5SWBobG71eBxDK5LzwHqx6lJnsjyZ1a

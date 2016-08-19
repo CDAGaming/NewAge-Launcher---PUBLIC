@@ -642,7 +642,7 @@
             // 
             // ButtonsPanel
             // 
-            this.ButtonsPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ButtonsPanel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.ButtonsPanel.BackColor = System.Drawing.Color.Transparent;
             this.ButtonsPanel.ColumnCount = 1;
             this.ButtonsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
