@@ -340,11 +340,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Splat.pdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ICSharpCode.SharpZipLib.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -372,6 +367,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MySql.Data.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Splat.pdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

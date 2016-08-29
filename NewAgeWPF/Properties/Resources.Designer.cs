@@ -425,16 +425,6 @@ namespace NewAgeWPF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] Splat1 {
-            get {
-                object obj = ResourceManager.GetObject("Splat1", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         internal static byte[] Squirrel {
             get {
                 object obj = ResourceManager.GetObject("Squirrel", resourceCulture);
