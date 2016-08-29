@@ -18,20 +18,20 @@
 #     AppVeyor Configuration     #
 #--------------------------------#
  #------------------------------#
- #       NewAge Launcher        #
+ #    NewAge Launcher (WPF)     #
  #------------------------------#
 
 version: 1.0.{build}
 branches:
   only:
-  - CDAGaming
-install:
- - git submodule update --init --recursive
+  - WPF
+#install:
+#- git submodule update --init --recursive
 build:
-  project: NewAgeLauncher.sln
+  project: NewAgeWPF.sln
   verbosity: minimal
 deploy:
 - provider: GitHub
-  release: Release V0.9.5
+  release: Release V1.0
   auth_token:
     secure: AaRUijs5QwQRA0b/D0OvrqvJVeTIBxH7Q5SWBobG71eBxDK5LzwHqx6lJnsjyZ1a
