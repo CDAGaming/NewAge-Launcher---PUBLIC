@@ -22909,4 +22909,55 @@
   <data name="DroidSans_Bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DroidSans-Bold.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="DeltaCompressionDotNet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeltaCompressionDotNet.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DeltaCompressionDotNet_MsDelta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeltaCompressionDotNet.MsDelta.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DeltaCompressionDotNet_PatchApi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeltaCompressionDotNet.PatchApi.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ICSharpCode_SharpZipLib" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICSharpCode.SharpZipLib.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ICSharpCode_SharpZipLib1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICSharpCode.SharpZipLib.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="MahApps_Metro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MahApps.Metro.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MahApps_Metro1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MahApps.Metro.XML;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Mono_Cecil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mono.Cecil.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Mono_Cecil_Mdb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mono.Cecil.Mdb.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Mono_Cecil_Pdb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mono.Cecil.Pdb.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Mono_Cecil_Rocks" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mono.Cecil.Rocks.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MySql_Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\MySql.Data.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NuGet_Squirrel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NuGet.Squirrel.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Splat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Splat.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Splat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Splat.pdb;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Squirrel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Squirrel.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="System_Windows_Interactivity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\System.Windows.Interactivity.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
