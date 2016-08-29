@@ -285,9 +285,9 @@
     <Resource Include="Resources\NewAge_Thumbnail.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\DeltaCompressionDotNet.dll">
+    <None Include="Resources\DeltaCompressionDotNet.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\DeltaCompressionDotNet.MsDelta.dll">
@@ -300,69 +300,69 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\MahApps.Metro.dll">
+    <None Include="Resources\MahApps.Metro.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\MahApps.Metro.XML">
+    <None Include="Resources\MahApps.Metro.XML">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\System.Windows.Interactivity.dll">
+    <None Include="Resources\System.Windows.Interactivity.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Mono.Cecil.dll">
+    <None Include="Resources\Mono.Cecil.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Mono.Cecil.Mdb.dll">
+    <None Include="Resources\Mono.Cecil.Mdb.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Mono.Cecil.Pdb.dll">
+    <None Include="Resources\Mono.Cecil.Pdb.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Mono.Cecil.Rocks.dll">
+    <None Include="Resources\Mono.Cecil.Rocks.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Splat.dll">
+    <None Include="Resources\Splat.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Splat.pdb">
+    <None Include="Resources\Splat.pdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\ICSharpCode.SharpZipLib.dll">
+    <None Include="Resources\ICSharpCode.SharpZipLib.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\ICSharpCode.SharpZipLib.xml">
+    <None Include="Resources\ICSharpCode.SharpZipLib.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\NuGet.Squirrel.dll">
+    <None Include="Resources\NuGet.Squirrel.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Squirrel.dll">
+    <None Include="Resources\Squirrel.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="MySql.Data.dll" />
@@ -371,9 +371,9 @@
     <Folder Include="bin\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\MySql.Data.dll">
+    <None Include="Resources\MySql.Data.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
