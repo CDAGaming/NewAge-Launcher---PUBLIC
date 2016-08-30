@@ -24,7 +24,7 @@ namespace NewAgeWPF
 
             if (NewAgeWPF.Properties.Settings.Default.CheckforUpdateTag == true)
             {
-                using (var updater = UpdateManager.GitHubUpdateManager(""))
+                using (var updater = UpdateManager.GitHubUpdateManager("https://github.com/CDAGaming/NewAge-Launcher---PUBLIC"))
                 {
                     //var UpdateCheck = await updater.CheckForUpdate();
 
