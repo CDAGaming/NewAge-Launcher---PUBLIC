@@ -335,11 +335,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Splat.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ICSharpCode.SharpZipLib.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -371,9 +366,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Splat.pdb">
+    <None Include="Resources\Splat.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Splat.pdb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
