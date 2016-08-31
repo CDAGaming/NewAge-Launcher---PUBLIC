@@ -792,8 +792,17 @@ namespace NewAgeWPF
             }
             else
             {
-                File.Copy(Settings.Default.WoWLocation + "\\data\\wow.mpq", Settings.Default.WoWLocation + "\\wow_mod.exe");
-                MessageBox.Show(this, "Could not find WoW_mod.exe! Launcher just restored a backup of wow_mod.exe", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                try
+                {
+                    File.Copy(Settings.Default.WoWLocation + "\\data\\wow.mpq", Settings.Default.WoWLocation + "\\wow_mod.exe");
+
+                    Process.Start(wowExe);
+                    WindowState = WindowState.Minimized;
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

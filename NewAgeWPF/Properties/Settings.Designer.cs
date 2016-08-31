@@ -241,13 +241,73 @@ namespace NewAgeWPF.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool AppUpdating {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CurrentVersion {
             get {
-                return ((bool)(this["AppUpdating"]));
+                return ((string)(this["CurrentVersion"]));
             }
             set {
-                this["AppUpdating"] = value;
+                this["CurrentVersion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UpdateAvailable {
+            get {
+                return ((bool)(this["UpdateAvailable"]));
+            }
+            set {
+                this["UpdateAvailable"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UpdateApplyTag {
+            get {
+                return ((bool)(this["UpdateApplyTag"]));
+            }
+            set {
+                this["UpdateApplyTag"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string UpdateMessage {
+            get {
+                return ((string)(this["UpdateMessage"]));
+            }
+            set {
+                this["UpdateMessage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UpdateAccepted {
+            get {
+                return ((bool)(this["UpdateAccepted"]));
+            }
+            set {
+                this["UpdateAccepted"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UpdatePostPoned {
+            get {
+                return ((bool)(this["UpdatePostPoned"]));
+            }
+            set {
+                this["UpdatePostPoned"] = value;
             }
         }
     }

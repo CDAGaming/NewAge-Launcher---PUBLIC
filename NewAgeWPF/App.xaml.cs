@@ -10,6 +10,7 @@ using System.Reflection;
 using System.Diagnostics;
 using System.Net;
 using System.IO;
+using NewAgeWPF.Properties;
 
 namespace NewAgeWPF
 {
@@ -21,38 +22,68 @@ namespace NewAgeWPF
         protected override async void OnStartup(StartupEventArgs e)
         {
 
+            base.OnStartup(e);
 
-            if (NewAgeWPF.Properties.Settings.Default.CheckforUpdateTag == true)
+            string CurrentVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            Settings.Default.CurrentVersion = CurrentVersion;
+            Settings.Default.Save();
+
+            
+            if (Settings.Default.CheckforUpdateTag == true)
             {
-                using (var updater = UpdateManager.GitHubUpdateManager("https://github.com/CDAGaming/NewAge-Launcher---PUBLIC"))
+                using (var updater = await UpdateManager.GitHubUpdateManager("https://github.com/CDAGaming/NewAge-Launcher---PUBLIC"))
                 {
-                    //var UpdateCheck = await updater.CheckForUpdate();
 
-                    if (NewAgeWPF.Properties.Settings.Default.UpdatePGShow == false)
+                    if (Settings.Default.UpdatePGShow == false && Settings.Default.CheckforUpdateTag == true)
                     {
-                        try
-                        {
-                            await updater.Result.UpdateApp();
+                        var UpdateCheck = await updater.CheckForUpdate();
 
-                            MessageBox.Show("The Launcher has been Updated to a New Version, Please Restart The Launcher to Apply Update", "Update Completed", MessageBoxButton.OK, MessageBoxImage.Information);
-                        }
-                        catch (Exception)
+                        if (UpdateCheck.ReleasesToApply.Any())
                         {
-                            //
+                            Settings.Default.UpdatePGShow = true;
                         }
                     }
-                    else
+                    else if (Settings.Default.UpdatePGShow == true && Settings.Default.CheckforUpdateTag == true)
                     {
-                        await updater.Result.UpdateApp();
+                        var UpdateCheck = await updater.CheckForUpdate();
 
+                        if (UpdateCheck.ReleasesToApply.Any())
+                        {
+                            string FutureVersion = UpdateCheck.FutureReleaseEntry.Version.ToString();
+                            string UpdateMSG = "Current Version:" + Settings.Default.CurrentVersion + "---" + "Update Available" + " ( " + FutureVersion + ")";
+                            Settings.Default.UpdateMessage = UpdateMSG;
+                            Settings.Default.Save();
 
-                        UpdatesPage updatePG = new UpdatesPage();
-                        updatePG.ShowDialog();
+                            UpdatesPage updatePG = new UpdatesPage();
+                            updatePG.ShowDialog();
+
+                            if (Settings.Default.UpdateAccepted == true && Settings.Default.UpdatePostPoned == false)
+                            {
+                                await updater.ApplyReleases(UpdateCheck);
+
+                                Process.Start(ResourceAssembly.Location);
+                                Application.Current.Shutdown();
+                            }
+                            else if (Settings.Default.UpdateAccepted == false && Settings.Default.UpdatePostPoned == true)
+                            {
+                                MessageBox.Show("You Will be Reminded On Next Reboot of Launcher");
+                            }
+
+                        }
+                    }
+                    else if (Settings.Default.UpdatePGShow == false && Settings.Default.CheckforUpdateTag == false)
+                    {
+                        // Do Nothing in Startup Event
+                    }
+                    else if (Settings.Default.UpdatePGShow == true && Settings.Default.CheckforUpdateTag == false)
+                    {
+                        UpdatesPage UpdatePG = new UpdatesPage();
+                        UpdatePG.ShowDialog();
                     }
                 }
 
             }
-            base.OnStartup(e);
+
         }
     }
 }
