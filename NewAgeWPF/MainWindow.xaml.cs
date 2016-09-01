@@ -174,6 +174,8 @@ namespace NewAgeWPF
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //Set Title Of Window
+            
             //Check if WowLocation Exists
             if (string.IsNullOrEmpty(Settings.Default.WoWLocation) || !Directory.Exists(Settings.Default.WoWLocation))
             {
@@ -189,18 +191,20 @@ namespace NewAgeWPF
                 }
             }
 
-            // Transparency Check - Not Ready Yet
+            // Transparency Check
             if (Settings.Default.TransparencyToggle == true)
             {
-
+                AllowsTransparency = true;
+                Opacity = 0.8;
             }
             else
             {
-
+                AllowsTransparency = false;
+                Opacity = 1.0;
             }
 
             // Populate ComboBox
-            Theme.ItemsSource = new List<string> { "Red", "Green", "Blue", "Purple", "Orange", "Lime", "Emerald", "Teal", "Cyan", "Cobalt", "Indigo", "Violet", "Pink", "Magenta", "Crimson", "Amber", "Yellow", "Brown", "Olive", "Steel", "Muave", "Taupe", "Sienna" };
+            Theme.ItemsSource = new List<string> { "Red", "Green", "Blue", "Purple", "Orange", "Lime", "Emerald", "Teal", "Cyan", "Cobalt", "Indigo", "Violet", "Pink", "Magenta", "Crimson", "Amber", "Yellow", "Brown", "Olive", "Steel", "Muave", "Taupe", "Sienna" /*, "<Create Theme>", Settings.Default.CustomTheme1, Settings.Default.CustomTheme2, Settings.Default.CustomTheme3*/ };
 
             //=============THEME STARTUP CONFIGURATION=============\\
 
@@ -227,6 +231,48 @@ namespace NewAgeWPF
             {
                 Theme.SelectedValue = "Purple";
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Purple"), ThemeManager.GetAppTheme("BaseLight"));
+            }
+            //Orange Theme
+            if (Settings.Default.Theme == "Orange")
+            {
+                Theme.SelectedValue = "Orange";
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Orange"), ThemeManager.GetAppTheme("BaseLight"));
+            }
+            //Lime Theme
+            if (Settings.Default.Theme == "Lime")
+            {
+                Theme.SelectedValue = "Lime";
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Lime"), ThemeManager.GetAppTheme("BaseLight"));
+            }
+            //Emerald Theme
+            if (Settings.Default.Theme == "Emerald")
+            {
+                Theme.SelectedValue = "Emerald";
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Emerald"), ThemeManager.GetAppTheme("BaseLight"));
+            }
+            //Teal Theme
+            if (Settings.Default.Theme == "Teal")
+            {
+                Theme.SelectedValue = "Teal";
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Teal"), ThemeManager.GetAppTheme("BaseLight"));
+            }
+            //Cyan Theme
+            if (Settings.Default.Theme == "Cyan")
+            {
+                Theme.SelectedValue = "Cyan";
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Cyan"), ThemeManager.GetAppTheme("BaseLight"));
+            }
+            //Cobalt Theme
+            if (Settings.Default.Theme == "Cobalt")
+            {
+                Theme.SelectedValue = "Cobalt";
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Cobalt"), ThemeManager.GetAppTheme("BaseLight"));
+            }
+            //Indigo Theme
+            if (Settings.Default.Theme == "Indigo")
+            {
+                Theme.SelectedValue = "Indigo";
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Indigo"), ThemeManager.GetAppTheme("BaseLight"));
             }
 
             //========================================= GET TITLE FROM DATABASE SECTION ================================================\\
@@ -830,6 +876,11 @@ namespace NewAgeWPF
         private void ForumButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Process.Start("http://community.wownewage.com");
+        }
+
+        private void TitleText_Loaded(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

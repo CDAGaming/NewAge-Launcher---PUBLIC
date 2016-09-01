@@ -10,11 +10,12 @@
         Title="NewAge Launcher" Height="629" Width="1092" MinWidth="1092" MinHeight="629" Icon="Resources/CataLogo.png" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Foreground="Black">
     <Controls:MetroWindow.TitleTemplate>
         <DataTemplate>
-            <TextBlock Text="NewAge Launcher - Home" 
+            <TextBlock x:Name="TitleText"
+                       Text="NewAge Launcher"
                        TextTrimming="CharacterEllipsis"
                        VerticalAlignment="Center"
                        Margin="7, 0, 0, 0"
-                       FontWeight="Light"
+                       FontWeight="Light" Loaded="TitleText_Loaded"
                                                 />
         </DataTemplate>
     </Controls:MetroWindow.TitleTemplate>

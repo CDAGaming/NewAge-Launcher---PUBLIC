@@ -31,9 +31,15 @@ namespace NewAgeWPF
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            Startup_Checkbox.IsChecked = Settings.Default.UpdatePGShow;
+
+            Settings.Default.UpdatePostPoned = false;
+            Settings.Default.Save();
+
             if (Settings.Default.UpdateAvailable == true)
             {
                 WelcomeLabel.Content = Settings.Default.UpdateMessage;
+                WelcomeLabel.FontSize = 12;
 
                 ContinueorRestartButton.IsEnabled = true;
                 ContinueorRestartButton.Opacity = 1.0;
@@ -48,6 +54,7 @@ namespace NewAgeWPF
             else if (Settings.Default.UpdateAvailable == false)
             {
                 WelcomeLabel.Content = "Welcome - No Update Available" + "(" + Settings.Default.CurrentVersion + ")";
+                WelcomeLabel.FontSize = 12;
 
                 ContinueorRestartButton.IsEnabled = true;
                 ContinueorRestartButton.Opacity = 1.0;
@@ -71,8 +78,7 @@ namespace NewAgeWPF
             Settings.Default.UpdatePostPoned = true;
             Settings.Default.Save();
 
-            Process.Start(Application.ResourceAssembly.Location);
-            Application.Current.Shutdown();
+            Close();
 
         }
 

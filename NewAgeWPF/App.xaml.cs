@@ -41,6 +41,10 @@ namespace NewAgeWPF
                         if (UpdateCheck.ReleasesToApply.Any())
                         {
                             Settings.Default.UpdatePGShow = true;
+
+                            string FutureVersion = UpdateCheck.FutureReleaseEntry.Version.ToString();
+                            Settings.Default.FutureVersion = FutureVersion;
+                            Settings.Default.Save();
                         }
                     }
                     else if (Settings.Default.UpdatePGShow == true && Settings.Default.CheckforUpdateTag == true)
@@ -49,8 +53,7 @@ namespace NewAgeWPF
 
                         if (UpdateCheck.ReleasesToApply.Any())
                         {
-                            string FutureVersion = UpdateCheck.FutureReleaseEntry.Version.ToString();
-                            string UpdateMSG = "Current Version:" + Settings.Default.CurrentVersion + "---" + "Update Available" + " ( " + FutureVersion + ")";
+                            string UpdateMSG = "Current Version:" + Settings.Default.CurrentVersion + "---" + "Update Available" + " ( " + Settings.Default.FutureVersion + ")";
                             Settings.Default.UpdateMessage = UpdateMSG;
                             Settings.Default.Save();
 
