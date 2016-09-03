@@ -113,6 +113,8 @@ namespace NewAgeWPF
             {
                 Settings.Default.LanguageChangeTag = false;
             }
+
+            //Install Fonts Chackbox
             if (InstallFonts_Checkbox.IsChecked == true)
             {
                 Settings.Default.FontAdditionTag = true;
@@ -130,13 +132,60 @@ namespace NewAgeWPF
         {
             //=======THEME CONFIG (FROM MAINFORM)=======\\
 
+            //Red Theme
             if (Settings.Default.Theme == "Red")
             {
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Red"), ThemeManager.GetAppTheme("BaseLight"));
             }
+            //Green Theme
             if (Settings.Default.Theme == "Green")
             {
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Green"), ThemeManager.GetAppTheme("BaseLight"));
+            }
+            //Blue Theme
+            if (Settings.Default.Theme == "Blue")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Blue"), ThemeManager.GetAppTheme("BaseLight"));
+            }
+            //Purple Theme
+            if (Settings.Default.Theme == "Purple")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Purple"), ThemeManager.GetAppTheme("BaseLight"));
+            }
+            //Orange Theme
+            if (Settings.Default.Theme == "Orange")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Orange"), ThemeManager.GetAppTheme("BaseLight"));
+            }
+            //Lime Theme
+            if (Settings.Default.Theme == "Lime")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Lime"), ThemeManager.GetAppTheme("BaseLight"));
+            }
+            //Emerald Theme
+            if (Settings.Default.Theme == "Emerald")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Emerald"), ThemeManager.GetAppTheme("BaseLight"));
+            }
+            //Teal Theme
+            if (Settings.Default.Theme == "Teal")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Teal"), ThemeManager.GetAppTheme("BaseLight"));
+            }
+            //Cyan Theme
+            if (Settings.Default.Theme == "Cyan")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Cyan"), ThemeManager.GetAppTheme("BaseLight"));
+            }
+            //Cobalt Theme
+            if (Settings.Default.Theme == "Cobalt")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Cobalt"), ThemeManager.GetAppTheme("BaseLight"));
+            }
+            //Indigo Theme
+            if (Settings.Default.Theme == "Indigo")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Indigo"), ThemeManager.GetAppTheme("BaseLight"));
             }
 
             if (Settings.Default.CheckforUpdateTag == true)

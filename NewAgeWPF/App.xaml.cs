@@ -29,6 +29,7 @@ namespace NewAgeWPF
             Settings.Default.Save();
 
             
+            // /* Use This Tag for DEBUGGING
             if (Settings.Default.CheckforUpdateTag == true)
             {
                 using (var updater = await UpdateManager.GitHubUpdateManager("https://github.com/CDAGaming/NewAge-Launcher---PUBLIC"))
@@ -86,6 +87,7 @@ namespace NewAgeWPF
                 }
 
             }
+            // */
 
         }
     }

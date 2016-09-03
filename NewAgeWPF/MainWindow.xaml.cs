@@ -194,17 +194,15 @@ namespace NewAgeWPF
             // Transparency Check
             if (Settings.Default.TransparencyToggle == true)
             {
-                AllowsTransparency = true;
                 Opacity = 0.8;
             }
             else
             {
-                AllowsTransparency = false;
                 Opacity = 1.0;
             }
 
             // Populate ComboBox
-            Theme.ItemsSource = new List<string> { "Red", "Green", "Blue", "Purple", "Orange", "Lime", "Emerald", "Teal", "Cyan", "Cobalt", "Indigo", "Violet", "Pink", "Magenta", "Crimson", "Amber", "Yellow", "Brown", "Olive", "Steel", "Muave", "Taupe", "Sienna" /*, "<Create Theme>", Settings.Default.CustomTheme1, Settings.Default.CustomTheme2, Settings.Default.CustomTheme3*/ };
+            Theme.ItemsSource = new List<string> { "Red", "Green", "Blue", "Purple", "Orange", "Lime", "Emerald", "Teal", "Cyan", "Cobalt", "Indigo", "Violet", "Pink", "Magenta", "Crimson", "Amber", "Yellow", "Brown", "Olive", "Steel", "Muave", "Taupe", "Sienna" };
 
             //=============THEME STARTUP CONFIGURATION=============\\
 
@@ -816,6 +814,68 @@ namespace NewAgeWPF
                 Settings.Default.Save();
             }
 
+            // Change Theme to Orange
+
+            if (selection == "Orange")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Orange"), ThemeManager.GetAppTheme("BaseLight"));
+                Settings.Default.Theme = "Orange";
+                Settings.Default.Save();
+            }
+
+            // Change Theme to Lime
+
+            if (selection == "Lime")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Lime"), ThemeManager.GetAppTheme("BaseLight"));
+                Settings.Default.Theme = "Lime";
+                Settings.Default.Save();
+            }
+
+            // Change Theme to Emerald
+
+            if (selection == "Emerald")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Emerald"), ThemeManager.GetAppTheme("BaseLight"));
+                Settings.Default.Theme = "Emerald";
+                Settings.Default.Save();
+            }
+
+            // Change Theme to Teal
+
+            if (selection == "Teal")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Teal"), ThemeManager.GetAppTheme("BaseLight"));
+                Settings.Default.Theme = "Teal";
+                Settings.Default.Save();
+            }
+
+            // Change Theme to Cyan
+
+            if (selection == "Cyan")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Cyan"), ThemeManager.GetAppTheme("BaseLight"));
+                Settings.Default.Theme = "Cyan";
+                Settings.Default.Save();
+            }
+
+            // Change Theme to Cobalt
+
+            if (selection == "Cobalt")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Cobalt"), ThemeManager.GetAppTheme("BaseLight"));
+                Settings.Default.Theme = "Cobalt";
+                Settings.Default.Save();
+            }
+
+            // Change Theme to Indigo
+
+            if (selection == "Indigo")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Indigo"), ThemeManager.GetAppTheme("BaseLight"));
+                Settings.Default.Theme = "Indigo";
+                Settings.Default.Save();
+            }
         }
 
         private void PlayButton_MouseDown(object sender, MouseButtonEventArgs e)
