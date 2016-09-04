@@ -22,8 +22,6 @@ namespace NewAgeWPF
         protected override async void OnStartup(StartupEventArgs e)
         {
 
-            base.OnStartup(e);
-
             string CurrentVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
             Settings.Default.CurrentVersion = CurrentVersion;
             Settings.Default.Save();
@@ -34,13 +32,13 @@ namespace NewAgeWPF
             {
                 using (var updater = await UpdateManager.GitHubUpdateManager("https://github.com/CDAGaming/NewAge-Launcher---PUBLIC"))
                 {
-
                     if (Settings.Default.UpdatePGShow == false && Settings.Default.CheckforUpdateTag == true)
                     {
                         var UpdateCheck = await updater.CheckForUpdate();
 
                         if (UpdateCheck.ReleasesToApply.Any())
                         {
+                            Settings.Default.UpdateAvailable = true;
                             Settings.Default.UpdatePGShow = true;
 
                             string FutureVersion = UpdateCheck.FutureReleaseEntry.Version.ToString();
@@ -52,9 +50,10 @@ namespace NewAgeWPF
                     {
                         var UpdateCheck = await updater.CheckForUpdate();
 
-                        if (UpdateCheck.ReleasesToApply.Any())
+                        if (UpdateCheck.ReleasesToApply.Any() && Settings.Default.CurrentVersion != Settings.Default.FutureVersion)
                         {
-                            string UpdateMSG = "Current Version:" + Settings.Default.CurrentVersion + "---" + "Update Available" + " ( " + Settings.Default.FutureVersion + ")";
+                            string UpdateMSG = "Update Available:" + "(" + Settings.Default.CurrentVersion + ">" + Settings.Default.FutureVersion + ")";
+                            Settings.Default.UpdateAvailable = true;
                             Settings.Default.UpdateMessage = UpdateMSG;
                             Settings.Default.Save();
 
@@ -88,7 +87,7 @@ namespace NewAgeWPF
 
             }
             // */
-
+            base.OnStartup(e);
         }
     }
 }

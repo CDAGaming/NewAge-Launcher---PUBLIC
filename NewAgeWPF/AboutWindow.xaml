@@ -12,12 +12,12 @@
     </Window.Background>
     <Grid>
         <Image x:Name="LogoImg" HorizontalAlignment="Left" Height="70" Margin="10,10,0,0" VerticalAlignment="Top" Width="70" Source="Resources/CataLogo.png"/>
-        <Image x:Name="image" HorizontalAlignment="Right" Height="70" Margin="85,10,0,0" VerticalAlignment="Top" Width="199" Source="Resources/logo.png" Stretch="Fill"/>
-        <Label x:Name="Copyrightlbl" Content="Copyright 2016 Jestus " HorizontalAlignment="Left" Height="25" Margin="162,80,0,0" VerticalAlignment="Top" Width="127" Background="{x:Null}" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label x:Name="VersionID" Content="Vx.x.x.x" HorizontalAlignment="Left" Height="25" Margin="95,80,0,0" VerticalAlignment="Top" Width="67" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Image x:Name="NewAgeIMG" HorizontalAlignment="Right" Height="70" Margin="85,10,0,0" VerticalAlignment="Top" Width="199" Source="Resources/logo.png" Stretch="Fill"/>
+        <Label x:Name="Copyrightlbl" Content="Copyright 2016 Jestus" HorizontalAlignment="Left" Height="25" Margin="162,80,0,0" VerticalAlignment="Top" Width="130" Background="{x:Null}" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="VersionID" Content="Vx.x.x.x" HorizontalAlignment="Left" Height="25" Margin="95,80,0,0" VerticalAlignment="Top" Width="65" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBlock x:Name="AboutUsTextbox" HorizontalAlignment="Left" Height="114" Margin="10,110,0,0" TextWrapping="Wrap" Text="This Launcher is Designed for Use on NewAge Servers ONLY. This Launcher is Protected by the General Public License V3.0, Please Check out the License File to View it." VerticalAlignment="Top" Width="274" Foreground="White"/>
-        <Label x:Name="Licenselbl" Content="License" HorizontalAlignment="Left" Height="23" Margin="10,238,0,0" VerticalAlignment="Top" Width="70" Foreground="#FF18C0DA" MouseDown="Licenselbl_MouseDown"/>
-        <Label x:Name="Changeslbl" Content="Changes" HorizontalAlignment="Left" Height="23" Margin="214,238,0,0" VerticalAlignment="Top" Width="70" Foreground="#FF18C0DA" MouseDown="Changeslbl_MouseDown"/>
+        <Label x:Name="Licenselbl" Content="License" HorizontalAlignment="Left" Height="30" Margin="10,231,0,0" VerticalAlignment="Top" Width="70" Foreground="#FF18C0DA" MouseDown="Licenselbl_MouseDown" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand"/>
+        <Label x:Name="Changeslbl" Content="Changes" HorizontalAlignment="Left" Height="30" Margin="214,231,0,0" VerticalAlignment="Top" Width="70" Foreground="#FF18C0DA" MouseDown="Changeslbl_MouseDown" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand"/>
 
     </Grid>
 </Controls:MetroWindow>

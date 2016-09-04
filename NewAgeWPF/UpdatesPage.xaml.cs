@@ -123,7 +123,6 @@ namespace NewAgeWPF
                 Postpone_Button.Opacity = 0.0;
                 Postpone_Button.Content = "";
             }
-            Changes_HTML.Navigate(new Uri("http://www.wownewage.com/Launcher_Changes.html"));
         }
 
         private void ContinueorRestartButton_Click2(object sender, RoutedEventArgs e)
