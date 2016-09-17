@@ -16,6 +16,10 @@ using NewAgeWPF.Properties;
 using System.Diagnostics;
 using System.IO;
 using MahApps.Metro;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Drawing.Text;
+using System.Drawing;
 
 namespace NewAgeWPF
 {
@@ -24,73 +28,52 @@ namespace NewAgeWPF
     /// </summary>
     public partial class AboutWindow : MetroWindow
     {
+
+        [DllImport("gdi32.dll")]
+        private static extern IntPtr AddFontMemResourceEx(IntPtr pbfont, uint cbfont, IntPtr pdv, [In] ref uint pcFonts);
+        System.Drawing.FontFamily ff;
+        Font font;
+
         public AboutWindow()
         {
             InitializeComponent();
         }
 
+        private void loadFont()
+        {
+            byte[] fontArray = Properties.Resources.Montserrat_Regular;
+            int dataLength = Properties.Resources.Montserrat_Regular.Length;
+
+            IntPtr ptrData = Marshal.AllocCoTaskMem(dataLength);
+
+            Marshal.Copy(fontArray, 0, ptrData, dataLength);
+
+            uint cFonts = 0;
+
+            AddFontMemResourceEx(ptrData, (uint)fontArray.Length, IntPtr.Zero, ref cFonts);
+
+            PrivateFontCollection pfc = new PrivateFontCollection();
+
+            pfc.AddMemoryFont(ptrData, dataLength);
+
+            Marshal.FreeCoTaskMem(ptrData);
+
+            ff = pfc.Families[0];
+            font = new Font(ff, 15f, System.Drawing.FontStyle.Regular);
+        }
+
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            loadFont();
             //Set Version Label
-            VersionID.Content = Settings.Default.CurrentVersion;
+            Version CurrentVersion = Assembly.GetExecutingAssembly().GetName().Version;
+            VersionID.Content = CurrentVersion;
 
             //=======THEME CONFIG (FROM MAINFORM)=======\\
 
-            //Red Theme
-            if (Settings.Default.Theme == "Red")
-            {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Red"), ThemeManager.GetAppTheme("BaseLight"));
-            }
-            //Green Theme
-            if (Settings.Default.Theme == "Green")
-            {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Green"), ThemeManager.GetAppTheme("BaseLight"));
-            }
-            //Blue Theme
-            if (Settings.Default.Theme == "Blue")
-            {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Blue"), ThemeManager.GetAppTheme("BaseLight"));
-            }
-            //Purple Theme
-            if (Settings.Default.Theme == "Purple")
-            {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Purple"), ThemeManager.GetAppTheme("BaseLight"));
-            }
-            //Orange Theme
-            if (Settings.Default.Theme == "Orange")
-            {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Orange"), ThemeManager.GetAppTheme("BaseLight"));
-            }
-            //Lime Theme
-            if (Settings.Default.Theme == "Lime")
-            {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Lime"), ThemeManager.GetAppTheme("BaseLight"));
-            }
-            //Emerald Theme
-            if (Settings.Default.Theme == "Emerald")
-            {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Emerald"), ThemeManager.GetAppTheme("BaseLight"));
-            }
-            //Teal Theme
-            if (Settings.Default.Theme == "Teal")
-            {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Teal"), ThemeManager.GetAppTheme("BaseLight"));
-            }
-            //Cyan Theme
-            if (Settings.Default.Theme == "Cyan")
-            {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Cyan"), ThemeManager.GetAppTheme("BaseLight"));
-            }
-            //Cobalt Theme
-            if (Settings.Default.Theme == "Cobalt")
-            {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Cobalt"), ThemeManager.GetAppTheme("BaseLight"));
-            }
-            //Indigo Theme
-            if (Settings.Default.Theme == "Indigo")
-            {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Indigo"), ThemeManager.GetAppTheme("BaseLight"));
-            }
+            ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent(Settings.Default.Theme), ThemeManager.GetAppTheme(Settings.Default.Scheme));
+
+            //===========================================\\
         }
 
         private void Licenselbl_MouseDown(object sender, MouseButtonEventArgs e)
@@ -107,8 +90,52 @@ namespace NewAgeWPF
 
         private void Changeslbl_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            UpdatesPage UpdatePG = new NewAgeWPF.UpdatesPage();
+            UpdatesPage UpdatePG = new UpdatesPage();
             UpdatePG.ShowDialog();
+        }
+
+        private void FacebookIMG_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var uri = new Uri("pack://application:,,,/Resources/fb_hover.png");
+            var bitmap = new BitmapImage(uri);
+            FacebookIMG.Source = bitmap;
+            FacebookIMG.Cursor = Cursors.Hand;
+        }
+
+        private void FacebookIMG_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var uri = new Uri("pack://application:,,,/Resources/fb.png");
+            var bitmap = new BitmapImage(uri);
+            FacebookIMG.Source = bitmap;
+            FacebookIMG.Cursor = Cursors.Arrow;
+        }
+
+        private void FacebookIMG_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Process.Start("https://www.facebook.com/wownewage/?ref=ts&fref=ts");
+            WindowState = WindowState.Minimized;
+        }
+
+        private void YoutubeIMG_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var uri = new Uri("pack://application:,,,/Resources/yt_hover.png");
+            var bitmap = new BitmapImage(uri);
+            YoutubeIMG.Source = bitmap;
+            YoutubeIMG.Cursor = Cursors.Hand;
+        }
+
+        private void YoutubeIMG_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var uri = new Uri("pack://application:,,,/Resources/yt.png");
+            var bitmap = new BitmapImage(uri);
+            YoutubeIMG.Source = bitmap;
+            YoutubeIMG.Cursor = Cursors.Arrow;
+        }
+
+        private void YoutubeIMG_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Process.Start("https://www.youtube.com/channel/UCB8QTlT6sMMLXrox5Q_rGEg");
+            WindowState = WindowState.Minimized;
         }
     }
 }

@@ -103,7 +103,7 @@ namespace NewAgeWPF.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://wownewage.com/vote")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://wownewage.com/gate/modules/vote")]
         public string VoteURL {
             get {
                 return ((string)(this["VoteURL"]));
@@ -112,7 +112,7 @@ namespace NewAgeWPF.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://wownewage.com/donate")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://paypal.me/wownewage")]
         public string DonateURL {
             get {
                 return ((string)(this["DonateURL"]));
@@ -241,18 +241,6 @@ namespace NewAgeWPF.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string CurrentVersion {
-            get {
-                return ((string)(this["CurrentVersion"]));
-            }
-            set {
-                this["CurrentVersion"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool UpdateAvailable {
             get {
@@ -314,12 +302,36 @@ namespace NewAgeWPF.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CurrentVersion {
+            get {
+                return ((string)(this["CurrentVersion"]));
+            }
+            set {
+                this["CurrentVersion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string FutureVersion {
             get {
                 return ((string)(this["FutureVersion"]));
             }
             set {
                 this["FutureVersion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("BaseLight")]
+        public string Scheme {
+            get {
+                return ((string)(this["Scheme"]));
+            }
+            set {
+                this["Scheme"] = value;
             }
         }
     }

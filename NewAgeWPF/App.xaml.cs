@@ -21,73 +21,97 @@ namespace NewAgeWPF
     {
         protected override async void OnStartup(StartupEventArgs e)
         {
-
-            string CurrentVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            Settings.Default.CurrentVersion = CurrentVersion;
-            Settings.Default.Save();
+            //Sets Current Version and Resets Future Version
+            Version CurrentVersion = Assembly.GetExecutingAssembly().GetName().Version;
+            //string CurrentVersion_string = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            //Settings.Default.CurrentVersion = CurrentVersion_string;
+            //Settings.Default.FutureVersion = "";
+            //Settings.Default.Save();
 
             
-            // /* Use This Tag for DEBUGGING
-            if (Settings.Default.CheckforUpdateTag == true)
+
+            if (Settings.Default.UpdatePostPoned == true)
             {
-                using (var updater = await UpdateManager.GitHubUpdateManager("https://github.com/CDAGaming/NewAge-Launcher---PUBLIC"))
+                Settings.Default.UpdatePostPoned = false;
+                Settings.Default.Save();
+            }
+            if (Settings.Default.UpdateAccepted == true)
+            {
+                Settings.Default.UpdateAccepted = false;
+                Settings.Default.Save();
+            }
+
+            
+            // /* Use This Tag for DEBUGGING or in A ZIP Format
+            if (Settings.Default.CheckforUpdateTag == true && Settings.Default.UpdatePGShow == true)
+            {
+                
+                using (var updater = await UpdateManager.GitHubUpdateManager("https://github.com/CDAGaming/NewAge-Launcher_WPF"))
                 {
-                    if (Settings.Default.UpdatePGShow == false && Settings.Default.CheckforUpdateTag == true)
+                    var updatecheck = await updater.CheckForUpdate();
+                    
+                    if (updatecheck.ReleasesToApply.Any())
                     {
-                        var UpdateCheck = await updater.CheckForUpdate();
+                       string FutureVersion = updatecheck.FutureReleaseEntry.Version.ToString();
+                       Version FutureVer = Version.Parse(FutureVersion);
+                       Settings.Default.FutureVersion = FutureVersion;
+                       Settings.Default.Save();
 
-                        if (UpdateCheck.ReleasesToApply.Any())
+                        if (CurrentVersion < FutureVer)
                         {
-                            Settings.Default.UpdateAvailable = true;
-                            Settings.Default.UpdatePGShow = true;
-
-                            string FutureVersion = UpdateCheck.FutureReleaseEntry.Version.ToString();
-                            Settings.Default.FutureVersion = FutureVersion;
-                            Settings.Default.Save();
-                        }
-                    }
-                    else if (Settings.Default.UpdatePGShow == true && Settings.Default.CheckforUpdateTag == true)
-                    {
-                        var UpdateCheck = await updater.CheckForUpdate();
-
-                        if (UpdateCheck.ReleasesToApply.Any() && Settings.Default.CurrentVersion != Settings.Default.FutureVersion)
-                        {
-                            string UpdateMSG = "Update Available:" + "(" + Settings.Default.CurrentVersion + ">" + Settings.Default.FutureVersion + ")";
-                            Settings.Default.UpdateAvailable = true;
+                            string UpdateMSG = "An Update is Available: " + " ( " + CurrentVersion + " > " + FutureVersion + " ) ";
                             Settings.Default.UpdateMessage = UpdateMSG;
+                            Settings.Default.UpdateAvailable = true;
                             Settings.Default.Save();
-
-                            UpdatesPage updatePG = new UpdatesPage();
-                            updatePG.ShowDialog();
 
                             if (Settings.Default.UpdateAccepted == true && Settings.Default.UpdatePostPoned == false)
                             {
-                                await updater.ApplyReleases(UpdateCheck);
+                                await updater.ApplyReleases(updatecheck);
 
                                 Process.Start(ResourceAssembly.Location);
                                 Application.Current.Shutdown();
                             }
                             else if (Settings.Default.UpdateAccepted == false && Settings.Default.UpdatePostPoned == true)
                             {
-                                MessageBox.Show("You Will be Reminded On Next Reboot of Launcher");
-                            }
 
+                            }
                         }
-                    }
-                    else if (Settings.Default.UpdatePGShow == false && Settings.Default.CheckforUpdateTag == false)
-                    {
-                        // Do Nothing in Startup Event
-                    }
-                    else if (Settings.Default.UpdatePGShow == true && Settings.Default.CheckforUpdateTag == false)
-                    {
-                        UpdatesPage UpdatePG = new UpdatesPage();
-                        UpdatePG.ShowDialog();
+                        else if (CurrentVersion == FutureVer)
+                        {
+                            string UpdateMSG = "Already Up-To-Date :D" + " ( " + CurrentVersion + " ) ";
+                            Settings.Default.UpdateMessage = UpdateMSG;
+                            Settings.Default.UpdateAvailable = false;
+                            Settings.Default.Save();
+                        }
+                        else if (CurrentVersion > FutureVer)
+                        {
+                            string UpdateMSG = "Already Up-To-Date :D" + " ( " + CurrentVersion + " ) ";
+                            Settings.Default.UpdateMessage = UpdateMSG;
+                            Settings.Default.UpdateAvailable = false;
+                            Settings.Default.Save();
+                        }
+                        
                     }
                 }
+                UpdatesPage updatepg = new NewAgeWPF.UpdatesPage();
+                updatepg.ShowDialog();
+            }
+            else if (Settings.Default.CheckforUpdateTag == false && Settings.Default.UpdatePGShow == false)
+            {
+                // N/A
+            }
+            else if (Settings.Default.CheckforUpdateTag == true && Settings.Default.UpdatePGShow == false)
+            {
 
+            }
+            else if (Settings.Default.CheckforUpdateTag == false && Settings.Default.UpdatePGShow == true)
+            {
+                UpdatesPage updatePG = new NewAgeWPF.UpdatesPage();
+                updatePG.ShowDialog();
             }
             // */
             base.OnStartup(e);
         }
+
     }
 }

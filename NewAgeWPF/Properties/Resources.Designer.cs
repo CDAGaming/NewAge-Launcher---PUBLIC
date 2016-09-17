@@ -131,6 +131,26 @@ namespace NewAgeWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Contribute_Hovor {
+            get {
+                object obj = ResourceManager.GetObject("Contribute_Hovor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Contribute_NoHovor {
+            get {
+                object obj = ResourceManager.GetObject("Contribute_NoHovor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] DeltaCompressionDotNet {
@@ -181,22 +201,22 @@ namespace NewAgeWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static byte[] DroidSans {
+        internal static System.Drawing.Bitmap fb {
             get {
-                object obj = ResourceManager.GetObject("DroidSans", resourceCulture);
-                return ((byte[])(obj));
+                object obj = ResourceManager.GetObject("fb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static byte[] DroidSans_Bold {
+        internal static System.Drawing.Bitmap fb_hover {
             get {
-                object obj = ResourceManager.GetObject("DroidSans_Bold", resourceCulture);
-                return ((byte[])(obj));
+                object obj = ResourceManager.GetObject("fb_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -335,6 +355,36 @@ namespace NewAgeWPF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] Montserrat_Bold {
+            get {
+                object obj = ResourceManager.GetObject("Montserrat_Bold", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Montserrat_Light {
+            get {
+                object obj = ResourceManager.GetObject("Montserrat_Light", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Montserrat_Regular {
+            get {
+                object obj = ResourceManager.GetObject("Montserrat_Regular", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] MySql_Data {
             get {
                 object obj = ResourceManager.GetObject("MySql_Data", resourceCulture);
@@ -429,6 +479,26 @@ namespace NewAgeWPF.Properties {
             get {
                 object obj = ResourceManager.GetObject("System_Windows_Interactivity", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap yt {
+            get {
+                object obj = ResourceManager.GetObject("yt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap yt_hover {
+            get {
+                object obj = ResourceManager.GetObject("yt_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

@@ -57,10 +57,8 @@ namespace NewAgeWPF
     {
         [DllImport("gdi32.dll")]
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbfont, uint cbfont, IntPtr pdv, [In] ref uint pcFonts);
-        /* INCOMPATIBLE CODE --- SEEK ALTERNATIVE
-        System.Windows.Media.FontFamily ff;
+        System.Drawing.FontFamily ff;
         Font font;
-        */
 
         Stopwatch sw = new Stopwatch();
         WebClient client;
@@ -70,11 +68,11 @@ namespace NewAgeWPF
             InitializeComponent();
         }
 
-        /*
+        
         private void loadFont()
         {
-            byte[] fontArray = Properties.Resources.DroidSans;
-            int dataLength = Properties.Resources.DroidSans.Length;
+            byte[] fontArray = Properties.Resources.Montserrat_Regular;
+            int dataLength = Properties.Resources.Montserrat_Regular.Length;
 
             IntPtr ptrData = Marshal.AllocCoTaskMem(dataLength);
 
@@ -91,25 +89,8 @@ namespace NewAgeWPF
             Marshal.FreeCoTaskMem(ptrData);
 
             ff = pfc.Families[0];
-            font = new Font(ff, 15f, System.Drawing.FontStyle.Bold);
+            font = new Font(ff, 15f, System.Drawing.FontStyle.Regular);
         }
-
-        private void AllocFont(Font f, Control c, float size, Boolean bold)
-        {
-            if (bold)
-            {
-                System.Windows.FontStyle fontStyle = FontStyle;
-                Application.Current.MainWindow.FontFamily = ff;
-                Application.Current.MainWindow.FontSize = size;
-                Application.Current.MainWindow.FontStyle = fontStyle;
-            }
-            else
-            {
-                System.Drawing.FontStyle fontstyle = new System.Drawing.FontStyle.Bold;
-
-            }
-        }
-        */
 
         private void image_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -122,7 +103,6 @@ namespace NewAgeWPF
             var bitmap = new BitmapImage(uri);
             PlayButton.Source = bitmap;
             PlayButton.Cursor = Cursors.Hand;
-
         }
 
         private void PlayButton_MouseLeave(object sender, MouseEventArgs e)
@@ -151,18 +131,18 @@ namespace NewAgeWPF
 
         private void DonateButton_MouseEnter(object sender, MouseEventArgs e)
         {
-            var uri = new Uri("pack://application:,,,/Resources/Donate_Hovor.png");
+            var uri = new Uri("pack://application:,,,/Resources/Contribute_Hovor.png");
             var bitmap = new BitmapImage(uri);
-            DonateButton.Source = bitmap;
-            DonateButton.Cursor = Cursors.Hand;
+            ContributeButton.Source = bitmap;
+            ContributeButton.Cursor = Cursors.Hand;
         }
 
         private void DonateButton_MouseLeave(object sender, MouseEventArgs e)
         {
-            var uri = new Uri("pack://application:,,,/Resources/Donate_NoHovor.png");
+            var uri = new Uri("pack://application:,,,/Resources/Contribute_NoHovor.png");
             var bitmap = new BitmapImage(uri);
-            DonateButton.Source = bitmap;
-            DonateButton.Cursor = Cursors.Arrow;
+            ContributeButton.Source = bitmap;
+            ContributeButton.Cursor = Cursors.Arrow;
         }
 
         private delegate void UpdateProgress(int percent, long bytesReceived, long totalBytesReceive, double time);
@@ -172,10 +152,55 @@ namespace NewAgeWPF
 
         public object PrivateFontCollection { get; private set; }
 
+        private void Server_Connect()
+        {
+            //=============Server Connectivity============\\
+
+            bool status = false;
+            Statuslbl.Content = "Waiting";
+            Statuslbl.Foreground = System.Windows.Media.Brushes.Gray;
+
+            using (TcpClient client = new TcpClient())
+            {
+
+                // Checks if it can Connect to Core, Based on Server Address & Port
+
+                client.Connect(Settings.Default.Server, Settings.Default.Port);
+
+                status = client.Connected;
+
+
+                if (status == true)
+                {
+                    Statuslbl.Foreground = System.Windows.Media.Brushes.Green;
+                    Statuslbl.Content = "Online";
+                }
+                else if (status == false)
+                {
+                    Statuslbl.Foreground = System.Windows.Media.Brushes.Red;
+                    Statuslbl.Content = "Offline";
+                }
+            }
+
+            //============================================\\
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //Set Title Of Window
-            
+            // Loads Connection Status & Sets Refresh Key to F5
+            Server_Connect();
+
+            if (Keyboard.IsKeyDown(Key.F5))
+            {
+                Statuslbl.Content = "Waiting";
+                Statuslbl.Foreground = System.Windows.Media.Brushes.Gray;
+
+                Server_Connect();
+            }
+
+            // Loads Custom Font
+            loadFont();
+
             //Check if WowLocation Exists
             if (string.IsNullOrEmpty(Settings.Default.WoWLocation) || !Directory.Exists(Settings.Default.WoWLocation))
             {
@@ -201,77 +226,23 @@ namespace NewAgeWPF
                 Opacity = 1.0;
             }
 
-            // Populate ComboBox
+            // Populate ComboBox's w/ Available Themes & Schemes
+            Scheme.ItemsSource = new List<string> { "Light", "Dark" };
             Theme.ItemsSource = new List<string> { "Red", "Green", "Blue", "Purple", "Orange", "Lime", "Emerald", "Teal", "Cyan", "Cobalt", "Indigo", "Violet", "Pink", "Magenta", "Crimson", "Amber", "Yellow", "Brown", "Olive", "Steel", "Muave", "Taupe", "Sienna" };
 
-            //=============THEME STARTUP CONFIGURATION=============\\
+            //=============THEME & SCHEME STARTUP CONFIGURATION=============\\
 
-            // Red Theme
-            if (Settings.Default.Theme == "Red")
+            Theme.SelectedValue = Settings.Default.Theme;
+            if (Settings.Default.Scheme == "BaseLight")
             {
-                Theme.SelectedValue = "Red";
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Red"), ThemeManager.GetAppTheme("BaseLight"));
+                Scheme.SelectedValue = "Light";
             }
-            // Green Theme
-            if (Settings.Default.Theme == "Green")
+            else if (Settings.Default.Scheme == "BaseDark")
             {
-                Theme.SelectedValue = "Green";
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Green"), ThemeManager.GetAppTheme("BaseLight"));
+                Scheme.SelectedValue = "Dark";
             }
-            // Blue Theme
-            if (Settings.Default.Theme == "Blue")
-            {
-                Theme.SelectedValue = "Blue";
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Blue"), ThemeManager.GetAppTheme("BaseLight"));
-            }
-            // Purple Theme
-            if (Settings.Default.Theme == "Purple")
-            {
-                Theme.SelectedValue = "Purple";
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Purple"), ThemeManager.GetAppTheme("BaseLight"));
-            }
-            //Orange Theme
-            if (Settings.Default.Theme == "Orange")
-            {
-                Theme.SelectedValue = "Orange";
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Orange"), ThemeManager.GetAppTheme("BaseLight"));
-            }
-            //Lime Theme
-            if (Settings.Default.Theme == "Lime")
-            {
-                Theme.SelectedValue = "Lime";
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Lime"), ThemeManager.GetAppTheme("BaseLight"));
-            }
-            //Emerald Theme
-            if (Settings.Default.Theme == "Emerald")
-            {
-                Theme.SelectedValue = "Emerald";
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Emerald"), ThemeManager.GetAppTheme("BaseLight"));
-            }
-            //Teal Theme
-            if (Settings.Default.Theme == "Teal")
-            {
-                Theme.SelectedValue = "Teal";
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Teal"), ThemeManager.GetAppTheme("BaseLight"));
-            }
-            //Cyan Theme
-            if (Settings.Default.Theme == "Cyan")
-            {
-                Theme.SelectedValue = "Cyan";
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Cyan"), ThemeManager.GetAppTheme("BaseLight"));
-            }
-            //Cobalt Theme
-            if (Settings.Default.Theme == "Cobalt")
-            {
-                Theme.SelectedValue = "Cobalt";
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Cobalt"), ThemeManager.GetAppTheme("BaseLight"));
-            }
-            //Indigo Theme
-            if (Settings.Default.Theme == "Indigo")
-            {
-                Theme.SelectedValue = "Indigo";
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Indigo"), ThemeManager.GetAppTheme("BaseLight"));
-            }
+
+            ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent(Settings.Default.Theme), ThemeManager.GetAppTheme(Settings.Default.Scheme));
 
             //========================================= GET TITLE FROM DATABASE SECTION ================================================\\
 
@@ -485,36 +456,7 @@ namespace NewAgeWPF
 
         private void bw_DoWork(object sender, DoWorkEventArgs e)
         {
-            bool status = false;
-
-            using (TcpClient client = new TcpClient())
-            {
-
-                // Checks if it can Connect to Core, Based on Server Address & Port
-
-                try
-                {
-                    client.Connect(Settings.Default.Server, Settings.Default.Port);
-
-                    status = true;
-                }
-                catch (Exception)
-                {
-                    status = false;
-                }
-
-                if (status)
-                {
-                    Statuslbl.Foreground = System.Windows.Media.Brushes.Red;
-                    Statuslbl.Content = "Online";
-                }
-                else
-                {
-                    Statuslbl.Foreground = System.Windows.Media.Brushes.Green;
-                    Statuslbl.Content = "Offline";
-                }
-            }
-
+            
         }
 
         private void bw_downloader_DoWork(object sender, DoWorkEventArgs e)
@@ -782,7 +724,7 @@ namespace NewAgeWPF
 
             if (selection == "Red")
             {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Red"), ThemeManager.GetAppTheme("BaseLight"));
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Red"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Red";
                 Settings.Default.Save();
             }
@@ -791,7 +733,7 @@ namespace NewAgeWPF
 
             if (selection == "Green")
             {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Green"), ThemeManager.GetAppTheme("BaseLight"));
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Green"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Green";
                 Settings.Default.Save();
             }
@@ -800,7 +742,7 @@ namespace NewAgeWPF
 
             if (selection == "Blue")
             {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Blue"), ThemeManager.GetAppTheme("BaseLight"));
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Blue"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Blue";
                 Settings.Default.Save();
             }
@@ -809,7 +751,7 @@ namespace NewAgeWPF
 
             if (selection == "Purple")
             {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Purple"), ThemeManager.GetAppTheme("BaseLight"));
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Purple"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Purple";
                 Settings.Default.Save();
             }
@@ -818,7 +760,7 @@ namespace NewAgeWPF
 
             if (selection == "Orange")
             {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Orange"), ThemeManager.GetAppTheme("BaseLight"));
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Orange"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Orange";
                 Settings.Default.Save();
             }
@@ -827,7 +769,7 @@ namespace NewAgeWPF
 
             if (selection == "Lime")
             {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Lime"), ThemeManager.GetAppTheme("BaseLight"));
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Lime"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Lime";
                 Settings.Default.Save();
             }
@@ -836,7 +778,7 @@ namespace NewAgeWPF
 
             if (selection == "Emerald")
             {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Emerald"), ThemeManager.GetAppTheme("BaseLight"));
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Emerald"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Emerald";
                 Settings.Default.Save();
             }
@@ -845,7 +787,7 @@ namespace NewAgeWPF
 
             if (selection == "Teal")
             {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Teal"), ThemeManager.GetAppTheme("BaseLight"));
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Teal"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Teal";
                 Settings.Default.Save();
             }
@@ -854,7 +796,7 @@ namespace NewAgeWPF
 
             if (selection == "Cyan")
             {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Cyan"), ThemeManager.GetAppTheme("BaseLight"));
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Cyan"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Cyan";
                 Settings.Default.Save();
             }
@@ -863,7 +805,7 @@ namespace NewAgeWPF
 
             if (selection == "Cobalt")
             {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Cobalt"), ThemeManager.GetAppTheme("BaseLight"));
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Cobalt"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Cobalt";
                 Settings.Default.Save();
             }
@@ -872,10 +814,119 @@ namespace NewAgeWPF
 
             if (selection == "Indigo")
             {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Indigo"), ThemeManager.GetAppTheme("BaseLight"));
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Indigo"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Indigo";
                 Settings.Default.Save();
             }
+
+            // Change Theme to Violet
+
+            if (selection == "Violet")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Violet"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
+                Settings.Default.Theme = "Violet";
+                Settings.Default.Save();
+            }
+
+            // Change Theme to Pink
+
+            if (selection == "Pink")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Pink"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
+                Settings.Default.Theme = "Pink";
+                Settings.Default.Save();
+            }
+
+            // Change Theme to Magenta
+
+            if (selection == "Magenta")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Magenta"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
+                Settings.Default.Theme = "Magenta";
+                Settings.Default.Save();
+            }
+
+            // Change Theme to Crimson
+
+            if (selection == "Crimson")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Crimson"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
+                Settings.Default.Theme = "Crimson";
+                Settings.Default.Save();
+            }
+
+            // Change Theme to Amber
+
+            if (selection == "Amber")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Amber"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
+                Settings.Default.Theme = "Amber";
+                Settings.Default.Save();
+            }
+
+            // Change Theme to Yellow
+
+            if (selection == "Yellow")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Yellow"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
+                Settings.Default.Theme = "Yellow";
+                Settings.Default.Save();
+            }
+
+            // Change Theme to Brown
+
+            if (selection == "Brown")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Brown"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
+                Settings.Default.Theme = "Brown";
+                Settings.Default.Save();
+            }
+
+            // Change Theme to Olive
+
+            if (selection == "Olive")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Olive"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
+                Settings.Default.Theme = "Olive";
+                Settings.Default.Save();
+            }
+
+            // Change Theme to Steel
+
+            if (selection == "Steel")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Steel"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
+                Settings.Default.Theme = "Steel";
+                Settings.Default.Save();
+            }
+
+            // Change Theme to Muave
+
+            if (selection == "Muave")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Muave"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
+                Settings.Default.Theme = "Muave";
+                Settings.Default.Save();
+            }
+
+            // Change Theme to Taupe
+
+            if (selection == "Taupe")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Taupe"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
+                Settings.Default.Theme = "Taupe";
+                Settings.Default.Save();
+            }
+
+            // Change Theme to Sienna
+
+            if (selection == "Sienna")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Sienna"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
+                Settings.Default.Theme = "Sienna";
+                Settings.Default.Save();
+            }
+
         }
 
         private void PlayButton_MouseDown(object sender, MouseButtonEventArgs e)
@@ -924,7 +975,8 @@ namespace NewAgeWPF
 
         private void DonateButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Process.Start("http://wownewage.com/donate");
+            Contribute_MainWindow contributewindow = new NewAgeWPF.Contribute_MainWindow();
+            contributewindow.ShowDialog();
         }
 
         private void AboutUsButton_MouseDown(object sender, MouseButtonEventArgs e)
@@ -941,6 +993,27 @@ namespace NewAgeWPF
         private void TitleText_Loaded(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void Scheme_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Tuple<AppTheme, Accent> appstyle = ThemeManager.DetectAppStyle(Application.Current);
+            Tuple<AppTheme, Accent> appstyle_settings = ThemeManager.DetectAppStyle(Application.Current);
+            var selectedvalue = Scheme.SelectedValue;
+            string selection = Convert.ToString(selectedvalue);
+
+            if (selection == "Light")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent(Settings.Default.Theme), ThemeManager.GetAppTheme("BaseLight"));
+                Settings.Default.Scheme = "BaseLight";
+                Settings.Default.Save();
+            }
+            if (selection == "Dark")
+            {
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent(Settings.Default.Theme), ThemeManager.GetAppTheme("BaseDark"));
+                Settings.Default.Scheme = "BaseDark";
+                Settings.Default.Save();
+            }
         }
     }
 }
