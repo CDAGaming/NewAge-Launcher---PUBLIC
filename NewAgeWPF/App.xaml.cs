@@ -60,6 +60,7 @@ namespace NewAgeWPF
                         if (CurrentVersion < FutureVer)
                         {
                             string UpdateMSG = "An Update is Available: " + " ( " + CurrentVersion + " > " + FutureVersion + " ) ";
+                            UpdateMSG.Replace(",", ".");
                             Settings.Default.UpdateMessage = UpdateMSG;
                             Settings.Default.UpdateAvailable = true;
                             Settings.Default.Save();
@@ -79,6 +80,7 @@ namespace NewAgeWPF
                         else if (CurrentVersion == FutureVer)
                         {
                             string UpdateMSG = "Already Up-To-Date :D" + " ( " + CurrentVersion + " ) ";
+                            UpdateMSG.Replace(",", ".");
                             Settings.Default.UpdateMessage = UpdateMSG;
                             Settings.Default.UpdateAvailable = false;
                             Settings.Default.Save();
@@ -86,11 +88,20 @@ namespace NewAgeWPF
                         else if (CurrentVersion > FutureVer)
                         {
                             string UpdateMSG = "Already Up-To-Date :D" + " ( " + CurrentVersion + " ) ";
+                            UpdateMSG.Replace(",", ".");
                             Settings.Default.UpdateMessage = UpdateMSG;
                             Settings.Default.UpdateAvailable = false;
                             Settings.Default.Save();
                         }
                         
+                    }
+                    else
+                    {
+                        string UpdateMSG = "Already Up-To-Date :D" + " ( " + CurrentVersion + " ) ";
+                        UpdateMSG.Replace(",", ".");
+                        Settings.Default.UpdateMessage = UpdateMSG;
+                        Settings.Default.UpdateAvailable = false;
+                        Settings.Default.Save();
                     }
                 }
                 UpdatesPage updatepg = new NewAgeWPF.UpdatesPage();

@@ -152,7 +152,7 @@ namespace NewAgeWPF
 
         public object PrivateFontCollection { get; private set; }
 
-        private void Server_Connect()
+        private async void Server_Connect()
         {
             //=============Server Connectivity============\\
 
@@ -165,7 +165,7 @@ namespace NewAgeWPF
 
                 // Checks if it can Connect to Core, Based on Server Address & Port
 
-                client.Connect(Settings.Default.Server, Settings.Default.Port);
+                await client.ConnectAsync(Settings.Default.Server, Settings.Default.Port);
 
                 status = client.Connected;
 
@@ -189,14 +189,6 @@ namespace NewAgeWPF
         {
             // Loads Connection Status & Sets Refresh Key to F5
             Server_Connect();
-
-            if (Keyboard.IsKeyDown(Key.F5))
-            {
-                Statuslbl.Content = "Waiting";
-                Statuslbl.Foreground = System.Windows.Media.Brushes.Gray;
-
-                Server_Connect();
-            }
 
             // Loads Custom Font
             loadFont();
@@ -228,7 +220,7 @@ namespace NewAgeWPF
 
             // Populate ComboBox's w/ Available Themes & Schemes
             Scheme.ItemsSource = new List<string> { "Light", "Dark" };
-            Theme.ItemsSource = new List<string> { "Red", "Green", "Blue", "Purple", "Orange", "Lime", "Emerald", "Teal", "Cyan", "Cobalt", "Indigo", "Violet", "Pink", "Magenta", "Crimson", "Amber", "Yellow", "Brown", "Olive", "Steel", "Muave", "Taupe", "Sienna" };
+            Theme.ItemsSource = new List<string> { "Red", "Green", "Blue", "Purple", "Orange", "Lime", "Emerald", "Teal", "Cyan", "Cobalt", "Indigo", "Violet", "Pink", "Magenta", "Crimson", "Amber", "Yellow", "Brown", "Olive", "Steel", "Mauve", "Taupe", "Sienna" };
 
             //=============THEME & SCHEME STARTUP CONFIGURATION=============\\
 
@@ -273,7 +265,7 @@ namespace NewAgeWPF
             while (content_row.Read())
             {
                 string content = content_row["content"].ToString();
-                contentContent[i] = content.Substring(3, content.Length - 7).Replace("<p>", " ").Replace("</p>", "").Replace("nbsp", "\n").Replace(";", "").Replace("&", "");
+                contentContent[i] = content.Substring(3, content.Length - 7).Replace("<p>", "").Replace("</p>", "").Replace("nbsp", "\n").Replace(";", "").Replace("&", "");
                 i++;
             }
 
@@ -423,9 +415,9 @@ namespace NewAgeWPF
             News_Item6_Title.Content = titleContent[5];
             Item6_Description.Text = contentContent[5];
 
-            BackgroundWorker bw = new BackgroundWorker();
-            bw.DoWork += new DoWorkEventHandler(bw_DoWork);
-            bw.RunWorkerAsync();
+            //BackgroundWorker bw = new BackgroundWorker();
+            //bw.DoWork += new DoWorkEventHandler(bw_DoWork);
+            //bw.RunWorkerAsync();
 
             BackgroundWorker bw_downloader = new BackgroundWorker();
             bw_downloader.DoWork += new DoWorkEventHandler(bw_downloader_DoWork);
@@ -452,11 +444,6 @@ namespace NewAgeWPF
                 MessageBox.Show(ex.Message, "NewAge Launcher", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-        }
-
-        private void bw_DoWork(object sender, DoWorkEventArgs e)
-        {
-            
         }
 
         private void bw_downloader_DoWork(object sender, DoWorkEventArgs e)
@@ -900,12 +887,12 @@ namespace NewAgeWPF
                 Settings.Default.Save();
             }
 
-            // Change Theme to Muave
+            // Change Theme to Mauve
 
-            if (selection == "Muave")
+            if (selection == "Mauve")
             {
-                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Muave"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
-                Settings.Default.Theme = "Muave";
+                ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Mauve"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
+                Settings.Default.Theme = "Mauve";
                 Settings.Default.Save();
             }
 

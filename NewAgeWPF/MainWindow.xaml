@@ -33,7 +33,7 @@
         <ImageBrush ImageSource="Resources/BG (4).png"/>
     </Controls:MetroWindow.Background>
     <Grid Margin="0">
-        <DockPanel DockPanel.Dock="Right" HorizontalAlignment="Right" Height="235" LastChildFill="False" Margin="0,167,12,0" VerticalAlignment="Top" Width="214">
+        <DockPanel DockPanel.Dock="Right" HorizontalAlignment="Right" Height="235" LastChildFill="False" Margin="0,167,0,0" VerticalAlignment="Top" Width="214">
             <Grid Height="235" VerticalAlignment="Center" Width="214" HorizontalAlignment="Center" DockPanel.Dock="Right">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
