@@ -91,9 +91,6 @@ namespace NewAgeWPF
         {
             Settings.Default.UpdateAccepted = true;
             Settings.Default.Save();
-
-            Process.Start(Application.ResourceAssembly.Location);
-            Application.Current.Shutdown();
         }
     }
 }
