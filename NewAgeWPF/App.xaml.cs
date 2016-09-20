@@ -35,12 +35,7 @@ namespace NewAgeWPF
                 Settings.Default.UpdatePostPoned = false;
                 Settings.Default.Save();
             }
-            if (Settings.Default.UpdateAccepted == true)
-            {
-                Settings.Default.UpdateAccepted = false;
-                Settings.Default.Save();
-            }
-
+            
             
             // /* Use This Tag for DEBUGGING or in A ZIP Format
             if (Settings.Default.CheckforUpdateTag == true && Settings.Default.UpdatePGShow == true)
@@ -69,8 +64,8 @@ namespace NewAgeWPF
                             {
                                 await updater.ApplyReleases(updatecheck);
 
-                                Process.Start(ResourceAssembly.Location);
-                                Application.Current.Shutdown();
+                                Settings.Default.UpdateAccepted = false;
+                                Settings.Default.Save();
                             }
                             else if (Settings.Default.UpdateAccepted == false && Settings.Default.UpdatePostPoned == true)
                             {

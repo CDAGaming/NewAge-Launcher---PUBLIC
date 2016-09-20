@@ -15,7 +15,7 @@
                        TextTrimming="CharacterEllipsis"
                        VerticalAlignment="Center"
                        Margin="7, 0, 0, 0"
-                       FontWeight="Normal" Loaded="TitleText_Loaded" FontFamily="Montserrat"
+                       FontWeight="Normal" Loaded="TitleText_Loaded" FontFamily="/NewAgeWPF;component/Resources/#Montserrat"
                                                 />
         </DataTemplate>
     </Controls:MetroWindow.TitleTemplate>
