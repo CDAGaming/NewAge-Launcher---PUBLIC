@@ -334,5 +334,29 @@ namespace NewAgeWPF.Properties {
                 this["Scheme"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Release")]
+        public string UpdateChannel {
+            get {
+                return ((string)(this["UpdateChannel"]));
+            }
+            set {
+                this["UpdateChannel"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Light")]
+        public string SchemeValue {
+            get {
+                return ((string)(this["SchemeValue"]));
+            }
+            set {
+                this["SchemeValue"] = value;
+            }
+        }
     }
 }

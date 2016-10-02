@@ -11,6 +11,7 @@ using System.Diagnostics;
 using System.Net;
 using System.IO;
 using NewAgeWPF.Properties;
+using System.Windows.Documents;
 
 namespace NewAgeWPF
 {
@@ -28,6 +29,17 @@ namespace NewAgeWPF
             //Settings.Default.FutureVersion = "";
             //Settings.Default.Save();
 
+            // Kills All Running World Of Warcraft Processes, to Prevent Patch Read Issues
+
+            foreach (var process_wow1 in Process.GetProcessesByName("wow_mod"))
+            {
+                process_wow1.Kill();
+            }
+
+            foreach (var process_wow2 in Process.GetProcessesByName("wow"))
+            {
+                process_wow2.Kill();
+            }
             
 
             if (Settings.Default.UpdatePostPoned == true)
@@ -47,6 +59,7 @@ namespace NewAgeWPF
                     
                     if (updatecheck.ReleasesToApply.Any())
                     {
+                       List<ReleaseEntry> updatedownloads = updatecheck.ReleasesToApply;
                        string FutureVersion = updatecheck.FutureReleaseEntry.Version.ToString();
                        Version FutureVer = Version.Parse(FutureVersion);
                        Settings.Default.FutureVersion = FutureVersion;
@@ -62,9 +75,12 @@ namespace NewAgeWPF
 
                             if (Settings.Default.UpdateAccepted == true && Settings.Default.UpdatePostPoned == false)
                             {
+                                await updater.DownloadReleases(updatedownloads);
+
                                 await updater.ApplyReleases(updatecheck);
 
                                 Settings.Default.UpdateAccepted = false;
+                                Settings.Default.UpdateAvailable = false;
                                 Settings.Default.Save();
                             }
                             else if (Settings.Default.UpdateAccepted == false && Settings.Default.UpdatePostPoned == true)

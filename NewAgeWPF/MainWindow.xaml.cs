@@ -208,7 +208,7 @@ namespace NewAgeWPF
                 }
             }
 
-            // Transparency Check
+            // Transparency Check -- NEEDS TWEAKING
             if (Settings.Default.TransparencyToggle == true)
             {
                 Opacity = 0.8;
@@ -225,14 +225,7 @@ namespace NewAgeWPF
             //=============THEME & SCHEME STARTUP CONFIGURATION=============\\
 
             Theme.SelectedValue = Settings.Default.Theme;
-            if (Settings.Default.Scheme == "BaseLight")
-            {
-                Scheme.SelectedValue = "Light";
-            }
-            else if (Settings.Default.Scheme == "BaseDark")
-            {
-                Scheme.SelectedValue = "Dark";
-            }
+            Scheme.SelectedValue = Settings.Default.SchemeValue;
 
             ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent(Settings.Default.Theme), ThemeManager.GetAppTheme(Settings.Default.Scheme));
 
@@ -265,7 +258,7 @@ namespace NewAgeWPF
             while (content_row.Read())
             {
                 string content = content_row["content"].ToString();
-                contentContent[i] = content.Substring(3, content.Length - 7).Replace("<p>", "").Replace("</p>", "").Replace("nbsp", "\n").Replace(";", "").Replace("&", "");
+                contentContent[i] = content.Substring(3, content.Length - 7).Replace("<p>", "").Replace("</p>", "").Replace("nbsp", "\n").Replace(";", "").Replace("&", "").Replace("<br />", "").Replace(".", ". ").Replace("<a href=", "").Replace("<", "").Replace("/>", "").Replace("</a>", "").Replace("/a>", "").Replace("https://gitlab.com/matteo.emili14/NewAge-Patch/raw/master/official/patch-A.mpq", "").Replace("src=", "").Replace("<img title=", "").Replace("alt=", "").Replace('"', ' ');
                 i++;
             }
 
@@ -714,6 +707,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Red"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Red";
                 Settings.Default.Save();
+
+                Theme.Foreground = System.Windows.Media.Brushes.Red;
+                Scheme.Foreground = System.Windows.Media.Brushes.Red;
             }
 
             // Change Theme to Green
@@ -723,6 +719,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Green"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Green";
                 Settings.Default.Save();
+
+                Theme.Foreground = System.Windows.Media.Brushes.Green;
+                Scheme.Foreground = System.Windows.Media.Brushes.Green;
             }
 
             // Change Theme to Blue
@@ -732,6 +731,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Blue"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Blue";
                 Settings.Default.Save();
+
+                Theme.Foreground = System.Windows.Media.Brushes.Blue;
+                Scheme.Foreground = System.Windows.Media.Brushes.Blue;
             }
 
             // Change Theme to Purple
@@ -741,6 +743,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Purple"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Purple";
                 Settings.Default.Save();
+
+                Theme.Foreground = System.Windows.Media.Brushes.Purple;
+                Scheme.Foreground = System.Windows.Media.Brushes.Purple;
             }
 
             // Change Theme to Orange
@@ -750,6 +755,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Orange"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Orange";
                 Settings.Default.Save();
+
+                Theme.Foreground = System.Windows.Media.Brushes.Orange;
+                Scheme.Foreground = System.Windows.Media.Brushes.Orange;
             }
 
             // Change Theme to Lime
@@ -759,6 +767,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Lime"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Lime";
                 Settings.Default.Save();
+
+                Theme.Foreground = System.Windows.Media.Brushes.Lime;
+                Scheme.Foreground = System.Windows.Media.Brushes.Lime;
             }
 
             // Change Theme to Emerald
@@ -768,6 +779,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Emerald"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Emerald";
                 Settings.Default.Save();
+
+                Theme.Foreground = new SolidColorBrush(System.Windows.Media.Color.FromRgb(85, 212, 63));
+                Scheme.Foreground = new SolidColorBrush(System.Windows.Media.Color.FromRgb(85, 212, 63));
             }
 
             // Change Theme to Teal
@@ -777,6 +791,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Teal"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Teal";
                 Settings.Default.Save();
+
+                Theme.Foreground = System.Windows.Media.Brushes.Teal;
+                Scheme.Foreground = System.Windows.Media.Brushes.Teal;
             }
 
             // Change Theme to Cyan
@@ -786,6 +803,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Cyan"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Cyan";
                 Settings.Default.Save();
+
+                Theme.Foreground = System.Windows.Media.Brushes.Cyan;
+                Scheme.Foreground = System.Windows.Media.Brushes.Cyan;
             }
 
             // Change Theme to Cobalt
@@ -795,6 +815,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Cobalt"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Cobalt";
                 Settings.Default.Save();
+
+                Theme.Foreground = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 71, 171));
+                Scheme.Foreground = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 71, 171));
             }
 
             // Change Theme to Indigo
@@ -804,6 +827,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Indigo"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Indigo";
                 Settings.Default.Save();
+
+                Theme.Foreground = System.Windows.Media.Brushes.Indigo;
+                Scheme.Foreground = System.Windows.Media.Brushes.Indigo;
             }
 
             // Change Theme to Violet
@@ -813,6 +839,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Violet"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Violet";
                 Settings.Default.Save();
+
+                Theme.Foreground = System.Windows.Media.Brushes.Violet;
+                Scheme.Foreground = System.Windows.Media.Brushes.Violet;
             }
 
             // Change Theme to Pink
@@ -822,6 +851,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Pink"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Pink";
                 Settings.Default.Save();
+
+                Theme.Foreground = System.Windows.Media.Brushes.Pink;
+                Scheme.Foreground = System.Windows.Media.Brushes.Pink;
             }
 
             // Change Theme to Magenta
@@ -831,6 +863,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Magenta"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Magenta";
                 Settings.Default.Save();
+
+                Theme.Foreground = System.Windows.Media.Brushes.Magenta;
+                Scheme.Foreground = System.Windows.Media.Brushes.Magenta;
             }
 
             // Change Theme to Crimson
@@ -840,6 +875,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Crimson"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Crimson";
                 Settings.Default.Save();
+
+                Theme.Foreground = System.Windows.Media.Brushes.Crimson;
+                Scheme.Foreground = System.Windows.Media.Brushes.Crimson;
             }
 
             // Change Theme to Amber
@@ -849,6 +887,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Amber"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Amber";
                 Settings.Default.Save();
+
+                Theme.Foreground = new SolidColorBrush(System.Windows.Media.Color.FromRgb(255, 191, 0));
+                Scheme.Foreground = new SolidColorBrush(System.Windows.Media.Color.FromRgb(255, 191, 0));
             }
 
             // Change Theme to Yellow
@@ -858,6 +899,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Yellow"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Yellow";
                 Settings.Default.Save();
+
+                Theme.Foreground = System.Windows.Media.Brushes.Yellow;
+                Scheme.Foreground = System.Windows.Media.Brushes.Yellow;
             }
 
             // Change Theme to Brown
@@ -867,6 +911,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Brown"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Brown";
                 Settings.Default.Save();
+
+                Theme.Foreground = System.Windows.Media.Brushes.Brown;
+                Scheme.Foreground = System.Windows.Media.Brushes.Brown;
             }
 
             // Change Theme to Olive
@@ -876,6 +923,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Olive"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Olive";
                 Settings.Default.Save();
+
+                Theme.Foreground = System.Windows.Media.Brushes.Olive;
+                Scheme.Foreground = System.Windows.Media.Brushes.Olive;
             }
 
             // Change Theme to Steel
@@ -885,6 +935,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Steel"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Steel";
                 Settings.Default.Save();
+
+                Theme.Foreground = new SolidColorBrush(System.Windows.Media.Color.FromRgb(224, 223, 219));
+                Scheme.Foreground = new SolidColorBrush(System.Windows.Media.Color.FromRgb(224, 223, 219));
             }
 
             // Change Theme to Mauve
@@ -894,6 +947,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Mauve"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Mauve";
                 Settings.Default.Save();
+
+                Theme.Foreground = new SolidColorBrush(System.Windows.Media.Color.FromRgb(224, 126, 255));
+                Scheme.Foreground = new SolidColorBrush(System.Windows.Media.Color.FromRgb(224, 126, 255));
             }
 
             // Change Theme to Taupe
@@ -903,6 +959,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Taupe"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Taupe";
                 Settings.Default.Save();
+
+                Theme.Foreground = new SolidColorBrush(System.Windows.Media.Color.FromRgb(103, 76, 71));
+                Scheme.Foreground = new SolidColorBrush(System.Windows.Media.Color.FromRgb(103, 76, 71));
             }
 
             // Change Theme to Sienna
@@ -912,6 +971,9 @@ namespace NewAgeWPF
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("Sienna"), ThemeManager.GetAppTheme(Settings.Default.Scheme));
                 Settings.Default.Theme = "Sienna";
                 Settings.Default.Save();
+
+                Theme.Foreground = System.Windows.Media.Brushes.Sienna;
+                Scheme.Foreground = System.Windows.Media.Brushes.Sienna;
             }
 
         }
@@ -962,7 +1024,7 @@ namespace NewAgeWPF
 
         private void DonateButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Contribute_MainWindow contributewindow = new NewAgeWPF.Contribute_MainWindow();
+            Contribute_MainWindow contributewindow = new Contribute_MainWindow();
             contributewindow.ShowDialog();
         }
 
@@ -993,14 +1055,22 @@ namespace NewAgeWPF
             {
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent(Settings.Default.Theme), ThemeManager.GetAppTheme("BaseLight"));
                 Settings.Default.Scheme = "BaseLight";
+                Settings.Default.SchemeValue = "Light";
                 Settings.Default.Save();
             }
             if (selection == "Dark")
             {
                 ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent(Settings.Default.Theme), ThemeManager.GetAppTheme("BaseDark"));
                 Settings.Default.Scheme = "BaseDark";
+                Settings.Default.SchemeValue = "Dark";
                 Settings.Default.Save();
             }
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            SettingsWindow settings = new SettingsWindow();
+            settings.ShowDialog();
         }
     }
 }

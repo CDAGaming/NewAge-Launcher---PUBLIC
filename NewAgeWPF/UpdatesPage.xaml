@@ -14,7 +14,7 @@
                        TextTrimming="CharacterEllipsis"
                        VerticalAlignment="Center"
                        Margin="7, 0, 0, 0"
-                       FontWeight="Normal" FontFamily="Montserrat"
+                       FontWeight="Normal" FontFamily="pack://application:,,,/Resources/#Montserrat"
                                                 />
         </DataTemplate>
     </Controls:MetroWindow.TitleTemplate>
@@ -25,10 +25,10 @@
         <ImageBrush ImageSource="Resources/BG (4).png" Stretch="UniformToFill"/>
     </Controls:MetroWindow.Background>
     <Grid>
-        <CheckBox x:Name="Startup_Checkbox" Content="Show on Startup" HorizontalAlignment="Left" Height="20" Margin="10,341,0,0" VerticalAlignment="Top" Width="130" Foreground="#FFE4E3E3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsChecked="True" FontFamily="/NewAgeWPF;component/Resources/#Montserrat"/>
-        <Button x:Name="ContinueorRestartButton" Content="Continue" HorizontalAlignment="Left" Height="20" Margin="331,341,0,0" VerticalAlignment="Top" Width="72" FontFamily="/NewAgeWPF;component/Resources/#Montserrat"/>
-        <Button x:Name="Postpone_Button" Content="Postpone" HorizontalAlignment="Left" Height="20" Margin="235,341,0,0" VerticalAlignment="Top" Width="82" FontFamily="Montserrat"/>
-        <Label x:Name="WelcomeLabel" Content="Welcome" HorizontalAlignment="Center" Height="40" VerticalAlignment="Top" Width="394" FontSize="20" Foreground="#FF14BED8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="10,0" FontFamily="/NewAgeWPF;component/Resources/#Montserrat"/>
+        <CheckBox x:Name="Startup_Checkbox" Content="Show on Startup" HorizontalAlignment="Left" Height="20" Margin="10,341,0,0" VerticalAlignment="Top" Width="130" Foreground="#FFE4E3E3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsChecked="True" FontFamily="pack://application:,,,/Resources/#Montserrat"/>
+        <Button x:Name="ContinueorRestartButton" Content="Continue" HorizontalAlignment="Left" Height="20" Margin="331,341,0,0" VerticalAlignment="Top" Width="72" FontFamily="pack://application:,,,/Resources/#Montserrat"/>
+        <Button x:Name="Postpone_Button" Content="Postpone" HorizontalAlignment="Left" Height="20" Margin="235,341,0,0" VerticalAlignment="Top" Width="82" FontFamily="pack://application:,,,/Resources/#Montserrat"/>
+        <Label x:Name="WelcomeLabel" Content="Welcome" HorizontalAlignment="Center" Height="40" VerticalAlignment="Top" Width="394" FontSize="20" Foreground="#FF14BED8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="10,0" FontFamily="pack://application:,,,/Resources/#Montserrat"/>
         <WebBrowser x:Name="Changes_HTML" HorizontalAlignment="Left" Height="280" Margin="10,40,0,0" VerticalAlignment="Top" Width="394" Source="http://wownewage.com/Launcher_Changes.html"/>
     </Grid>
 </Controls:MetroWindow>

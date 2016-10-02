@@ -91,6 +91,8 @@ namespace NewAgeWPF
         {
             Settings.Default.UpdateAccepted = true;
             Settings.Default.Save();
+
+
         }
     }
 }

@@ -14,7 +14,7 @@
                        TextTrimming="CharacterEllipsis"
                        VerticalAlignment="Center"
                        Margin="7, 0, 0, 0"
-                       FontWeight="Normal" FontFamily="Montserrat"
+                       FontWeight="Normal" FontFamily="pack://application:,,,/Resources/#Montserrat"
                                                 />
         </DataTemplate>
     </Controls:MetroWindow.TitleTemplate>
@@ -26,8 +26,8 @@
     </Window.Background>
     <Grid>
         <Image x:Name="image" HorizontalAlignment="Left" Height="70" Margin="30,10,0,0" VerticalAlignment="Top" Width="235" Source="Resources/logo.png" Stretch="UniformToFill"/>
-        <Label x:Name="label" Content="Select an Option" Height="45" Margin="10,92,0,0" VerticalAlignment="Top" Width="274" Foreground="White" HorizontalAlignment="Left" FontFamily="/NewAgeWPF;component/Resources/#Montserrat" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24"/>
-        <Button x:Name="DonateButton" Content="Donate" HorizontalAlignment="Left" Height="35" Margin="10,226,0,0" VerticalAlignment="Top" Width="100" Click="DonateButton_Click" FontFamily="/NewAgeWPF;component/Resources/#Montserrat" FontSize="14"/>
-        <Button x:Name="VoteButton" Content="Vote" HorizontalAlignment="Left" Height="35" Margin="184,226,0,0" VerticalAlignment="Top" Width="100" FontFamily="/NewAgeWPF;component/Resources/#Montserrat" FontSize="14" Click="VoteButton_Click"/>
+        <Label x:Name="label" Content="Select an Option" Height="45" Margin="10,92,0,0" VerticalAlignment="Top" Width="274" Foreground="White" HorizontalAlignment="Left" FontFamily="pack://application:,,,/Resources/#Montserrat" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24"/>
+        <Button x:Name="DonateButton" Content="Donate" HorizontalAlignment="Left" Height="35" Margin="10,226,0,0" VerticalAlignment="Top" Width="100" Click="DonateButton_Click" FontFamily="pack://application:,,,/Resources/#Montserrat" FontSize="14"/>
+        <Button x:Name="VoteButton" Content="Vote" HorizontalAlignment="Left" Height="35" Margin="184,226,0,0" VerticalAlignment="Top" Width="100" FontFamily="pack://application:,,,/Resources/#Montserrat" FontSize="14" Click="VoteButton_Click"/>
     </Grid>
 </Controls:MetroWindow>

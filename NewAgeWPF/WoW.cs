@@ -37,21 +37,7 @@ namespace NewAgeWPF
                 if (!string.IsNullOrEmpty(Settings.Default.WoWLocation))
                     return Settings.Default.WoWLocation;
 
-                RegistryKey wow = Registry.LocalMachine;
-
-                if (Environment.Is64BitOperatingSystem)
-                {
-                    wow = wow.OpenSubKey(@"SOFTWARE\Wow6432Node\Blizzard Entertainment\World of Warcraft");
-                }
-                else
-                {
-                    wow = wow.OpenSubKey(@"SOFTWARE\Blizzard Entertainment\World of Warcraft");
-                }
-
-                if (wow == null)
-                    return null;
-
-                return (string)wow.GetValue("InstallPath");
+                return null;
             }
         }
 
@@ -86,7 +72,7 @@ namespace NewAgeWPF
 
                     return Path.Combine(Directory, @"Data\enGB\realmlist.wtf");
                 }
-
+                //ENUS Realmlist Config
                 else if (File.Exists(Path.Combine(Directory, @"Data\enUS\realmlist.wtf")))
                 {
                     string pathUS = (Path.Combine(Directory, @"Data\enUS\realmlist.wtf"));
@@ -100,6 +86,88 @@ namespace NewAgeWPF
                     }
 
                     return Path.Combine(Directory, @"Data\enUS\realmlist.wtf");
+                }
+                //DEDE Realmlist Config
+                else if (File.Exists(Path.Combine(Directory, @"Data\deDE\realmlist.wtf")))
+                {
+                    string pathDE = (Path.Combine(Directory, @"Data\deDE\realmlist.wtf"));
+                    FileAttributes attributesDE = File.GetAttributes(pathDE);
+
+                    // If File is Set to Read-Only, Do This:
+                    return Path.Combine(Directory, @"Data\deDE\realmlist.wtf");
+
+                }
+                //ESES Realmlist Config
+                else if (File.Exists(Path.Combine(Directory, @"Data\esES\realmlist.wtf")))
+                {
+                    string pathES = (Path.Combine(Directory, @"Data\esES\realmlist.wtf"));
+                    FileAttributes attributesES = File.GetAttributes(pathES);
+
+                    // If File is Set to Read-Only, Do This:
+                    return Path.Combine(Directory, @"Data\esES\realmlist.wtf");
+                }
+                //esMX Realmlist Config
+                else if (File.Exists(Path.Combine(Directory, @"Data\esMX\realmlist.wtf")))
+                {
+                    string pathMX = (Path.Combine(Directory, @"Data\esMX\realmlist.wtf"));
+                    FileAttributes attributesMX = File.GetAttributes(pathMX);
+
+                    // If File is Set to Read-Only, Do This:
+                    return Path.Combine(Directory, @"Data\esMX\realmlist.wtf");
+                }
+                //frFR Realmlist Config
+                else if (File.Exists(Path.Combine(Directory, @"Data\frFR\realmlist.wtf")))
+                {
+                    string pathFR = (Path.Combine(Directory, @"Data\frFR\realmlist.wtf"));
+                    FileAttributes attributesFR = File.GetAttributes(pathFR);
+
+                    // If File is Set to Read-Only, Do This:
+                    return Path.Combine(Directory, @"Data\frFR\realmlist.wtf");
+                }
+                //koKR Realmlist Config
+                else if (File.Exists(Path.Combine(Directory, @"Data\koKR\realmlist.wtf")))
+                {
+                    string pathKR = (Path.Combine(Directory, @"Data\koKR\realmlist.wtf"));
+                    FileAttributes attributesKR = File.GetAttributes(pathKR);
+
+                    // If File is set to Read-Only, Do This:
+                    return Path.Combine(Directory, @"Data\koKR\realmlist.wtf");
+                }
+                //ptBR Realmlist Config
+                else if (File.Exists(Path.Combine(Directory, @"Data\ptBR\realmlist.wtf")))
+                {
+                    string pathBR = (Path.Combine(Directory, @"Data\ptBR\realmlist.wtf"));
+                    FileAttributes attributesBR = File.GetAttributes(pathBR);
+
+                    // If File is Set to Read-Only, Do This:
+                    return Path.Combine(Directory, @"Data\ptBR\realmlist.wtf");
+                }
+                //ruRU Realmlist Config
+                else if (File.Exists(Path.Combine(Directory, @"Data\ruRU\realmlist.wtf")))
+                {
+                    string pathRU = (Path.Combine(Directory, @"Data\ruRU\realmlist.wtf"));
+                    FileAttributes attributesRU = File.GetAttributes(pathRU);
+
+                    // If File is Set to Read-Only, Do This:
+                    return Path.Combine(Directory, @"Data\ruRU\realmlist.wtf");
+                }
+                //zhCN Realmlist Config
+                else if (File.Exists(Path.Combine(Directory, @"Data\zhCN\realmlist.wtf")))
+                {
+                    string pathCN = (Path.Combine(Directory, @"Data\zhCN\realmlist.wtf"));
+                    FileAttributes attributesCN = File.GetAttributes(pathCN);
+
+                    // If File is Set to Read-Only, Do This:
+                    return Path.Combine(Directory, @"Data\zhCN\realmlist.wtf");
+                }
+                //zhTW Realmlist Config
+                else if (File.Exists(Path.Combine(Directory, @"Data\zhTW\realmlist.wtf")))
+                {
+                    string pathTW = (Path.Combine(Directory, @"Data\zhTW\realmlist.wtf"));
+                    FileAttributes attributesTW = File.GetAttributes(pathTW);
+
+                    // If File is Set to Read-Only, Do This:
+                    return Path.Combine(Directory, @"Data\zhTW\realmlist.wtf");
                 }
 
                 else
