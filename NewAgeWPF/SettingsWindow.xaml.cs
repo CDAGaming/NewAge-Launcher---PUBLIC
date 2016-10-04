@@ -74,16 +74,6 @@ namespace NewAgeWPF
             //Wow Location
             Settings.Default.WoWLocation = WoWLocationBox.Text;
 
-            //Transparency Checkbox
-            if (TransparencyCheckBox.IsChecked == true)
-            {
-                Settings.Default.TransparencyToggle = true;
-            }
-            if (TransparencyCheckBox.IsChecked == false)
-            {
-                Settings.Default.TransparencyToggle = false;
-            }
-
             //Updates Checkbox
             if (Updates_Checkbox.IsChecked == true)
             {
@@ -104,22 +94,16 @@ namespace NewAgeWPF
                 Settings.Default.WoWCacheToggle = false;
             }
 
-            //Language Change Checkbox
-            if (LanguageChange_CheckBox.IsChecked == true)
-            {
-                Settings.Default.LanguageChangeTag = true;
-            }
-            if (LanguageChange_CheckBox.IsChecked == false)
-            {
-                Settings.Default.LanguageChangeTag = false;
-            }
-
             Settings.Default.Save();
-            Close();
+
+            Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
+
         }
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
+
             //=======THEME CONFIG (FROM MAINFORM)=======\\
 
             ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent(Settings.Default.Theme), ThemeManager.GetAppTheme(Settings.Default.Scheme));
@@ -130,16 +114,13 @@ namespace NewAgeWPF
             {
                 Updates_Checkbox.IsChecked = true;
             }
-
-            if (Settings.Default.LanguageChangeTag == false)
-            {
-                LanguageChange_CheckBox.IsChecked = false;
-            }
             
+            // Populate or Retrieve Data
+
             WoWLocationBox.Text = Settings.Default.WoWLocation;
-            TransparencyCheckBox.IsChecked = Settings.Default.TransparencyToggle;
+            UpdateChannel_ComboBox.SelectedValue = Settings.Default.UpdateChannel;
+            UpdateChannel_ComboBox.ItemsSource = new List<string> { "Release", "Beta" };
             ClearCache_Checkbox.IsChecked = Settings.Default.WoWCacheToggle;
-            LanguageChange_CheckBox.IsChecked = Settings.Default.LanguageChangeTag;
             Updates_Checkbox.IsChecked = Settings.Default.CheckforUpdateTag;
         }
 
@@ -172,6 +153,23 @@ namespace NewAgeWPF
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void UpdateChannel_ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var UpdateChannel_selectedvalue = UpdateChannel_ComboBox.SelectedValue;
+            string UpdateChannel_Selection = Convert.ToString(UpdateChannel_selectedvalue);
+
+            if (UpdateChannel_Selection == "Release")
+            {
+                Settings.Default.UpdateChannel = "Release";
+                Settings.Default.Save();
+            }
+            else if (UpdateChannel_Selection == "Beta")
+            {
+                Settings.Default.UpdateChannel = "Beta";
+                Settings.Default.Save();
+            }
         }
     }
 }

@@ -52,70 +52,137 @@ namespace NewAgeWPF
             // /* Use This Tag for DEBUGGING or in A ZIP Format
             if (Settings.Default.CheckforUpdateTag == true && Settings.Default.UpdatePGShow == true)
             {
-                
-                using (var updater = await UpdateManager.GitHubUpdateManager("https://github.com/CDAGaming/NewAge-Launcher_WPF"))
+                if (Settings.Default.UpdateChannel == "Release")
                 {
-                    var updatecheck = await updater.CheckForUpdate();
-                    
-                    if (updatecheck.ReleasesToApply.Any())
+                    using (var updater = await UpdateManager.GitHubUpdateManager("https://github.com/CDAGaming/NewAge-Launcher_WPF", null, null, null, false, null))
                     {
-                       List<ReleaseEntry> updatedownloads = updatecheck.ReleasesToApply;
-                       string FutureVersion = updatecheck.FutureReleaseEntry.Version.ToString();
-                       Version FutureVer = Version.Parse(FutureVersion);
-                       Settings.Default.FutureVersion = FutureVersion;
-                       Settings.Default.Save();
+                        var updatecheck = await updater.CheckForUpdate();
 
-                        if (CurrentVersion < FutureVer)
+                        if (updatecheck.ReleasesToApply.Any())
                         {
-                            string UpdateMSG = "An Update is Available: " + " ( " + CurrentVersion + " > " + FutureVersion + " ) ";
-                            UpdateMSG.Replace(",", ".");
-                            Settings.Default.UpdateMessage = UpdateMSG;
-                            Settings.Default.UpdateAvailable = true;
+                            List<ReleaseEntry> updatedownloads = updatecheck.ReleasesToApply;
+                            string FutureVersion = updatecheck.FutureReleaseEntry.Version.ToString();
+                            Version FutureVer = Version.Parse(FutureVersion);
+                            Settings.Default.FutureVersion = FutureVersion;
                             Settings.Default.Save();
 
-                            if (Settings.Default.UpdateAccepted == true && Settings.Default.UpdatePostPoned == false)
+                            if (CurrentVersion < FutureVer)
                             {
-                                await updater.DownloadReleases(updatedownloads);
+                                if (Settings.Default.CurrentChannel != "Release")
+                                {
+                                    string UpdateMSG = "An Update is Available: " + " ( " + CurrentVersion + " - " + Settings.Default.CurrentChannel + " > " + FutureVersion + " - " + "Release" + " ) ";
+                                    Settings.Default.UpdateMessage = UpdateMSG;
+                                    Settings.Default.UpdateAvailable = true;
+                                    Settings.Default.Save();
+                                }
+                                else if (Settings.Default.CurrentChannel == "Release")
+                                {
+                                    string UpdateMSG = "An Update is Available: " + " ( " + CurrentVersion + " - " + Settings.Default.CurrentChannel + " > " + FutureVersion + " - " + Settings.Default.CurrentChannel + " ) ";
+                                    Settings.Default.UpdateMessage = UpdateMSG;
+                                    Settings.Default.UpdateAvailable = true;
+                                    Settings.Default.Save();
+                                }
 
-                                await updater.ApplyReleases(updatecheck);
+                                if (Settings.Default.UpdateAccepted == true && Settings.Default.UpdatePostPoned == false)
+                                {
+                                    await updater.DownloadReleases(updatedownloads);
 
-                                Settings.Default.UpdateAccepted = false;
+                                    await updater.ApplyReleases(updatecheck);
+
+                                    Settings.Default.UpdateAccepted = false;
+                                    Settings.Default.UpdateAvailable = false;
+                                    Settings.Default.CurrentChannel = "Release";
+                                    Settings.Default.Save();
+                                }
+                                else if (Settings.Default.UpdateAccepted == false && Settings.Default.UpdatePostPoned == true)
+                                {
+                                    MessageBox.Show("Update Has been Postponed Until Next Restart.");
+                                }
+                            }
+                            else if (CurrentVersion == FutureVer || CurrentVersion > FutureVer)
+                            {
+                                string UpdateMSG = "Already Up-To-Date :D" + " ( " + CurrentVersion + " - " + Settings.Default.CurrentChannel + " ) ";
+                                Settings.Default.UpdateMessage = UpdateMSG;
                                 Settings.Default.UpdateAvailable = false;
                                 Settings.Default.Save();
                             }
-                            else if (Settings.Default.UpdateAccepted == false && Settings.Default.UpdatePostPoned == true)
-                            {
-
-                            }
                         }
-                        else if (CurrentVersion == FutureVer)
+                        else
                         {
-                            string UpdateMSG = "Already Up-To-Date :D" + " ( " + CurrentVersion + " ) ";
-                            UpdateMSG.Replace(",", ".");
+                            string UpdateMSG = "Already Up-To-Date :D" + " ( " + CurrentVersion + " - " + Settings.Default.CurrentChannel + " ) ";
                             Settings.Default.UpdateMessage = UpdateMSG;
                             Settings.Default.UpdateAvailable = false;
                             Settings.Default.Save();
                         }
-                        else if (CurrentVersion > FutureVer)
-                        {
-                            string UpdateMSG = "Already Up-To-Date :D" + " ( " + CurrentVersion + " ) ";
-                            UpdateMSG.Replace(",", ".");
-                            Settings.Default.UpdateMessage = UpdateMSG;
-                            Settings.Default.UpdateAvailable = false;
-                            Settings.Default.Save();
-                        }
-                        
-                    }
-                    else
-                    {
-                        string UpdateMSG = "Already Up-To-Date :D" + " ( " + CurrentVersion + " ) ";
-                        UpdateMSG.Replace(",", ".");
-                        Settings.Default.UpdateMessage = UpdateMSG;
-                        Settings.Default.UpdateAvailable = false;
-                        Settings.Default.Save();
                     }
                 }
-                UpdatesPage updatepg = new NewAgeWPF.UpdatesPage();
+                else if (Settings.Default.UpdateChannel == "Beta")
+                {
+                    using (var updater = await UpdateManager.GitHubUpdateManager("https://github.com/CDAGaming/NewAge-Launcher_WPF", null, null, null, true, null))
+                    {
+                        var updatecheck = await updater.CheckForUpdate();
+
+                        if (updatecheck.ReleasesToApply.Any())
+                        {
+                            List<ReleaseEntry> updatedownloads = updatecheck.ReleasesToApply;
+                            string FutureVersion = updatecheck.FutureReleaseEntry.Version.ToString();
+                            Version FutureVer = Version.Parse(FutureVersion);
+                            Settings.Default.FutureVersion = FutureVersion;
+                            Settings.Default.Save();
+
+                            if (CurrentVersion < FutureVer)
+                            {
+                                if (Settings.Default.CurrentChannel != "Beta")
+                                {
+                                    string UpdateMSG = "An Update is Available: " + " ( " + CurrentVersion + " - " + Settings.Default.CurrentChannel + " > " + FutureVersion + " - " + "PreRelease" + " ) ";
+                                    Settings.Default.UpdateMessage = UpdateMSG;
+                                    Settings.Default.UpdateAvailable = true;
+                                    Settings.Default.Save();
+                                }
+                                else if (Settings.Default.CurrentChannel == "Beta")
+                                {
+                                    string UpdateMSG = "An Update is Available: " + " ( " + CurrentVersion + " - " + Settings.Default.CurrentChannel + " > " + FutureVersion + " - " + Settings.Default.CurrentChannel + " ) ";
+                                    Settings.Default.UpdateMessage = UpdateMSG;
+                                    Settings.Default.UpdateAvailable = true;
+                                    Settings.Default.Save();
+                                }
+
+                                if (Settings.Default.UpdateAccepted == true && Settings.Default.UpdatePostPoned == false)
+                                {
+                                    await updater.DownloadReleases(updatedownloads);
+
+                                    await updater.ApplyReleases(updatecheck);
+
+                                    Settings.Default.UpdateAccepted = false;
+                                    Settings.Default.UpdateAvailable = false;
+                                    Settings.Default.CurrentChannel = "Beta";
+                                    Settings.Default.Save();
+                                }
+                                else if (Settings.Default.UpdateAccepted == false && Settings.Default.UpdatePostPoned == true)
+                                {
+                                    MessageBox.Show("Update Has been Postponed Until Next Restart.");
+                                }
+                            }
+                            else if (CurrentVersion == FutureVer || CurrentVersion > FutureVer)
+                            {
+                                string UpdateMSG = "Already Up-To-Date :D" + " ( " + CurrentVersion + " - " + Settings.Default.CurrentChannel + " ) ";
+                                Settings.Default.UpdateMessage = UpdateMSG;
+                                Settings.Default.UpdateAvailable = false;
+                                Settings.Default.Save();
+                            }
+                        }
+                        else
+                        {
+                            string UpdateMSG = "Already Up-To-Date :D" + " ( " + CurrentVersion + " - " + Settings.Default.CurrentChannel + " ) ";
+                            UpdateMSG.Replace(",", ".");
+                            Settings.Default.UpdateMessage = UpdateMSG;
+                            Settings.Default.UpdateAvailable = false;
+                            Settings.Default.Save();
+                        }
+                    }
+                }
+
+                UpdatesPage updatepg = new UpdatesPage();
                 updatepg.ShowDialog();
             }
             else if (Settings.Default.CheckforUpdateTag == false && Settings.Default.UpdatePGShow == false)
@@ -124,7 +191,158 @@ namespace NewAgeWPF
             }
             else if (Settings.Default.CheckforUpdateTag == true && Settings.Default.UpdatePGShow == false)
             {
+                if (Settings.Default.UpdateChannel == "Release")
+                {
+                    using (var updater = await UpdateManager.GitHubUpdateManager("https://github.com/CDAGaming/NewAge-Launcher_WPF", null, null, null, false, null))
+                    {
+                        var updatecheck = await updater.CheckForUpdate();
 
+                        if (updatecheck.ReleasesToApply.Any())
+                        {
+                            List<ReleaseEntry> updatedownloads = updatecheck.ReleasesToApply;
+                            string FutureVersion = updatecheck.FutureReleaseEntry.Version.ToString();
+                            Version FutureVer = Version.Parse(FutureVersion);
+                            Settings.Default.FutureVersion = FutureVersion;
+                            Settings.Default.Save();
+
+                            if (CurrentVersion < FutureVer)
+                            {
+                                if (Settings.Default.CurrentChannel != "Release")
+                                {
+                                    MessageBoxResult msgresult = MessageBox.Show("An Update is Available: " + " ( " + CurrentVersion + " - " + Settings.Default.CurrentChannel + " > " + FutureVersion + " - " + "Release" + " ) " + ", Do you Wish to Update?", "New Update Available!", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+
+                                    if (msgresult == MessageBoxResult.Yes)
+                                    {
+                                        await updater.DownloadReleases(updatedownloads);
+                                        await updater.ApplyReleases(updatecheck);
+
+                                        Settings.Default.UpdateAccepted = false;
+                                        Settings.Default.UpdatePostPoned = false;
+                                        Settings.Default.Save();
+
+                                        MessageBoxResult msgresult2 = MessageBox.Show("Update Completed, Now Closing Launcher", "Update Complete", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                                        if (msgresult2 == MessageBoxResult.OK)
+                                        {
+                                            Application.Current.Shutdown();
+                                        }
+                                    }
+                                    else if (msgresult == MessageBoxResult.No)
+                                    {
+                                        MessageBox.Show("Update Postponed Until Next Restart");
+                                    }
+                                }
+                                else if (Settings.Default.CurrentChannel == "Release")
+                                {
+                                    MessageBoxResult msgresult = MessageBox.Show("An Update is Available: " + " ( " + CurrentVersion + " - " + Settings.Default.CurrentChannel + " > " + FutureVersion + Settings.Default.CurrentChannel + " ) " + ", Do you Wish to Update?", "New Update Available!", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+
+                                    if (msgresult == MessageBoxResult.Yes)
+                                    {
+                                        await updater.DownloadReleases(updatedownloads);
+                                        await updater.ApplyReleases(updatecheck);
+
+                                        Settings.Default.UpdateAccepted = false;
+                                        Settings.Default.UpdatePostPoned = false;
+                                        Settings.Default.CurrentChannel = "Release";
+                                        Settings.Default.Save();
+
+                                        MessageBoxResult msgresult2 = MessageBox.Show("Update Completed, Now Closing Launcher", "Update Complete", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                                        if (msgresult2 == MessageBoxResult.OK)
+                                        {
+                                            Application.Current.Shutdown();
+                                        }
+                                    }
+                                    else if (msgresult == MessageBoxResult.No)
+                                    {
+                                        MessageBox.Show("Update Postponed Until Next Restart");
+                                    }
+                                }
+                            }
+                            else if (CurrentVersion == FutureVer || CurrentVersion > FutureVer)
+                            {
+                                MessageBox.Show("You Are Already Up-To-Date :D" + " ( " + CurrentVersion + " - " + Settings.Default.CurrentChannel + " ) ");
+                            }
+                        }
+                    }
+                }
+
+                else if (Settings.Default.UpdateChannel == "Beta")
+                {
+                    using (var updater = await UpdateManager.GitHubUpdateManager("https://github.com/CDAGaming/NewAge-Launcher_WPF", null, null, null, true, null))
+                    {
+                        var updatecheck = await updater.CheckForUpdate();
+
+                        if (updatecheck.ReleasesToApply.Any())
+                        {
+                            List<ReleaseEntry> updatedownloads = updatecheck.ReleasesToApply;
+                            string FutureVersion = updatecheck.FutureReleaseEntry.Version.ToString();
+                            Version FutureVer = Version.Parse(FutureVersion);
+                            Settings.Default.FutureVersion = FutureVersion;
+                            Settings.Default.Save();
+
+                            if (CurrentVersion < FutureVer)
+                            {
+                                if (Settings.Default.CurrentChannel != "Beta")
+                                {
+                                    MessageBoxResult msgresult = MessageBox.Show("An Update is Available: " + " ( " + CurrentVersion + " - " + Settings.Default.CurrentChannel + " > " + FutureVersion + " - " + "PreRelease" + " ) " + ", Do you Wish to Update?", "New Update Available!", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+
+                                    if (msgresult == MessageBoxResult.Yes)
+                                    {
+                                        await updater.DownloadReleases(updatedownloads);
+                                        await updater.ApplyReleases(updatecheck);
+
+                                        Settings.Default.UpdateAccepted = false;
+                                        Settings.Default.UpdatePostPoned = false;
+                                        Settings.Default.CurrentChannel = "Beta";
+                                        Settings.Default.Save();
+
+                                        MessageBoxResult msgresult2 = MessageBox.Show("Update Completed, Now Closing Launcher", "Update Complete", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                                        if (msgresult2 == MessageBoxResult.OK)
+                                        {
+                                            Application.Current.Shutdown();
+                                        }
+                                    }
+                                    else if (msgresult == MessageBoxResult.No)
+                                    {
+                                        MessageBox.Show("Update Postponed Until Next Restart");
+                                    }
+                                }
+                                else if (Settings.Default.CurrentChannel == "Beta")
+                                {
+                                    MessageBoxResult msgresult = MessageBox.Show("An Update is Available: " + " ( " + CurrentVersion + " - " + Settings.Default.CurrentChannel + " > " + FutureVersion + Settings.Default.CurrentChannel + " ) " + ", Do you Wish to Update?", "New Update Available!", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+
+                                    if (msgresult == MessageBoxResult.Yes)
+                                    {
+                                        await updater.DownloadReleases(updatedownloads);
+                                        await updater.ApplyReleases(updatecheck);
+
+                                        Settings.Default.UpdateAccepted = false;
+                                        Settings.Default.UpdatePostPoned = false;
+                                        Settings.Default.CurrentChannel = "Beta";
+                                        Settings.Default.Save();
+
+                                        MessageBoxResult msgresult2 = MessageBox.Show("Update Completed, Now Closing Launcher", "Update Complete", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                                        if (msgresult2 == MessageBoxResult.OK)
+                                        {
+                                            Application.Current.Shutdown();
+                                        }
+                                    }
+                                    else if (msgresult == MessageBoxResult.No)
+                                    {
+                                        MessageBox.Show("Update Postponed Until Next Restart");
+                                    }
+                                }
+                            }
+                            else if (CurrentVersion == FutureVer || CurrentVersion > FutureVer)
+                            {
+                                MessageBox.Show("You Are Already Up-To-Date :D" + " ( " + CurrentVersion + " - " + Settings.Default.CurrentChannel + " ) ");
+                            }
+                        }
+                    }
+                }
             }
             else if (Settings.Default.CheckforUpdateTag == false && Settings.Default.UpdatePGShow == true)
             {

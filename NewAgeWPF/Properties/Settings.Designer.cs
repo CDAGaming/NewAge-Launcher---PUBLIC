@@ -122,96 +122,12 @@ namespace NewAgeWPF.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool TransparencyToggle {
-            get {
-                return ((bool)(this["TransparencyToggle"]));
-            }
-            set {
-                this["TransparencyToggle"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool WoWCacheToggle {
             get {
                 return ((bool)(this["WoWCacheToggle"]));
             }
             set {
                 this["WoWCacheToggle"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool LanguageSet {
-            get {
-                return ((bool)(this["LanguageSet"]));
-            }
-            set {
-                this["LanguageSet"] = value;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("English (Default)")]
-        public string CurrentLanguage {
-            get {
-                return ((string)(this["CurrentLanguage"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://wownewage.com/Launcher/Launguage/ES/Lansador_NuevaEra.exe")]
-        public string WebsiteURL_ES {
-            get {
-                return ((string)(this["WebsiteURL_ES"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://wownewage.com/Launcher/Launguage/EN/NewAge Launcher.exe")]
-        public string WebsiteURL_EN {
-            get {
-                return ((string)(this["WebsiteURL_EN"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://wownewage.com/Launcher/Launguage/FR/NewAge Launcher.exe")]
-        public string WebsiteURL_FR {
-            get {
-                return ((string)(this["WebsiteURL_FR"]));
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool LanguageChangeTag {
-            get {
-                return ((bool)(this["LanguageChangeTag"]));
-            }
-            set {
-                this["LanguageChangeTag"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool FontAdditionTag {
-            get {
-                return ((bool)(this["FontAdditionTag"]));
-            }
-            set {
-                this["FontAdditionTag"] = value;
             }
         }
         
@@ -356,6 +272,18 @@ namespace NewAgeWPF.Properties {
             }
             set {
                 this["SchemeValue"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Release")]
+        public string CurrentChannel {
+            get {
+                return ((string)(this["CurrentChannel"]));
+            }
+            set {
+                this["CurrentChannel"] = value;
             }
         }
     }

@@ -208,16 +208,6 @@ namespace NewAgeWPF
                 }
             }
 
-            // Transparency Check -- NEEDS TWEAKING
-            if (Settings.Default.TransparencyToggle == true)
-            {
-                Opacity = 0.8;
-            }
-            else
-            {
-                Opacity = 1.0;
-            }
-
             // Populate ComboBox's w/ Available Themes & Schemes
             Scheme.ItemsSource = new List<string> { "Light", "Dark" };
             Theme.ItemsSource = new List<string> { "Red", "Green", "Blue", "Purple", "Orange", "Lime", "Emerald", "Teal", "Cyan", "Cobalt", "Indigo", "Violet", "Pink", "Magenta", "Crimson", "Amber", "Yellow", "Brown", "Olive", "Steel", "Mauve", "Taupe", "Sienna" };
