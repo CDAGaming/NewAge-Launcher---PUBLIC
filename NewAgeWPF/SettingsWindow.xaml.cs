@@ -75,27 +75,32 @@ namespace NewAgeWPF
             Settings.Default.WoWLocation = WoWLocationBox.Text;
 
             //Updates Checkbox
+
             if (Updates_Checkbox.IsChecked == true)
             {
                 Settings.Default.CheckforUpdateTag = true;
             }
-            if (Updates_Checkbox.IsChecked == false)
+            else if (Updates_Checkbox.IsChecked == false)
             {
                 Settings.Default.CheckforUpdateTag = false;
             }
 
             //Clear Cache Checkbox
+
             if (ClearCache_Checkbox.IsChecked == true)
             {
                 Settings.Default.WoWCacheToggle = true;
             }
-            if (ClearCache_Checkbox.IsChecked == false)
+            else if (ClearCache_Checkbox.IsChecked == false)
             {
                 Settings.Default.WoWCacheToggle = false;
             }
 
-            Settings.Default.Save();
+            // Update Channel Combobox
 
+            Settings.Default.UpdateChannel = Convert.ToString(UpdateChannel_ComboBox.SelectedValue);
+
+            Settings.Default.Save();
             Process.Start(Application.ResourceAssembly.Location);
             Application.Current.Shutdown();
 
@@ -157,19 +162,7 @@ namespace NewAgeWPF
 
         private void UpdateChannel_ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var UpdateChannel_selectedvalue = UpdateChannel_ComboBox.SelectedValue;
-            string UpdateChannel_Selection = Convert.ToString(UpdateChannel_selectedvalue);
-
-            if (UpdateChannel_Selection == "Release")
-            {
-                Settings.Default.UpdateChannel = "Release";
-                Settings.Default.Save();
-            }
-            else if (UpdateChannel_Selection == "Beta")
-            {
-                Settings.Default.UpdateChannel = "Beta";
-                Settings.Default.Save();
-            }
+            
         }
     }
 }

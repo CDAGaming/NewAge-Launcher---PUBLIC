@@ -40,15 +40,15 @@ namespace NewAgeWPF
             {
                 process_wow2.Kill();
             }
-            
+
 
             if (Settings.Default.UpdatePostPoned == true)
             {
                 Settings.Default.UpdatePostPoned = false;
                 Settings.Default.Save();
             }
-            
-            
+
+
             // /* Use This Tag for DEBUGGING or in A ZIP Format
             if (Settings.Default.CheckforUpdateTag == true && Settings.Default.UpdatePGShow == true)
             {
@@ -86,20 +86,26 @@ namespace NewAgeWPF
                                 if (Settings.Default.UpdateAccepted == true && Settings.Default.UpdatePostPoned == false)
                                 {
                                     await updater.DownloadReleases(updatedownloads);
-
                                     await updater.ApplyReleases(updatecheck);
 
                                     Settings.Default.UpdateAccepted = false;
                                     Settings.Default.UpdateAvailable = false;
                                     Settings.Default.CurrentChannel = "Release";
                                     Settings.Default.Save();
+
+                                    MessageBoxResult updateresult = MessageBox.Show("Update Complete, Please Relaunch Launcher to Start New Version, or Exit the Prompt to Exit at your Own Time.", "Update Completed!", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                                    if (updateresult == MessageBoxResult.OK)
+                                    {
+                                        Application.Current.Shutdown();
+                                    }
                                 }
                                 else if (Settings.Default.UpdateAccepted == false && Settings.Default.UpdatePostPoned == true)
                                 {
                                     MessageBox.Show("Update Has been Postponed Until Next Restart.");
                                 }
                             }
-                            else if (CurrentVersion == FutureVer || CurrentVersion > FutureVer)
+                            else if (CurrentVersion >= FutureVer)
                             {
                                 string UpdateMSG = "Already Up-To-Date :D" + " ( " + CurrentVersion + " - " + Settings.Default.CurrentChannel + " ) ";
                                 Settings.Default.UpdateMessage = UpdateMSG;
@@ -150,20 +156,26 @@ namespace NewAgeWPF
                                 if (Settings.Default.UpdateAccepted == true && Settings.Default.UpdatePostPoned == false)
                                 {
                                     await updater.DownloadReleases(updatedownloads);
-
                                     await updater.ApplyReleases(updatecheck);
 
                                     Settings.Default.UpdateAccepted = false;
                                     Settings.Default.UpdateAvailable = false;
                                     Settings.Default.CurrentChannel = "Beta";
                                     Settings.Default.Save();
+
+                                    MessageBoxResult updateresult = MessageBox.Show("Update Complete, Please Relaunch Launcher to Start New Version, or Exit the Prompt to Exit at your Own Time.", "Update Completed!", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                                    if (updateresult == MessageBoxResult.OK)
+                                    {
+                                        Application.Current.Shutdown();
+                                    }
                                 }
                                 else if (Settings.Default.UpdateAccepted == false && Settings.Default.UpdatePostPoned == true)
                                 {
                                     MessageBox.Show("Update Has been Postponed Until Next Restart.");
                                 }
                             }
-                            else if (CurrentVersion == FutureVer || CurrentVersion > FutureVer)
+                            else if (CurrentVersion >= FutureVer)
                             {
                                 string UpdateMSG = "Already Up-To-Date :D" + " ( " + CurrentVersion + " - " + Settings.Default.CurrentChannel + " ) ";
                                 Settings.Default.UpdateMessage = UpdateMSG;
@@ -220,9 +232,9 @@ namespace NewAgeWPF
                                         Settings.Default.UpdatePostPoned = false;
                                         Settings.Default.Save();
 
-                                        MessageBoxResult msgresult2 = MessageBox.Show("Update Completed, Now Closing Launcher", "Update Complete", MessageBoxButton.OK, MessageBoxImage.Information);
+                                        MessageBoxResult updateresult = MessageBox.Show("Update Complete, Please Relaunch Launcher to Start New Version, or Exit the Prompt to Exit at your Own Time.", "Update Completed!", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                                        if (msgresult2 == MessageBoxResult.OK)
+                                        if (updateresult == MessageBoxResult.OK)
                                         {
                                             Application.Current.Shutdown();
                                         }
@@ -246,9 +258,9 @@ namespace NewAgeWPF
                                         Settings.Default.CurrentChannel = "Release";
                                         Settings.Default.Save();
 
-                                        MessageBoxResult msgresult2 = MessageBox.Show("Update Completed, Now Closing Launcher", "Update Complete", MessageBoxButton.OK, MessageBoxImage.Information);
+                                        MessageBoxResult updateresult = MessageBox.Show("Update Complete, Please Relaunch Launcher to Start New Version, or Exit the Prompt to Exit at your Own Time.", "Update Completed!", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                                        if (msgresult2 == MessageBoxResult.OK)
+                                        if (updateresult == MessageBoxResult.OK)
                                         {
                                             Application.Current.Shutdown();
                                         }
@@ -259,7 +271,7 @@ namespace NewAgeWPF
                                     }
                                 }
                             }
-                            else if (CurrentVersion == FutureVer || CurrentVersion > FutureVer)
+                            else if (CurrentVersion >= FutureVer)
                             {
                                 MessageBox.Show("You Are Already Up-To-Date :D" + " ( " + CurrentVersion + " - " + Settings.Default.CurrentChannel + " ) ");
                             }
@@ -297,9 +309,9 @@ namespace NewAgeWPF
                                         Settings.Default.CurrentChannel = "Beta";
                                         Settings.Default.Save();
 
-                                        MessageBoxResult msgresult2 = MessageBox.Show("Update Completed, Now Closing Launcher", "Update Complete", MessageBoxButton.OK, MessageBoxImage.Information);
+                                        MessageBoxResult updateresult = MessageBox.Show("Update Complete, Please Relaunch Launcher to Start New Version, or Exit the Prompt to Exit at your Own Time.", "Update Completed!", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                                        if (msgresult2 == MessageBoxResult.OK)
+                                        if (updateresult == MessageBoxResult.OK)
                                         {
                                             Application.Current.Shutdown();
                                         }
@@ -323,9 +335,9 @@ namespace NewAgeWPF
                                         Settings.Default.CurrentChannel = "Beta";
                                         Settings.Default.Save();
 
-                                        MessageBoxResult msgresult2 = MessageBox.Show("Update Completed, Now Closing Launcher", "Update Complete", MessageBoxButton.OK, MessageBoxImage.Information);
+                                        MessageBoxResult updateresult = MessageBox.Show("Update Complete, Please Relaunch Launcher to Start New Version, or Exit the Prompt to Exit at your Own Time.", "Update Completed!", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                                        if (msgresult2 == MessageBoxResult.OK)
+                                        if (updateresult == MessageBoxResult.OK)
                                         {
                                             Application.Current.Shutdown();
                                         }
@@ -336,7 +348,7 @@ namespace NewAgeWPF
                                     }
                                 }
                             }
-                            else if (CurrentVersion == FutureVer || CurrentVersion > FutureVer)
+                            else if (CurrentVersion >= FutureVer)
                             {
                                 MessageBox.Show("You Are Already Up-To-Date :D" + " ( " + CurrentVersion + " - " + Settings.Default.CurrentChannel + " ) ");
                             }
@@ -346,12 +358,13 @@ namespace NewAgeWPF
             }
             else if (Settings.Default.CheckforUpdateTag == false && Settings.Default.UpdatePGShow == true)
             {
-                UpdatesPage updatePG = new NewAgeWPF.UpdatesPage();
+                UpdatesPage updatePG = new UpdatesPage();
                 updatePG.ShowDialog();
             }
             // */
-            base.OnStartup(e);
-        }
 
+            base.OnStartup(e);
+
+        }
     }
 }
