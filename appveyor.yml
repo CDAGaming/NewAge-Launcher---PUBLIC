@@ -32,6 +32,6 @@ build:
   verbosity: minimal
 deploy:
 - provider: GitHub
-  release: V1.3.2.0
+  release: V1.3.3.0
   auth_token:
     secure: AaRUijs5QwQRA0b/D0OvrqvJVeTIBxH7Q5SWBobG71eBxDK5LzwHqx6lJnsjyZ1a

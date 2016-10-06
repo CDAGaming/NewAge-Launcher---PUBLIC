@@ -95,5 +95,19 @@ namespace NewAgeWPF
             Process.Start(Application.ResourceAssembly.Location);
             Application.Current.Shutdown();
         }
+
+        private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Startup_Checkbox.IsChecked == true)
+            {
+                Settings.Default.UpdatePGShow = true;
+            }
+            else if (Startup_Checkbox.IsChecked == false)
+            {
+                Settings.Default.UpdatePGShow = false;
+            }
+
+            Settings.Default.Save();
+        }
     }
 }

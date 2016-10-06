@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NewAgeWPF"
         mc:Ignorable="d"
-        Title="NewAge - Updates" Height="400" Width="420" ResizeMode="CanMinimize" Loaded="MetroWindow_Loaded">
+        Title="NewAge - Updates" Height="400" Width="420" ResizeMode="CanMinimize" Loaded="MetroWindow_Loaded" Closing="MetroWindow_Closing">
     <Controls:MetroWindow.TitleTemplate>
         <DataTemplate>
             <TextBlock x:Name="TitleText"
