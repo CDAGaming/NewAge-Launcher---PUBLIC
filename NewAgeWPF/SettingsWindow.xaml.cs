@@ -164,5 +164,21 @@ namespace NewAgeWPF
         {
             
         }
+
+        private void ConfigButton_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ConfigButton.Cursor = Cursors.Hand;
+        }
+
+        private void ConfigButton_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ConfigButton.Cursor = Cursors.Arrow;
+        }
+
+        private void ConfigButton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ConfigWindow configwindow = new NewAgeWPF.ConfigWindow();
+            configwindow.ShowDialog();
+        }
     }
 }

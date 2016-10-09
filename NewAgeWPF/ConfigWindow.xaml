@@ -1,0 +1,34 @@
+﻿<Controls:MetroWindow x:Class="NewAgeWPF.ConfigWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NewAgeWPF"
+        mc:Ignorable="d"
+        Title="NewAge - Config" Height="350" Width="600" ResizeMode="CanMinimize" Loaded="MetroWindow_Loaded">
+    <Controls:MetroWindow.TitleTemplate>
+        <DataTemplate>
+            <TextBlock x:Name="TitleText"
+                       Text="NewAge Launcher - Config"
+                       TextTrimming="CharacterEllipsis"
+                       VerticalAlignment="Center"
+                       Margin="7, 0, 0, 0"
+                       FontWeight="Normal" FontFamily="pack://application:,,,/Resources/#Montserrat"
+                                                />
+        </DataTemplate>
+    </Controls:MetroWindow.TitleTemplate>
+    <Controls:MetroWindow.Effect>
+        <DropShadowEffect ShadowDepth="10" BlurRadius="6"/>
+    </Controls:MetroWindow.Effect>
+    <Controls:MetroWindow.Background>
+        <ImageBrush ImageSource="Resources/BG (4).png"/>
+    </Controls:MetroWindow.Background>
+    <Grid>
+        <Image x:Name="SaveButton" HorizontalAlignment="Right" Height="36" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="97" Source="Resources/Save.png" MouseEnter="SaveButton_MouseEnter" MouseLeave="SaveButton_MouseLeave" MouseDown="SaveButton_MouseDown"/>
+        <Label x:Name="Title_Sound" Content="Sound" HorizontalAlignment="Right" Margin="0,10,509,0" VerticalAlignment="Top" Width="75" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontFamily="pack://application:,,,/Resources/#Montserrat" Foreground="White"/>
+        <Label x:Name="SoundQuality" Content="1 - Low Quality" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="111" Height="25" FontFamily="pack://application:,,,/Resources/#Montserrat" Foreground="White"/>
+        <Slider x:Name="SoundQuality_ScrollBar" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" Width="120" SmallChange="1" Value="1" Maximum="3" Minimum="1" ValueChanged="SoundQuality_ScrollBar_ValueChanged"/>
+        <Label x:Name="SoundQualityTitle" Content="Sound Quality:" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Width="111" Height="25" FontFamily="pack://application:,,,/Resources/#Montserrat" Foreground="White"/>
+    </Grid>
+</Controls:MetroWindow>

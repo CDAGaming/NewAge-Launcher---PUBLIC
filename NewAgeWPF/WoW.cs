@@ -52,6 +52,20 @@ namespace NewAgeWPF
             }
         }
 
+        public static string ConfigLocation
+        {
+            get
+            {
+                if (File.Exists(Path.Combine(Directory, @"WTF\Config.wtf")))
+                {
+                    return Path.Combine(Directory, @"WTF\Config.wtf");
+                }
+
+                else
+                    return null;
+            }
+        }
+
         public static string RealmListLocation
         {
             get
@@ -94,6 +108,11 @@ namespace NewAgeWPF
                     FileAttributes attributesDE = File.GetAttributes(pathDE);
 
                     // If File is Set to Read-Only, Do This:
+                    if ((attributesDE & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
+                    {
+                        attributesDE = RemoveAttribute_DEDE(attributesDE, FileAttributes.ReadOnly);
+                        File.SetAttributes(pathDE, attributesDE);
+                    }
                     return Path.Combine(Directory, @"Data\deDE\realmlist.wtf");
 
                 }
@@ -184,6 +203,11 @@ namespace NewAgeWPF
         public static FileAttributes RemoveAttribute_ENUS(FileAttributes attributesUS, FileAttributes Remove_ENUS)
         {
             return attributesUS & ~Remove_ENUS;
+        }
+
+        public static FileAttributes RemoveAttribute_DEDE(FileAttributes attributesDE, FileAttributes Remove_DEDE)
+        {
+            return attributesDE & ~Remove_DEDE;
         }
 
         public static string DataDirectory

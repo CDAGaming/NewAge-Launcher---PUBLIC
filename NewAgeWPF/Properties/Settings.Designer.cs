@@ -286,5 +286,29 @@ namespace NewAgeWPF.Properties {
                 this["CurrentChannel"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SoundQualityTag {
+            get {
+                return ((bool)(this["SoundQualityTag"]));
+            }
+            set {
+                this["SoundQualityTag"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int SoundQualityValue {
+            get {
+                return ((int)(this["SoundQualityValue"]));
+            }
+            set {
+                this["SoundQualityValue"] = value;
+            }
+        }
     }
 }

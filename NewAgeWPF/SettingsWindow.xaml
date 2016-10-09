@@ -34,6 +34,7 @@
         <CheckBox x:Name="Updates_Checkbox" Content="Check For Updates" HorizontalAlignment="Left" Margin="372,10,0,0" VerticalAlignment="Top" Foreground="White" ToolTip="Allow Launcher to Check for Updates on Startup" IsChecked="True" FontFamily="pack://application:,,,/Resources/#Montserrat" Width="140" VerticalContentAlignment="Center"/>
         <Label x:Name="UpdateChannelTitle" Content="Update Channel:" HorizontalAlignment="Left" Margin="10,53,0,0" VerticalAlignment="Top" Width="115" Foreground="White" Height="30" FontFamily="pack://application:,,,/Resources/#Montserrat" VerticalContentAlignment="Center"/>
         <ComboBox x:Name="UpdateChannel_ComboBox" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" Width="135" IsReadOnly="True" SelectionChanged="UpdateChannel_ComboBox_SelectionChanged"/>
+        <Image x:Name="ConfigButton" HorizontalAlignment="Right" Height="36" Margin="0,0,225,0" VerticalAlignment="Bottom" Width="97" Source="Resources/Config.png" MouseEnter="ConfigButton_MouseEnter" MouseLeave="ConfigButton_MouseLeave" MouseDown="ConfigButton_MouseDown"/>
 
     </Grid>
 </Controls:MetroWindow>

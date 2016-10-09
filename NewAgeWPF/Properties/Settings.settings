@@ -74,5 +74,11 @@
     <Setting Name="CurrentChannel" Type="System.String" Scope="User">
       <Value Profile="(Default)">Release</Value>
     </Setting>
+    <Setting Name="SoundQualityTag" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SoundQualityValue" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
