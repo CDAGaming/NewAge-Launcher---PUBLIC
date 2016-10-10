@@ -66,19 +66,34 @@
       <Value Profile="(Default)">BaseLight</Value>
     </Setting>
     <Setting Name="UpdateChannel" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Release</Value>
+      <Value Profile="(Default)">Beta</Value>
     </Setting>
     <Setting Name="SchemeValue" Type="System.String" Scope="User">
       <Value Profile="(Default)">Light</Value>
     </Setting>
     <Setting Name="CurrentChannel" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Release</Value>
+      <Value Profile="(Default)">Beta</Value>
     </Setting>
     <Setting Name="SoundQualityTag" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="SoundQualityValue" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">1</Value>
+    <Setting Name="SoundQualityValue" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ResolutionTag" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ResolutionValue1" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ResolutionValue2" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ResolutionSelected" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SoundQualitySelected" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

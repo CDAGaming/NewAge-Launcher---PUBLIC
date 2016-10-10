@@ -36,6 +36,7 @@ using System.Drawing;
 using NewAgeWPF.Properties;
 using System.Diagnostics;
 using MahApps.Metro;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace NewAgeWPF
 {
@@ -127,6 +128,8 @@ namespace NewAgeWPF
             UpdateChannel_ComboBox.ItemsSource = new List<string> { "Release", "Beta" };
             ClearCache_Checkbox.IsChecked = Settings.Default.WoWCacheToggle;
             Updates_Checkbox.IsChecked = Settings.Default.CheckforUpdateTag;
+
+            
         }
 
         private void BrowseButton_MouseEnter(object sender, MouseEventArgs e)
@@ -141,12 +144,21 @@ namespace NewAgeWPF
 
         private void BrowseButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            using (System.Windows.Forms.FolderBrowserDialog fbd = new System.Windows.Forms.FolderBrowserDialog())
+            // Load File Dialog Browser
+            var fbd = new CommonOpenFileDialog();
+            fbd.Title = "Select WoW Client Location";
+            fbd.IsFolderPicker = true;
+            fbd.AddToMostRecentlyUsedList = true;
+            fbd.EnsurePathExists = true;
+            fbd.EnsureFileExists = true;
+            fbd.ShowPlacesList = true;
+            fbd.Multiselect = false;
+            fbd.AllowNonFileSystemItems = false;
+
+            if (fbd.ShowDialog() == CommonFileDialogResult.Ok)
             {
-                if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    WoWLocationBox.Text = fbd.SelectedPath;
-                }
+                //var selection = fbd.FileName;
+                WoWLocationBox.Text = fbd.FileName;
             }
         }
 

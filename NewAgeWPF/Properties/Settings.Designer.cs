@@ -253,7 +253,7 @@ namespace NewAgeWPF.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Release")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Beta")]
         public string UpdateChannel {
             get {
                 return ((string)(this["UpdateChannel"]));
@@ -277,7 +277,7 @@ namespace NewAgeWPF.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Release")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Beta")]
         public string CurrentChannel {
             get {
                 return ((string)(this["CurrentChannel"]));
@@ -301,13 +301,73 @@ namespace NewAgeWPF.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1")]
-        public int SoundQualityValue {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SoundQualityValue {
             get {
-                return ((int)(this["SoundQualityValue"]));
+                return ((string)(this["SoundQualityValue"]));
             }
             set {
                 this["SoundQualityValue"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ResolutionTag {
+            get {
+                return ((bool)(this["ResolutionTag"]));
+            }
+            set {
+                this["ResolutionTag"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ResolutionValue1 {
+            get {
+                return ((string)(this["ResolutionValue1"]));
+            }
+            set {
+                this["ResolutionValue1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ResolutionValue2 {
+            get {
+                return ((string)(this["ResolutionValue2"]));
+            }
+            set {
+                this["ResolutionValue2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ResolutionSelected {
+            get {
+                return ((string)(this["ResolutionSelected"]));
+            }
+            set {
+                this["ResolutionSelected"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SoundQualitySelected {
+            get {
+                return ((string)(this["SoundQualitySelected"]));
+            }
+            set {
+                this["SoundQualitySelected"] = value;
             }
         }
     }

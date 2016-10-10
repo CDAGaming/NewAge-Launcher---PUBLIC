@@ -686,9 +686,7 @@ namespace NewAgeWPF
         private void Theme_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Tuple<AppTheme, Accent> appstyle = ThemeManager.DetectAppStyle(Application.Current);
-            Tuple<AppTheme, Accent> appstyle_settings = ThemeManager.DetectAppStyle(Application.Current);
-            var selectedvalue = Theme.SelectedValue;
-            string selection = Convert.ToString(selectedvalue);
+            string selection = Convert.ToString(Theme.SelectedValue);
 
             // Change Theme to Red
 
@@ -1037,9 +1035,7 @@ namespace NewAgeWPF
         private void Scheme_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Tuple<AppTheme, Accent> appstyle = ThemeManager.DetectAppStyle(Application.Current);
-            Tuple<AppTheme, Accent> appstyle_settings = ThemeManager.DetectAppStyle(Application.Current);
-            var selectedvalue = Scheme.SelectedValue;
-            string selection = Convert.ToString(selectedvalue);
+            string selection = Convert.ToString(Scheme.SelectedValue);
 
             if (selection == "Light")
             {
