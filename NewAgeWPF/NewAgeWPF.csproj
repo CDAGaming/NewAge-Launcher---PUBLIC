@@ -396,7 +396,9 @@
   <ItemGroup>
     <None Include="MySql.Data.dll" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MySql.Data.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -430,83 +432,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Config.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\Microsoft.WindowsAPICodePack.Shell.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\Microsoft.WindowsAPICodePack.Shell.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\Microsoft.WindowsAPICodePack.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\Mono.Cecil.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\Mono.Cecil.Mdb.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\Mono.Cecil.Pdb.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\Mono.Cecil.Rocks.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\MySql.Data.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\NuGet.Squirrel.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\Splat.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\Splat.pdb" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\Squirrel.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\System.Windows.Interactivity.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\DeltaCompressionDotNet.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\DeltaCompressionDotNet.MsDelta.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\ICSharpCode.SharpZipLib.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\ICSharpCode.SharpZipLib.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\MahApps.Metro.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\MahApps.Metro.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\Microsoft.CSharp.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Release\Microsoft.WindowsAPICodePack.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Microsoft.WindowsAPICodePack.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\Microsoft.WindowsAPICodePack.Shell.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\Microsoft.WindowsAPICodePack.Shell.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\Microsoft.WindowsAPICodePack.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

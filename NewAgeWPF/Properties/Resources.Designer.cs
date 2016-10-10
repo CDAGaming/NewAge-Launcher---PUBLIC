@@ -183,29 +183,9 @@ namespace NewAgeWPF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] DeltaCompressionDotNet_MsDelta1 {
-            get {
-                object obj = ResourceManager.GetObject("DeltaCompressionDotNet_MsDelta1", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         internal static byte[] DeltaCompressionDotNet_PatchApi {
             get {
                 object obj = ResourceManager.GetObject("DeltaCompressionDotNet_PatchApi", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] DeltaCompressionDotNet1 {
-            get {
-                object obj = ResourceManager.GetObject("DeltaCompressionDotNet1", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -303,38 +283,6 @@ namespace NewAgeWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] ICSharpCode_SharpZipLib2 {
-            get {
-                object obj = ResourceManager.GetObject("ICSharpCode_SharpZipLib2", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
-        ///&lt;doc&gt;
-        ///    &lt;assembly&gt;
-        ///        &lt;name&gt;ICSharpCode.SharpZipLib&lt;/name&gt;
-        ///    &lt;/assembly&gt;
-        ///    &lt;members&gt;
-        ///        &lt;member name=&quot;T:ICSharpCode.SharpZipLib.Core.WindowsPathUtils&quot;&gt;
-        ///            &lt;summary&gt;
-        ///            WindowsPathUtils provides simple utilities for handling windows paths.
-        ///            &lt;/summary&gt;
-        ///        &lt;/member&gt;
-        ///        &lt;member name=&quot;M:ICSharpCode.SharpZipLib.Core.WindowsPathUtils.#ctor&quot;&gt;
-        ///            &lt;summary&gt;
-        ///            Initializes a new instance of the &lt;see cref=&quot;T:ICSh [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string ICSharpCode_SharpZipLib3 {
-            get {
-                return ResourceManager.GetString("ICSharpCode_SharpZipLib3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap logo {
@@ -377,106 +325,6 @@ namespace NewAgeWPF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] MahApps_Metro2 {
-            get {
-                object obj = ResourceManager.GetObject("MahApps_Metro2", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
-        ///&lt;doc&gt;
-        ///    &lt;assembly&gt;
-        ///        &lt;name&gt;MahApps.Metro&lt;/name&gt;
-        ///    &lt;/assembly&gt;
-        ///    &lt;members&gt;
-        ///        &lt;member name=&quot;T:ControlzEx.KeyboardNavigationEx&quot;&gt;
-        ///            &lt;summary&gt;
-        ///            Helper class for a common focusing problem.
-        ///            The focus itself isn&apos;t the problem. If we use the common focusing methods the control get the focus
-        ///            but it doesn&apos;t get the focus visual style.
-        ///            The KeyboardNavigation class handles the visual style only if the control get  [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string MahApps_Metro3 {
-            get {
-                return ResourceManager.GetString("MahApps_Metro3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] Microsoft_CSharp {
-            get {
-                object obj = ResourceManager.GetObject("Microsoft_CSharp", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
-        ///&lt;doc&gt;
-        ///    &lt;assembly&gt;
-        ///        &lt;name&gt;Microsoft.WindowsAPICodePack&lt;/name&gt;
-        ///    &lt;/assembly&gt;
-        ///    &lt;members&gt;
-        ///        &lt;member name=&quot;T:Microsoft.WindowsAPICodePack.ApplicationServices.ApplicationRestartRecoveryManager&quot;&gt;
-        ///            &lt;summary&gt;
-        ///            Provides access to the Application Restart and Recovery
-        ///            features available in Windows Vista or higher. Application Restart and Recovery lets an
-        ///            application do some recovery work to save data before the process ex [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string Microsoft_WindowsAPICodePack {
-            get {
-                return ResourceManager.GetString("Microsoft_WindowsAPICodePack", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] Microsoft_WindowsAPICodePack_Shell {
-            get {
-                object obj = ResourceManager.GetObject("Microsoft_WindowsAPICodePack_Shell", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
-        ///&lt;doc&gt;
-        ///    &lt;assembly&gt;
-        ///        &lt;name&gt;Microsoft.WindowsAPICodePack.Shell&lt;/name&gt;
-        ///    &lt;/assembly&gt;
-        ///    &lt;members&gt;
-        ///        &lt;member name=&quot;T:Microsoft.WindowsAPICodePack.Shell.EventHandlerExtensionMethods&quot;&gt;
-        ///            &lt;summary&gt;
-        ///            Provides extension methods for raising events safely.
-        ///            &lt;/summary&gt;
-        ///        &lt;/member&gt;
-        ///        &lt;member name=&quot;M:Microsoft.WindowsAPICodePack.Shell.EventHandlerExtensionMethods.SafeRaise(System.EventHandler,System.Object)&quot;&gt;
-        ///            &lt;summ [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string Microsoft_WindowsAPICodePack_Shell1 {
-            get {
-                return ResourceManager.GetString("Microsoft_WindowsAPICodePack_Shell1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] Microsoft_WindowsAPICodePack1 {
-            get {
-                object obj = ResourceManager.GetObject("Microsoft_WindowsAPICodePack1", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         internal static byte[] Mono_Cecil {
             get {
                 object obj = ResourceManager.GetObject("Mono_Cecil", resourceCulture);
@@ -497,16 +345,6 @@ namespace NewAgeWPF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] Mono_Cecil_Mdb1 {
-            get {
-                object obj = ResourceManager.GetObject("Mono_Cecil_Mdb1", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         internal static byte[] Mono_Cecil_Pdb {
             get {
                 object obj = ResourceManager.GetObject("Mono_Cecil_Pdb", resourceCulture);
@@ -517,39 +355,9 @@ namespace NewAgeWPF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] Mono_Cecil_Pdb1 {
-            get {
-                object obj = ResourceManager.GetObject("Mono_Cecil_Pdb1", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         internal static byte[] Mono_Cecil_Rocks {
             get {
                 object obj = ResourceManager.GetObject("Mono_Cecil_Rocks", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] Mono_Cecil_Rocks1 {
-            get {
-                object obj = ResourceManager.GetObject("Mono_Cecil_Rocks1", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] Mono_Cecil1 {
-            get {
-                object obj = ResourceManager.GetObject("Mono_Cecil1", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -595,16 +403,6 @@ namespace NewAgeWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] MySql_Data1 {
-            get {
-                object obj = ResourceManager.GetObject("MySql_Data1", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap NewAge_Thumbnail {
@@ -620,16 +418,6 @@ namespace NewAgeWPF.Properties {
         internal static byte[] NuGet_Squirrel {
             get {
                 object obj = ResourceManager.GetObject("NuGet_Squirrel", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] NuGet_Squirrel1 {
-            get {
-                object obj = ResourceManager.GetObject("NuGet_Squirrel1", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -687,26 +475,6 @@ namespace NewAgeWPF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] Splat {
-            get {
-                object obj = ResourceManager.GetObject("Splat", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] Splat1 {
-            get {
-                object obj = ResourceManager.GetObject("Splat1", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         internal static byte[] Squirrel {
             get {
                 object obj = ResourceManager.GetObject("Squirrel", resourceCulture);
@@ -717,29 +485,9 @@ namespace NewAgeWPF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] Squirrel1 {
-            get {
-                object obj = ResourceManager.GetObject("Squirrel1", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         internal static byte[] System_Windows_Interactivity {
             get {
                 object obj = ResourceManager.GetObject("System_Windows_Interactivity", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] System_Windows_Interactivity1 {
-            get {
-                object obj = ResourceManager.GetObject("System_Windows_Interactivity1", resourceCulture);
                 return ((byte[])(obj));
             }
         }
